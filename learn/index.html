@@ -71,12 +71,26 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/categories/" class="waves-effect waves-light">
+    <a href="/categories" class="waves-effect waves-light">
+
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
       <span>分类</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/categories/net">
+          
+          <i class="fas fa-network-wired" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>计算机网络</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -218,12 +232,26 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/categories/" class="waves-effect waves-light">
+		<a href="javascript:;">
 			
-			    <i class="fa-fw fas fa-bookmark"></i>
+				<i class="fa-fw fas fa-bookmark"></i>
 			
 			分类
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/categories/net " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-network-wired" style="position: absolute;left:50px" ></i>
+			      
+		          <span>计算机网络</span>
+                  </a>
+                </li>
+               
+            </ul>
           
         </li>
         
@@ -1177,6 +1205,17 @@ $(function () {
     <script src="/js/matery.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153156493-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-153156493-2');
+</script>
 
 
     <!-- Baidu Analytics -->
