@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="计算机网络动画演示">
-    <meta name="description" content="转载请注明！动画源自：https://wps.pearsoned.com/ecs_kurose_compnetw_6/216/55463/14198700.cw/index.html如有侵权，联系884691896@qq.com进行删除
-传">
+    <meta name="description" content="传输延迟和传播延迟、排队和损失、消息片、Http延迟估算、DNS递归迭代产讯，GBN，选择重复，流量控制，TCP拥塞控制的演示">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -621,8 +620,8 @@
 </div>
 <strong>Notes:</strong>
 <ol><li>Host B consumes data in 2Kbyte chunks at random times.</li>  <li>When Host A receives an acknowledgment with WIN=0, Host A sends a packet with one byte of data. It is assumed for simplicity, that this one byte is not comsumed by the receiver.  </li></ol>
-### TCP拥塞控制
-**TCP congestion control**
+
+<h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><p><strong>TCP congestion control</strong></p>
 <p> TCP congestion control is described in Chapter 3 of the text. In this interactive animation, you can view how TCP behaves when multiple clients are sending data over the same link. You may add stations either before or during the simulation. (The default is one station.) When the maximum amount of bandwidth is consumed, all of the sending clients reduce their transmissions rates, depending on the recovery method (Reno or Tahoe).</p>  <p> The green background in the graph shows the total amount of consumed bandwidth. The "3 ack's" button and the "timeout" button trigger the corresponding event for that particular workstation. The "Reno" and "Tahoe" buttons set the recovery method for that particular workstation. The sliders can be used to adjust the speed and the maximum bandwidth. </p>
 <div style="text-align:center">
     <iframe width="1000px" height="660px" frameborder="0" src="/netScr/src9.html"></iframe>
@@ -888,19 +887,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/06/%E6%B5%8B%E8%AF%95/">
+                <a href="/2020/02/06/Jack/Jack1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="测试">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="布尔逻辑">
                         
-                        <span class="card-title">测试</span>
+                        <span class="card-title">布尔逻辑</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是一个测试
+                            从零开始构建一台现代计算机，关于与门，或门，非门，异或门，二选一，四选一，八选一选择器，解复用器的介绍
                         
                     </div>
                     <div class="publish-info">
@@ -911,8 +910,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    随笔
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%A6%81%E7%B4%A0/" class="post-category">
+                                    计算机系统要素
                                 </a>
                             
                             
@@ -922,8 +921,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/%E5%B8%83%E5%B0%94%E9%80%BB%E8%BE%91/">
+                        <span class="chip bg-color">布尔逻辑</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%8E%E6%88%96%E9%9D%9E/">
+                        <span class="chip bg-color">与或非</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/">
+                        <span class="chip bg-color">选择器</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%91%E7%A0%81%E5%99%A8/">
+                        <span class="chip bg-color">译码器</span>
                     </a>
                     
                 </div>
@@ -934,35 +945,52 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/09/hello-world/">
+                <a href="/2019/12/10/computer-network/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="计算机网络动画演示">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">计算机网络动画演示</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            传输延迟和传播延迟、排队和损失、消息片、Http延迟估算、DNS递归迭代产讯，GBN，选择重复，流量控制，TCP拥塞控制的演示
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-10
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            AndrewGuan
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                    <a href="/tags/TCP/">
+                        <span class="chip bg-color">TCP</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1016,7 +1044,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.2k</span>&nbsp;字
+                class="white-color">13.8k</span>&nbsp;字
             
             
             
