@@ -665,18 +665,18 @@
 <p>当然还有更加骚的操作：<code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code>。一串命令下来非常的装逼。本篇文章的前提是你已经搭建好了自己的博客，也就说，你的博客能够正常显示了，或许有些文章或许没有，而且你已经熟悉了如何写自己的博客文章，如何生成博客页面，如何将生成的博客页面部署到服务器上，比如github和gitee。然后忽然发现，博客提供的基本模块不能满足自己的要求，比如我要开一个学习的页面，该怎么做呢？？？？？？</p>
 <p>这本文章将以构建一个学习模块为例，使用<a href="https://blinkfox.github.io/" target="_blank" rel="noopener">闪烁之狐</a>的博客主题，介绍博客的扩展模式。</p>
 <h3 id="二、创建一个学习模块"><a href="#二、创建一个学习模块" class="headerlink" title="二、创建一个学习模块"></a>二、创建一个学习模块</h3><p>闪烁之狐的主题在一开始好像只提供了首页，标签，分类，归档，关于，留言板，友情链接的模块。留言板模块基本上是一片空白，我们将在这片空白上构建自己的博客模块。先来看最基本的效果：</p>
-<p><img src="C:%5CUsers%5CThingcor%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200213145452028.png" alt="image-20200213145452028"></p>
+<p><img src="D:%5Cleaning_source%5CABlog%5Csource_posts%5Csrc%5Cimage-20200213145452028.png" alt=""></p>
 <p>这是我构建的一个学习的模块，这个模块中仅仅写了一些文字，这是了解闪烁之狐的扩展模式的最简单的一步。</p>
 <h4 id="1、生成目录文件"><a href="#1、生成目录文件" class="headerlink" title="1、生成目录文件"></a>1、生成目录文件</h4><p>首先我们需要生成一个文件夹，该文件夹下自带index.md文件。因为我们这里构建的是学习模块，所以我们生成learn文件夹：</p>
 <pre class="line-numbers language-hexo"><code class="language-hexo">hexo new page "learn"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>执行命令后，你会在source文件夹下看的有learn文件夹，其中包含一个index.md文件。如果按照正常的方式进行生成的话，那么我们看到的效果将会是这样的：</p>
-<p><img src="C:%5CUsers%5CThingcor%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200213150012392.png" alt="image-20200213150012392"></p>
+<p><img src="D:%5Cleaning_source%5CABlog%5Csource_posts%5Csrc%5Cimage-20200213150012392.png" alt=""></p>
 <p>并不是空白页。因此我们还需要做些其他的工作。下一步就是要考虑：空白页是怎么生成的呢？</p>
 <h4 id="2、渲染成空白页"><a href="#2、渲染成空白页" class="headerlink" title="2、渲染成空白页"></a>2、渲染成空白页</h4><p>从留言板我们看到空白页，打开soruce/contact文件夹下的index.md文件我们看到这样的内容是这样的：</p>
-<p><img src="C:%5CUsers%5CThingcor%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200213150220907.png" alt="image-20200213150220907"></p>
+<p><img src="D:%5Cleaning_source%5CABlog%5Csource_posts%5Csrc%5Cimage-20200213150220907.png" alt=""></p>
 <p>title和date都是一些常规标签。那么起作用的就是type和layout。打开主题目录下的layout文件，会发现有一个contact.ejs文件。该文件的作用进行对头部有layout：”contact”声明的文件进行渲染。那么我们的learn下的index.md是不是加个这种标签就可以了呢？可以试一下，你会发现生成的标题和logo与留言板是一样的。。。。因此我们需要做些改动，当然不能直接在contact.ejs中改，否则留言板也就被改掉了。</p>
 <p>你有contact.ejs那我为什么不能建一个learn.ejs呢？？？直接新建个txt文档改掉后缀名即可。然后把contact.ejs中的代码复制进来。</p>
-<p><img src="C:%5CUsers%5CThingcor%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200213151419374.png" alt="image-20200213151419374"></p>
+<p><img src="D:%5Cleaning_source%5CABlog%5Csource_posts%5Csrc%5Cimage-20200213151419374.png" alt=""></p>
 <p>可以看到复制的代码是这样的。这里我们关注箭头指向的那一行，这一行表示的是空白页的标题，<code>&amp;nbsp;</code>表示一个空格。前面的i标签表示的是logo（关于免费的logo可以在<a href="https://fontawesome.com/icons?d=gallery&m=free" target="_blank" rel="noopener">这里</a>选择）。将i标签换成<code>&lt;i class=&quot;fas fa-graduation-cap&quot;&gt;&lt;/i&gt;</code>，然后将标题改成Self-Education，并保存。</p>
 <p>下面的方框是加载留言插件用的，在这里不必关心（如果你在构建的时候只想要的一个空白页，那么可以直接把这段删掉）。</p>
 <p>所以，如何在首页中看到这个模块？？？？？这就是配置文件的作用。</p>
@@ -1031,31 +1031,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/12/pytorch/">
+                <a href="/2020/02/11/boyu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="白话Pytorch">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="动手深度学习-第一天">
                         
-                        <span class="card-title">白话Pytorch</span>
+                        <span class="card-title">动手深度学习-第一天</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            白话Pytorch
+                            动手学深度学习pytorch版。该篇主要讲解了pytorch中的一些函数，以及神经网络的构建步骤，利用Pytorch从零实现了Softmax模型。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Pytorch/" class="post-category">
-                                    Pytorch
+                            <a href="/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    动手学深度学习
                                 </a>
                             
                             
@@ -1065,16 +1065,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Pytorch/">
-                        <span class="chip bg-color">Pytorch</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
+                    <a href="/tags/datawhale%E8%AE%AD%E7%BB%83%E8%90%A5/">
+                        <span class="chip bg-color">datawhale训练营</span>
                     </a>
                     
                 </div>
@@ -1224,7 +1216,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.3k</span>&nbsp;字
+                class="white-color">19.7k</span>&nbsp;字
             
             
             
