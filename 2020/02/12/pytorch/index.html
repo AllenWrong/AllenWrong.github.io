@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pytorch">
+    <meta name="keywords" content="Pytorch">
     <meta name="description" content="白话Pytorch">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>pytorch | Guan</title>
+    <title>白话Pytorch | Guan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -477,12 +477,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pytorch</h1>
+                    <h1 class="description center-align post-title">白话Pytorch</h1>
                 </div>
             </div>
         </div>
@@ -646,14 +646,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    130
+                    576
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 				
@@ -671,19 +671,73 @@
             <div id="articleContent">
                 <h2 id="包参考"><a href="#包参考" class="headerlink" title="包参考"></a>包参考</h2><h3 id="torch"><a href="#torch" class="headerlink" title="torch"></a>torch</h3><p>torch package 包含 多维张量和之前定义过数学运算的数据结构。此外，它提供了支持许多高效序列化的张量(或者任意类型) 的程序集，以及一些有用工具。</p>
 <ul>
-<li>引包</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> torch
-<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li>判断一个对象obj是否是张量</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python">torch<span class="token punctuation">.</span>is_tensor<span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>判断<code>obj</code>是否是一个Pytorch 存储对象</strong></p>
-<p>一个<code>torch.Storage</code>是一个单一数据类型的连续一维数组。</p>
+<li><p><code>import torch</code>：引包</p>
+</li>
+<li><p><code>print(torch.__version__)</code>：查看版本</p>
+</li>
+<li><p><code>torch.is_tensor(obj)</code>：判断一个对象obj是否是张量</p>
+</li>
+<li><p><code>torch.is_storage(a)</code>：判断<code>obj</code>是否是一个Pytorch 存储对象</p>
+<p>简单来说，一个<code>torch.Storage</code>是一个单一数据类型的连续一维数组。关于torch.Storage的深入讲解参考：<a href="https://blog.csdn.net/sinat_33761963/article/details/84614923" target="_blank" rel="noopener">篇1</a>，<a href="https://blog.csdn.net/weixin_41990278/article/details/92379942" target="_blank" rel="noopener">篇2</a></p>
 <pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> torch<span class="token punctuation">.</span>FloatStorage<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>is_storage<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>torch.set_default_dtype(d)</code>：设置默认的浮点类型，d为标量类型</p>
+</li>
+<li><p><code>torch.get_default_dtype()</code>：查看默认的浮点类型</p>
+</li>
+<li><p><code>torch.tensor().dtype</code>：查看某个张量的浮点类型</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查看默认的浮点类型</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>get_default_dtype<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 查看a的类型</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 设置默认的浮点类型</span>
+torch<span class="token punctuation">.</span>set_default_dtype<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>float64<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 查看设置结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>get_default_dtype<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>torch.set_default_tensor_type(t)</code>：设置默认的浮点张量类型。t为张量类型</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查看默认的浮点张量类型</span>
+a <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 设置默认的浮点张量类型</span>
+torch<span class="token punctuation">.</span>set_default_tensor_type<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>DoubleTensor<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 创建一个张量</span>
+b <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>torch.tensor().numel()</code>：查看张量中元素的总数</p>
+</li>
+<li><p><code>torch.set_printoptions(precision=None, threshold=None, edgeitems=None, linewidth=None, profile=None)</code>：设置打印效果，感觉用处不大，没做实验演示。具体的看文档吧</p>
+</li>
+<li><p><code>torch.set_flush_denormal(mode)</code>：mode为<code>True</code>或<code>False</code>。为了防止一些不正常的元素产生，比如特别小的数，pytorch提供此设置，在设置之后，当出现极小数时，直接置为0了。文档中提出该功能必须要系统支持。</p>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查看系统是否支持</span>
+see <span class="token operator">=</span> torch<span class="token punctuation">.</span>set_flush_denormal<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>see<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 演示效果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1e</span><span class="token operator">-</span><span class="token number">323</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span>float64<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 关闭之后</span>
+torch<span class="token punctuation">.</span>set_flush_denormal<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 演示效果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1e</span><span class="token operator">-</span><span class="token number">323</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span>float64<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p><code>torch.tensor(data, dtype=None, device=None, requires_grad=False)</code>：创建tensor张量，</p>
+<ul>
+<li><p><code>dtype</code>：是pytorch所支持的数据类型</p>
+</li>
+<li><p><code>device</code>：可以指定创建CPU张量还是GUP张量</p>
+</li>
+<li><p><code>requires_grad</code>：是否自动求导</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><code>torch.tensor()</code>：创建张量的方式是从data那里拷贝一份，如果想要避免拷贝可以使用：<code>torch.Tensor.requires_grad_()</code>和<code>torch.Tensor.detach()</code>。如果data不是张量而是ndarray，那么可以使用<code>torch.from_numpy()</code></p>
 
             </div>
             <hr/>
@@ -944,56 +998,46 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/12/pytorch/">
+                <a href="/2020/02/13/%E9%97%AA%E7%83%81%E4%B9%8B%E7%8B%90/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="pytorch">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="闪烁之狐">
                         
-                        <span class="card-title">pytorch</span>
+                        <span class="card-title">闪烁之狐</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            白话Pytorch
+                            Hexo使我们很方便的搭建博客，但对于小白而言还是不能自由地扩展博客模块，该文主要向小白介绍如何自由地扩展博客模块。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Pytorch/" class="post-category">
-                                    Pytorch
+                            <a href="/categories/%E9%97%AA%E7%83%81%E4%B9%8B%E7%8B%90/" class="post-category">
+                                    闪烁之狐
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Pytorch/">
-                        <span class="chip bg-color">Pytorch</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
+                    <a href="/tags/%E9%97%AA%E7%83%81%E4%B9%8B%E7%8B%90/">
+                        <span class="chip bg-color">闪烁之狐</span>
                     </a>
                     
                 </div>
@@ -1011,9 +1055,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="boyu">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="动手深度学习-第一天">
                         
-                        <span class="card-title">boyu</span>
+                        <span class="card-title">动手深度学习-第一天</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1199,7 +1243,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.1k</span>&nbsp;字
+                class="white-color">20.2k</span>&nbsp;字
             
             
             

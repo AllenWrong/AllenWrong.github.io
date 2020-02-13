@@ -1880,8 +1880,8 @@ footer .copy-right {
 .top-scroll {
     display: none;
     position: fixed;
-    right: 19px;
-    bottom: 76px;
+    right: 15px;
+    bottom: 137px;
     padding-top: 15px;
     margin-bottom: 0;
     z-index: 998;
