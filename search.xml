@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>KYEnglish</title>
+      <link href="/2020/03/08/KYEnglish/"/>
+      <url>/2020/03/08/KYEnglish/</url>
+      
+        <content type="html"><![CDATA[<h3 id="基于英文分词实现的考研英语真题中的单词统计"><a href="#基于英文分词实现的考研英语真题中的单词统计" class="headerlink" title="基于英文分词实现的考研英语真题中的单词统计"></a>基于英文分词实现的考研英语真题中的单词统计</h3><p><a href="https://github.com/AllenWrong/KaoYanEnglish" target="_blank" rel="noopener">数据地址</a></p><p><strong>项目当前进度</strong></p><ul><li>基本统计了2010-2018年英语一真题阅读理解中的单词</li></ul><p><strong>项目展望</strong></p><ul><li>统计2000-2009年的单词</li><li>统计2010-2018年英语二的真题单词</li><li>增加2019-2020年真题的单词</li><li>收集真题中的例句</li></ul><p><strong>招募启示</strong></p><ul><li>。。</li><li>….</li><li>…</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 英语 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 英语 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaAdMulThread</title>
       <link href="/2020/02/28/JavaAdMulThread/"/>
       <url>/2020/02/28/JavaAdMulThread/</url>
