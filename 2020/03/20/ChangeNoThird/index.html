@@ -136,7 +136,7 @@
       </li>
       
       <li>
-        <a href="/art/program">
+        <a href="/learn/program">
           
           <i class="fas fa-drafting-compass" style="margin-top: -20px; zoom: 0.6;"></i>
           
@@ -328,7 +328,7 @@
               
                 <li>   
 				
-                  <a href="/art/program " style="margin-left:75px";>
+                  <a href="/learn/program " style="margin-left:75px";>
 				  
 				   <i class="fa fas fa-drafting-compass" style="position: absolute;left:50px" ></i>
 			      
@@ -650,7 +650,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-20
+                    2021-01-30
                 </div>
                 
 
@@ -680,7 +680,41 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>主要是利用异或操作。不过，我们首先需要确定$a \bigoplus a=0$</strong><br>该操作并没有带来性能上的提升，下面是步骤详解。<br>| 步骤 | a | b|备注|<br>|-|-|-|-|<br>| 初始| $23$| $56$|- |<br>| 第一步| $23$| $23\bigoplus 56$|令b中有56|<br>| 第二步| $23\bigoplus23\bigoplus56=56$| $23\bigoplus 56$| 结合b去掉23只保留56，存储在a中|<br>| 第三步| $56$| $56\bigoplus23\bigoplus 56=23$| 结合a去掉56，只保留23，存储在b中|</p>
+                <p><strong>主要是利用异或操作。不过，我们首先需要确定$a \bigoplus a=0$</strong><br>该操作并没有带来性能上的提升，下面是步骤详解。</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>a</th>
+<th>b</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>初始</td>
+<td>$23$</td>
+<td>$56$</td>
+<td></td>
+</tr>
+<tr>
+<td>第一步</td>
+<td>$23$</td>
+<td>$23\bigoplus 56$</td>
+<td>令b中有56</td>
+</tr>
+<tr>
+<td>第二步</td>
+<td>$23\bigoplus23\bigoplus56=56$</td>
+<td>$23\bigoplus 56$</td>
+<td>结合b去掉23只保留56，存储在a中</td>
+</tr>
+<tr>
+<td>第三步</td>
+<td>$56$</td>
+<td>$56\bigoplus23\bigoplus 56=23$</td>
+<td>结合a去掉56，只保留23，存储在b中</td>
+</tr>
+</tbody></table>
 <p><strong>下面是测试程序：</strong></p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
 
@@ -1482,7 +1516,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">28k</span>&nbsp;字
+                class="white-color">37.2k</span>&nbsp;字
             
             
             

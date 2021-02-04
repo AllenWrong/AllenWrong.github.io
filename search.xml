@@ -4,6 +4,231 @@
   
     
     <entry>
+      <title>农村发展的几个问题和几点思考</title>
+      <link href="/2021/01/31/EduQuestion/"/>
+      <url>/2021/01/31/EduQuestion/</url>
+      
+        <content type="html"><![CDATA[<h2 id="几个问题"><a href="#几个问题" class="headerlink" title="几个问题"></a>几个问题</h2><p>这几个问题是我一直都在思考的，答案并不是千篇一律的，而且答案需要实践的支持。<br>1、农村发展应该先搞经济还是先搞教育？<br>2、经济问题和教育问题怎么协调？<br>3、农村相比于城市而言，最大的问题便是教育资源匮乏，那么农村的优势在哪里？<br>4、找到了优势后，我们如何最大化优势？<br>5、互联网缩小了资源的差距，但是网络上的资源存在着不成体系的问题，成体系的资源却仍然花销昂贵，普通家庭很难支付。即使支付的起，也很难有效利用。这便牵扯到学习环境的问题。<br>7、互联网所带来的优势究竟能起多大的作用？<br>8、如果农村找到了自己的优势，并且根据自己的优势做出了教育方法的调整，那么统一考评的方法是什么？<br>9、如何普及对学习的认识，如何普及学习风气，在加强经济发展的同时普及学习能力。这里的学习并不是所谓的学习课标知识，而是学习搞经济发展所需要的内容。此外，一个必须修的内容便是文化，如何推动文化的普及。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教育 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教育 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>代数课程体系</title>
+      <link href="/2021/01/31/historyAlger/"/>
+      <url>/2021/01/31/historyAlger/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、代数类课程体系"><a href="#一、代数类课程体系" class="headerlink" title="一、代数类课程体系"></a>一、代数类课程体系</h2><ul><li>高等代数与解析几何</li><li>抽象代数</li><li>有限群表示论</li><li>李代数</li><li>数论（代数部分）</li></ul><h2 id="二、代数的发展"><a href="#二、代数的发展" class="headerlink" title="二、代数的发展"></a>二、代数的发展</h2><p><strong>总述</strong></p><ul><li>在古埃及就记录了一元一次方程求解问题</li><li>丢番图：代数学重要人物，被称为代数学之父</li><li>花拉子米：提出了方程两边同时加上或减去一个相同的项，方程仍然相等。被称为代数学之父</li><li>中国：著名人物李善兰。它的主要贡献是翻译西方数学名著，如《几何原本》，创造了许多数学名词，这些名词到现在还在沿用。</li></ul><p>一元一次方程的发展有两个方向，一个是一元扩展到多元，一个是一次扩展到多次。</p><p><strong>一元扩展到多元</strong></p><ul><li>二元一次方程组的求解：行列式的方法几乎是莱布尼兹和关孝和同时在做的工作。利用行列式的方法解决了二元一次方程组的求解问题。</li><li>中国古代《九章算术》中也有三元一次方程组消元法的描述。给出了消元法的思想。这一成果要早1000多年</li><li>西尔维斯特提出了矩阵（Matrix）的概念。注意：西尔维斯特提出的是Matrix的概念，矩阵是李善兰发明的词。</li><li>凯莱：对两个二元一次方程组进行了变量替换，定义了矩阵乘法。矩阵乘法的定义是一个开创性的工作。但是矩阵乘法不满足交换律，此后，代数的世界不再是可交换的了。</li></ul><p><strong>一次扩展到高次</strong></p><ul><li>古巴比伦人记录了这样的式子：$x-\frac{60}{x}=7$.古巴比伦人研究了一元二次方程问题，并给出了解答。一个一元二次方程可以改写成：$x^2-sx+p=0$.古巴比伦人给出的解答是这样的：$$\frac{s}{2}=\frac{1}{2}(x_1+x_2)$$ $$\sqrt{(\frac{s}{2})^2-p}=\frac{1}{2}(x_1-x_2)$$ 这是解的二元一次方程。这个方程是很好解的。因此可以给出解的式子：$$x_1=\frac{s}{2}+\sqrt{(\frac{s}{2})^2-p}$$ $$x_2=s-x_1$$ 于是，讨论三次方程的解是不是可以构造一个三元一次方程组呢。</li><li>意大利数学家费罗，塔尔塔利亚，卡尔达诺研究了四次方程的问题。下面看一个恒等式：$$(p-q)^3=-3pq(p-q)+(p^3-q^3)$$ 这个恒等式改写一下就是：$$(p-q)^3+3pq(p-q)-(p^3-q^3)=0$$ 这是一个三次方程的形式，因此可以得到一个满足$p-q$的方程：$$x^3+3pqx-(p^3-q^3)=0$$ 由于p-q已经是一个根，因此我们只需要解一个二次方程便可以解这个三次方程，二次方程求解已经解决，从而三次方程是可解的。</li><li>卡尔达诺的学生费拉里解决了四次方程的问题。他的主要工作是对四次方程配完全平方。对于四次方程：$$x^4+bx^2+cx+d=0$$ 考虑：$$(x^2-t)^2=(b-2t)x^2+cx+(d+t^2)$$ 若右侧有完全平方项，当且仅当：$$c^2-4(b-2t)(d+t^2)=0$$ 这是t的一个三次方程，三次方程可解，从而四次方程可解。</li></ul><p><strong>五次方程的可解问题</strong></p><ul><li>相关的著名人物：韦达，范德蒙，拉格朗日，阿贝尔，伽罗瓦。</li><li>韦达开创了字母符号体系，发现了韦达公式。为之后的工作做了铺垫。</li><li>范德蒙是最早开始探索的五次方程的解的人。二次，三次，四次方程的解法并不是统一的。范德蒙想统一解这些方程的方法。他发现了解高次方程最本质的东西，基本的思路源于古巴比伦人解二次方程的方法。古巴比伦人解二次方程时列的方程组中，第一个式子是根的和，第二个式子的系数一个是1一个是-1，这两个数其实是1的平方根。从这里出发，范德蒙列出了下面的方程组：$$\begin{cases}x_1+x_2+x_3=-\frac{b}{a} \ x_1+wx_2+w^2x_3=? \ x_1+w^2x_2+w^4x_3=? \ w^3=1\end{cases}$$ 这个方程组被证明是可解的。</li><li>后来，拉格朗日利用范德蒙的想法统一解决三、四次方程的解，发现五次以上方程很难解。</li><li>拉菲尼和阿贝尔：证明了一般五次方程不可根式解</li><li>阿贝尔：某些高次方程可解。某些五次方程是可以用根式解的。提出了阿贝尔群的概念</li><li>伽罗瓦：做出了开创性工作。提出了高次方程可解的充要条件。韦达和范德蒙的工作说明了根具有对称性。不同方程的根对称性不同。此外，他提出来刻画对称性。一个方程的根对称性强度预示着方程能不能用根式解。提出了群的概念来刻画对称性。将方程可解性转换为它所对应的群的结构是什么。从此以后代数学突飞猛进的发展。</li></ul><p><strong>抽象群论的具体化</strong><br>将抽象的群具体地实现为矩阵。在戴德金和弗罗贝乌斯的通信中诞生了群表示论。</p><p><strong>马凯的工作</strong><br>正多边形和正多面体的对称群的所有不同的矩阵实现可用一个图来表现出来，这些图没别对应于一个单李代数。</p><p><strong>代数课程体系</strong><br><img src="/img/algebrasys.png" /></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 代数 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 代数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>编译器设计</title>
+      <link href="/2021/01/30/compilerdesign2/"/>
+      <url>/2021/01/30/compilerdesign2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="三、语法分析器"><a href="#三、语法分析器" class="headerlink" title="三、语法分析器"></a>三、语法分析器</h2><h3 id="1-语法的形式化表示"><a href="#1-语法的形式化表示" class="headerlink" title="1. 语法的形式化表示"></a>1. 语法的形式化表示</h3><p>$$G = (V, T, P, S)$$</p><p>$G$：一个特定的语法。$V$：表示变量。$T$：终结符。$P$：产生式。$S$：开始符号<br><img src="/img/compiler/gramExample.png" /><br>这是一个语法的例子。箭头左边和右边的内容构成产生式。</p><ul><li>产生式：从这个例子中可以很清楚的看出产生式是长什么样的。至于为什么这么叫，这到不重要。可以从其名字和形式上来理解。顾明思义，产生式，左边的符号可以产生右边的内容。从形式上看，箭头表示可以用右边的内容替代左边的内容。</li><li>变量：产生式左边只出现了一个符号即E，因此这个语法的变量$V$={E}。通俗来讲，变量就是产生式左边出现的符号。</li><li>开始符号：$S$表示开始符号，它是变量的其中一个，显然，这里只有一个变量，因此$S$={E}。</li><li>终结符：通俗来讲就是产生式右边出现而左边没有出现的符号。在这个例子中$T$={+，*，id}。如何来理解呢，产生式左边出现的符号一定可以用右边的内容来替换。因此，式子中如果出现左边的符号，那么这个式子还可以继续替换下去。终结符是指右边出现而左边没有出现的符号，因此，式子遇到这样的符号就不可以继续替换，从而终止，取终结之意，命名为终结符。有没有这样一种情况：右边出现了可以继续替换的内容，而左边没有出现？既然左边没有出现，即使右边出现了，那我们用什么替换呢？显然，这种情况是不存在的。</li></ul><h3 id="2-最左推导（Left-Most-Derivation）和最右推导（Right-Most-Derivation）"><a href="#2-最左推导（Left-Most-Derivation）和最右推导（Right-Most-Derivation）" class="headerlink" title="2. 最左推导（Left Most Derivation）和最右推导（Right Most Derivation）"></a>2. 最左推导（Left Most Derivation）和最右推导（Right Most Derivation）</h3><p>下面是关于最左最右推导的例子。<br><img src="/img/compiler/LMDRMD.png" /><br>从例子中可以发现，最左推导每次都是替换右部最左边的变量，而最右推导每次都是替换右部最右边的变量。这就是最左最右推导的基本理解。<br>在这个例子中，最左推导，最右推导都不是唯一的。采用两种不同的最左推导方式可以得出同样的结果，采用两种不同的最右推导方式也可以得出同样的结果。像这样的不止一个推导式的语法称为歧义语法，由于其推导式不唯一从而解析树也不唯一，这就是歧义语法。于是我们有下面这样的问题：</p><ul><li>如何判断语法是歧义的？</li><li>如何将歧义语法转换为非歧义的？</li></ul><p>不幸的是，这两个问题的答案并不令人满意。没有判断语法歧义的算法，也没有将歧义语法转换为非歧义的算法。因此，判断一个语法是否是歧义的就需要进行多次尝试，看是否能够找出两个不同的解析树。虽然规律是死的，但是人是活的，于是最好的办法就是做出一些规定，使得歧义语法不能存在。</p><h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编译原理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编译原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>编译器设计</title>
+      <link href="/2021/01/29/compilerdesign1/"/>
+      <url>/2021/01/29/compilerdesign1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、编译器简单介绍"><a href="#一、编译器简单介绍" class="headerlink" title="一、编译器简单介绍"></a>一、编译器简单介绍</h2><h3 id="1-高级语言的翻译过程"><a href="#1-高级语言的翻译过程" class="headerlink" title="1. 高级语言的翻译过程"></a>1. 高级语言的翻译过程</h3><p><strong>高级语言（HLL）→预处理器（preprocessor）→编译器→汇编编译器→链接器/装入程序</strong></p><p>高级语言经过预处理器的处理会形成纯净的高级语言，预处理器会处理头文件和宏。纯净的高级语言经过编译器转化为汇编语言。汇编语言经过汇编编译器被编译出机器语言，即可执行程序。机器语言经过装入程序装入内存。有时还需要链接一些函数库。这是链接器要做的工作。<br>汇编器是依赖于平台的，因为它要编译出机器语言，而机器语言是依赖于硬件平台的。这门课程主要关注编译器的工作，即纯净的高级语言如何被编译成汇编语言。</p><h3 id="2-编译器工作的流程"><a href="#2-编译器工作的流程" class="headerlink" title="2. 编译器工作的流程"></a>2. 编译器工作的流程</h3><img src="/img/compiler/compilerworkflow.jpg"/><p>它主要包含以下几个模块：</p><ul><li>词法分析：它的输入是高级语言，输出是token流。它将高级语言程序token化，然后将token以流的形式输出。</li><li>语法分析：语法分析的输入是token流。语法分析器又可以称为解析器，它解析token流，看token是否符合语法规则要求。如果不符合就报错。它输出解析树</li><li>语义分析：输入的是解析树，语法分析阶段是分析程序中是否有语法错误，而语义分析阶段则是分析程序中是否存在语义错误，具体内容参考课本。</li><li>中间代码生成：中间代码生成模块的输入是有语义的解析树，经过词法分析，语法分析和语义分析的程序基本上是没有错误的程序了。因此就要就行翻译，中间代码生成可以生成三地址码。</li><li>代码优化：对程序进行优化，提高程序的效率，输出优化后的程序。</li><li>目标代码生成：生成目标代码</li><li>汇编程序：编译器的最终输出程序。</li><li>两个辅助模块：符号表管理模块，错误处理模块。这两个模块在整个编译流程中都会用到。</li></ul><p>下面是一个比较具体的例子：<br><img src = "/img/compiler/workflowexample.png"/><br>词法分析直接接收高级语言程序，然后将其token化。语法分析器将会解析token流，判断其中是否存在语法错误。将解析过的token流送给语义分析模块。语义分析模块进行语义检查，之后送给中间代码生成器。中间代码生成器产生中间代码，然后送给代码优化模块。代码优化模块进行优化，将优化后的程序送给目标代码生成模块。目标代码生产模块产生目标代码，即汇编程序。</p><p>其中，词法分析，语法分析，语义分析，中间代码生成器都是与平台无关的模块，因此将其称为编译器的前端。而代码优化，中间代码生成及汇编器是与平台有关的，将其称为编译器的后端模块。</p><p>一些常用工具：词法分析：Lec。语法分析：Yacc。整个前端工具：LANCE</p><p><strong>为什么会有中间代码？</strong><br>注意到后面的代码优化和目标代码生成是依赖于平台的，而词法分析，语法分析，语义分析都是与平台无关的。对于一个编译器，如果要移植到不同的平台上，只需要改掉它的后端就可以，而无需改动整个编译器，因此加入了中间代码生成模块，在中间生成一次中间代码。当编译器移植到不同的平台上时，前端部分无需改动，中间代码是相同的，改动后端，将中间代码编译成不同的汇编程序以适应平台的需要。</p><h2 id="二、词法分析"><a href="#二、词法分析" class="headerlink" title="二、词法分析"></a>二、词法分析</h2><h3 id="1-词法分析的作用"><a href="#1-词法分析的作用" class="headerlink" title="1. 词法分析的作用"></a>1. 词法分析的作用</h3><ul><li>去除注释</li><li>去除空白行和空格</li><li>记录行号（比如，错误处理器报错时会用到行号）</li></ul><p>词法分析器会逐个读取字符，然后去除注释，空白行和空格，并记录行号，最终形成token流。看下面一个例子：<br><img src="/img/compiler/tokenExample.png"/></p><p>这个例子包含25个token，其中要特别注意的是：引号内的字符串是一个token。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编译原理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编译原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据库系统概论知识总结3</title>
+      <link href="/2021/01/28/DataBaseSummary3/"/>
+      <url>/2021/01/28/DataBaseSummary3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="三、关系数据库标准语言SQL"><a href="#三、关系数据库标准语言SQL" class="headerlink" title="三、关系数据库标准语言SQL"></a>三、关系数据库标准语言SQL</h2><h3 id="1-SQL"><a href="#1-SQL" class="headerlink" title="1. SQL"></a>1. SQL</h3><p><strong>1. SQL的特点</strong><br>了解一下SQL的特点。</p><ul><li>综合统一<ul><li>集数据定义语言 DDL（Data Definition Language），数据操纵语言 DML（Data Manipulation Language），数据控制语言 DCL（Data Control Language） 功能于一体。</li><li>可以独立完成数据库生命周期中的全部活动：<ul><li>定义关系模式，插入数据，建立数据库；</li><li>对数据库中的数据进行查询和更新；</li><li>数据库重构和维护</li><li>数据库安全性、完整性控制等</li><li>用户数据库投入运行后，可根据需要随时逐步修改模式，不影响数据的运行。</li><li>数据操作符统一</li></ul></li></ul></li><li>高度非过程化<ul><li>非关系数据模型的数据操纵语言“面向过程”，必须制定存取路径</li><li>SQL只要提出“做什么”，无须了解存取路径。</li><li>存取路径的选择以及SQL的操作过程由系统自动完成。</li></ul></li><li>面向集合的操作方式<ul><li>非关系数据模型采用面向记录的操作方式，操作对象是一条记录</li><li>SQL采用集合操作方式：</li><li>操作对象、查找结果可以是元组的集合</li><li>一次插入、删除、更新操作的对象可以是元组的集合</li></ul></li><li>以同一种语法结构提供多种使用方式<ul><li>SQL是独立的语言<ul><li>能够独立地用于联机交互的使用方式</li></ul></li><li>SQL又是嵌入式语言<ul><li>SQL能够嵌入到高级语言（例如C，C++，Java）程序中，供程序员设计程序时使用</li></ul></li></ul></li><li>SQL功能极强，完成核心功能只用了9个动词<table><thead><tr><th align="center">SQL功能</th><th align="center">动词</th></tr></thead><tbody><tr><td align="center">数据查询</td><td align="center">SELECT</td></tr><tr><td align="center">数据定义</td><td align="center">CREATE、DROP、ALTER</td></tr><tr><td align="center">数据操纵</td><td align="center">INSERT、UPDATE、DELETE</td></tr><tr><td align="center">数据控制</td><td align="center">GRANT、REVOKE</td></tr></tbody></table></li></ul><p><strong>2. SQL对关系数据库三级模式的支持</strong><br>下面的图引自中国人民大学王珊老师等的数据库课程的PPT。<br><img src="/img/SQLSchema.png"/></p><ul><li>基本表<ul><li>本身独立存在的表</li><li>SQL中一个关系就对应一个基本表</li><li>一个(或多个)基本表对应一个存储文件</li><li>一个表可以带若干索引</li><li>存储文件</li></ul></li><li>逻辑结构组成了关系数据库的内模式<ul><li>物理结构是任意的，对用户透明</li></ul></li><li>视图<ul><li>从一个或几个基本表导出的表</li><li>数据库中只存放视图的定义而不存放视图对应的数据</li><li>视图是一个虚表</li><li>用户可以在视图上再定义视图</li></ul></li></ul><p>【总结】前面两个部分的内容主要是抄自PPT，这部分内容比较固定。</p><h3 id="2-数据定义"><a href="#2-数据定义" class="headerlink" title="2. 数据定义"></a>2. 数据定义</h3><p>SQL的数据定义功能包括：模式定义，表定义，视图定义和索引定义。现代数据库系统提供了一个层次化的数据库对象命名机制。一个关系数据库管理系统的实例中可以建立多个数据库，一个数据库中可以建立多个模式，一个模式下通常包括多个表、视图和索引等数据库对象。<br><img src="/img/SQLDefineStatement.png" /></p><p>下面有一个需要注意的点：</p><ul><li>SQL标准并不提供修改模式定义和修改视图定义的操作。因此修改模式定义和修改视图定义应该先删除然后再重建。</li></ul><p><strong>1. 数据字典</strong><br>数据字典本质上也是表，存储着一些特殊的数据。不同之处在于，数据字典是关系数据库管理系统内部的一组系统表，它记录了数据库中所有的定义信息。关系数据库管理系统在执行SQL的数据定义语句时，实际上就是在更新数据字典中的信息。下面是数据字典包含的定义信息：</p><ul><li>关系模式，表，视图，索引定义</li><li>完整性约束定义</li><li>各类用户对数据库的操作权限</li><li>统计信息</li></ul><p><strong>2. 定义模式</strong><br>定义一个模式实际上就是定义了一个命名空间，模式没有包含很多信息，它像一个目录。定义完模式后，我们就可以在模式中进一步定义该模式的数据库对象。<br>定义语句：<code>create schema &lt;模式名&gt; authorization &lt;用户名&gt;</code>。（SQL语句大小写都可以，好像通常都是大写，这里为了写博客方便，采用小写。）<br>表示定义一个模式，然后把这个模式授权给指定用户。模式名可以不指定，这时就会采用用户名作为模式名。</p><p><strong>3. 删除模式</strong><br>删除语句：<code>drop schema &lt;模式名&gt; &lt;cascade|restrict&gt;</code><br>删除指定的模式。有两种删除方式</p><ul><li>cascade：删除该模式及该模式下的所有对象</li><li>restrict：仅当该模式没有定义对象时才能删除。如果该模式下有对象，则拒绝该删除语句的执行。</li></ul><p><strong>4. 基本表的定义</strong><br>建表时需要注意内容：表名，列名，列类型，列级完整性约束，表级完整性约束。此外在括号中，列名 列类型 列级完整性约束中间隔着空格构成一个项，项与项中间使用逗号隔开，表级完整性约束作为一个项习惯性写在最后。下面是一个列子：</p><pre class="line-numbers language-SQL"><code class="language-SQL">create table sc(    Id int not null,    Sno char(9),    Cno char(4),    Grade smallint,    primary key (Sno, Cno),    forenign key (Sno) references Student(Sno),    forenign key (Cno) references Course(Cno));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><code>Id int not null</code>包含了列名，列类型和列级完整性约束。有的列比如<code>Grade smallint</code>，</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据库系统概论知识总结1</title>
+      <link href="/2021/01/27/DataBaseSummary1/"/>
+      <url>/2021/01/27/DataBaseSummary1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、数据库介绍"><a href="#一、数据库介绍" class="headerlink" title="一、数据库介绍"></a>一、数据库介绍</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据库系统概论知识总结2</title>
+      <link href="/2021/01/27/DataBaseSummary2/"/>
+      <url>/2021/01/27/DataBaseSummary2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="二：关系数据库"><a href="#二：关系数据库" class="headerlink" title="二：关系数据库"></a>二：关系数据库</h2><h3 id="1-关系模型"><a href="#1-关系模型" class="headerlink" title="1. 关系模型"></a>1. 关系模型</h3><p><strong>1. 关系数据结构</strong><br>关系数据模型有三个要素：关系数据结构，关系操作集合，关系完整性约束。<br>关系模型只有单一的数据结构，即关系。关系，在用户的视角下就是一张二维表。二维表的表头是对元组的描述。元组就是一张表中的一条条的记录。每个记录有一个或多个字段组成。而且这些字段的名字和类型是由表头（元组模式）决定的。下面介绍一些与该数据结构相关的概念：</p><ul><li><strong>域</strong>：通俗来讲，就是某一属性的取值范围。元组的每一个字段的取值都是在指定的域中进行取值。</li><li><strong>笛卡尔积</strong>：有些排列组合的感觉。给定一组域，笛卡尔积就是这些域的所有值的任意组合。</li><li><strong>基数</strong>：笛卡尔积可以看成是一个空间。（可以把空间理解成一种特殊的集合）。基数的值等于所有域的大小的乘积。实际上就是有多少种可能的组合。</li><li><strong>关系</strong>：给定一组域，笛卡尔积就是这些域的所有值的任意组合。笛卡尔积也可以称为笛卡尔空间。给定一组域，关系就是这组域的笛卡尔空间的一个子集，表示为$R(D_{1},D_{2},…D_{n})$。为什么是子集？给定一组域，笛卡尔空间描述了这组域所有可能的组合情况。而一个关系（或者理解为一张包含数据的二维表）的元组基本不可能包含所有的情况。这里面有一些原因，比如：某些字段虽然在做笛卡尔积的时候是可以进行组合的，但是在现实中却没有实际意义。我很想在这里举一个实际的例子，但是还没有想出来。对于给定的域，域的个数称为关系的<strong>目或度</strong>。当n=1的时候称为单元关系。关系的元素是<strong>元组</strong>，而元组的元素是<strong>属性</strong>或者说<strong>字段</strong>。其中有一类特殊的属性，称为<strong>码</strong>，它可以唯一的标识一个元组。码由一组属性组成，这时候称这组属性为<strong>候选码</strong>。若一个元组中所有的属性都是候选码，这个时候称这样的属性组为<strong>全码</strong>。在实际情况中，一个元组或者说一个关系模式的候选码可以有很多种选择，当然我们会选定其中的一个属性组作为用于唯一表示元组的码，这样的码就是<strong>主码</strong>。<br>【总结】：从笛卡尔空间的角度给出了关系的定义，然后介绍了关系的相关概念。比较难理解的是候选码和全码。实际上记住他们的作用就可以了，它们都是用于唯一标识元组的属性组。主码就是从候选码中选出的用于唯一标识元组的一个特定的属性组。</li></ul><p><strong>2. 关系模式</strong><br>类比于面向对象中的类和对象。类是型，对象是值。在数据库中，关系模式是型，关系是值。通俗来讲，关系模式是对关系的描述。主要包括的内容有：元组由哪些属性构成，属性来自的什么域，属性与域的对映关系，完整性约束。可以表示为：<br>$$R(U,D,DOM,F)$$</p><ul><li>R：关系名</li><li>D：属性所来自的域的集合</li><li>DOM：属性与域的映射关系</li><li>F：属性间数据依赖的集合</li></ul><p><strong>3. 关系的完整性约束</strong><br>关系的完整性约束主要有三类：实体完整性，参照完整性，用户定义的完整性。其中前两个是关系模型必须满足的约束条件，又被称为关系的两个不变性。用户定义的完整性是应用领域需要遵循的约束条件。可以这么理解：这个完整性约束就是指实际应用场景中遇到的一些约束。</p><p><strong>3.1 实体完整性</strong><br><strong>主属性</strong>就是指码的各个属性。构成码的各个属性都可以被称为主属性。实体完整性，如果能用一句话描述的话就是：<strong>主属性不能取空值</strong>。那么如何理解呢？实体这个概念是指现实中客观存在的事物。多个主属性构成的主码用于唯一标识元组，如果唯一标识元组的多个主属性可以为空。那么就会存在用空来标识的元组，那这样的元组是存在还是不存在呢？这就使客观存在的特性产生了疑问。因此，使用主属性不能为空的约束来保证实体完整性。</p><p><strong>3.2 参照完整性</strong><br>现实世界中的实体之间往往存在某种联系，考虑到这种联系引入了参照完整性。参照完整性<br>主要内容可以有两个部分来构成：参照完整性定义，参照完整性规则。下面给出我的理解。</p><p>【定义】<strong>设$F$是基本关系$R$的一个或一组属性，但不是关系$R$的码，$K_s$是基本关系$S$的主码。如果$F$与$K_s$相对应，则称$F$是$R$的外码，并称基本关系$R$为参照关系，基本关系$S$为被参照关系或目标关系。关系$R$和$S$不一定是不同的关系。</strong><br>F是R中的属性，$K_s$是关系S中的属性，并且是主码。F和$K_s$对应就是说，它们的取值来自同一个域。这样的两个来自同一个域的属性，分别坐落与不同的基本关系。其中一个只是普通的属性，一个是主码。这就构成了一种参照关系。并把F称为外码。（这里提到的属性可以为一个或一组属性）</p><p>【参照完整性规则】<strong>若属性（或属性组）$F$是基本关系$R$的外码，它与基本关系$S$的主码$K_s$相对应（基本关系$R$和$S$不一定是不同的关系），则对于$R$中每个元组在$F$上的值必须：</strong></p><ul><li><strong>或取空值</strong></li><li><strong>或者等于$S$中某个元组的主码值</strong><br>基本关系R和S不一定是不同的关系就是说，它们可以是相同的关系，这句话允许了同一关系内部属性间的引用关系。此外，理解了参照完整性规则规定了外码的取值基本上就掌握了参照完整性。</li></ul><p><strong>3.3 用户定义的完整性</strong><br>用户定义的完整性根据实际的开发情景进行定义。依赖于实际情况。</p><h3 id="2-关系代数"><a href="#2-关系代数" class="headerlink" title="2. 关系代数"></a>2. 关系代数</h3><p>前面在介绍关系数据结构的时候提到了关系数据模型的三个要素：关系结构，关系操作集合，关系完整性定义。这里把关系操作集合合并到了关系代数的部分。<br>传统的集合操作：并，交，差，笛卡尔积。<br>专门的关系操作：选择，投影，连接，除。<br><strong>1. 并</strong><br>关系R和关系S具有相同的目。关系R和关系S的并是指把关系R中的元组和关系S中的元组取并集<br><strong>2. 交</strong><br>关系R和关系S具有相同的目。关系R和关系S的交是指把关系R中的元组和关系S中的元组取交集<br><strong>3. 差</strong><br>关系R和关系S具有相同的目。关系R－关系S由属于R而不属于S的所有元组组成<br><strong>4. 笛卡尔积</strong><br>关系R和关系S作笛卡尔积是指关系R中的元组和关系S中的元组所有可能的组合。这里是对元组做横向拼接。关系R和关系S的目不一定是相同的。这里笛卡尔积的元素是元组，前面是域中所有可能的取值。<br><strong>5. 选择</strong><br>选择又称为限制。在MIT6.830课程中实现的SimpleDb中，使用的Predicate这个类来实现的选择功能，它提供了一个filter方法。所谓选择就是在关系中选择满足给定条件的各个元组。直观上看，选择是在行的角度上进行的运算。<br><strong>6. 投影</strong><br>投影就是选出若干属性列组成新的关系。由于消除了某些属性列，所以可能导致新的记录存在重复，所以投影操作会进行去重。在MIT6.830课程中实现的SimpleDb中，使用的Project这个类来实现的投影功能。<br><strong>7. 连接</strong><br>连接操作从两个关系的笛卡尔积中选择指定属性满足一定条件的元组。在MIT6.830课程中实现的SimpleDb中，使用的Join和JoinPredicate这个两个类来实现的连接功能。其中JoinPredicate主要用于做筛选的操作。直观上看，连接是在行的角度进行的操作。<br>常见的链接主要有两种：等值连接和自然连接。</p><ul><li>等值连接很好理解，如果两个元组所进行比较的两个属性上的值是相等的就对它们进行连接。</li><li>自然连接：自然连接要求两个关系中进行比较的属性组必须是相同的属性组。此外，拼接完元组后会把重复的属性列去掉。这是比较的特殊的地方。</li></ul><p><strong>悬浮元组</strong>：关系R和关系S在进行自然连接的时候，如果对于R中的某个元组t，在S中不存在能够与之连接的元组。那么这样的t称为悬浮元组。注意，在R和S中都有可能出现悬浮元组。所谓能够连接的两个元组，就是说这两个元组在指定的属性上的值是相等的。<br><strong>外连接：</strong> 不丢弃悬浮元组的链接<br><strong>左外连接：</strong> 在两个关系进行连接的时候，两个关系中都有可能出现悬浮元组，只保留左边关系中的元组<br><strong>右外连接：</strong> 只保留右边关系中的元组<br><strong>8. 除</strong><br>除运算借助例子比较好理解。但是这里我不打算举例子了。确实有些难理解<br>设关系R(X, Y)，S(Y, Z)。X，Y，Z为属性组，R中的Y与S中的Y可以有不同的名，但必须出自相同的域集。R除S表示，选出某些元组的属性组。这些元组在这些属性组上的象集Y必须覆盖S在Y上的投影。所谓象集就是当元组的属性组X取特定值时，属性组Y取值的集合。</p><h3 id="3-关系演算"><a href="#3-关系演算" class="headerlink" title="3. 关系演算"></a>3. 关系演算</h3><p>关系演算后期补充。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>重读资本论</title>
+      <link href="/2021/01/24/%E9%87%8D%E8%AF%BB%E8%B5%84%E6%9C%AC%E8%AE%BA/"/>
+      <url>/2021/01/24/%E9%87%8D%E8%AF%BB%E8%B5%84%E6%9C%AC%E8%AE%BA/</url>
+      
+        <content type="html"><![CDATA[<p>资本论学说不是经济学理论，马克思也不是经济学家。资本论的副标题是政治经济学批判，这很好的反映了资本论学说和经济学理论的区别。<br>马克思和社会科学家的区别：</p><ul><li>所有的社会科学认为自己是实证的科学，即从经验的事实出发。</li><li>所有的社会科学认为自己成功地把社会事实放入到一个逻辑体系中去讨论。所谓逻辑体系就是由一系列范畴及其关系所构成的逻辑系统。把所有的社会事实放入到这个逻辑系统，那么，社会事实出了问题就是由于偏离了逻辑系统的理性的法则，于是就要按照逻辑系统的规则进行修正。  </li></ul><p>这反映了一种现代社会科学家的思维特点：首先将社会事实放入到范畴中进行讨论。</p><p>于是产生了一个问题：社会事实是怎么来的？在哲学家看来，社会事实本身就是被范畴建构起来的。（即事实本质上是物理活动，我们能观察的都是物理事实，一经人类认识，就被范畴建构了。）于是就有了这种关系：学科的研究对象都是被范畴建构起来的事实。而哲学研究的对象便是事实是如何被范畴建构的。（这里我用物理事实或客观事实表示最原始的事实，其他事实均表示进入范畴之后的物理事实）</p><p>【启发】一个初生的婴儿，可能还没有范畴的概念，因此它所认识到的内容应该都是客观的物理事实。而随着人的成大，随着人不断的实践，不断的认识，便有了范畴的概念。客观事实一经认识便进入到了范畴。由此可见，人是不客观的，因为人习惯用自己的经验去认识事物。深刻地认识到自己是不客观的，而后顺应客观规律，主动调整。所以，要十分注意顽固和痴念，合理的利用顽固和痴念。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 资本论 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 资本论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SimpleDb实现</title>
+      <link href="/2021/01/09/SimpleDb/"/>
+      <url>/2021/01/09/SimpleDb/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、表结构"><a href="#一、表结构" class="headerlink" title="一、表结构"></a>一、表结构</h3><p>谈到数据库（Database），第一印象就是一张数据表（Table）。一张表由很多个记录（或者叫行，或者叫元组（Tuple））组成。元组由字段（Field）组成。这些元组都有统一的模式（或者理解成表头），称为元组模式（Tuple Descriptor）。元组模式描述一个元组由哪些字段组成，以及这些字段的位置和类型，而元组便是字段值的集合。比如：</p><table><thead><tr><th>姓名（String）</th><th>学号（String）</th><th>年龄（int）</th><th>性别（String）</th><th>出生日期（String）</th><th>电话（Sting）</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>于是，可以得到如下重要的对象：字段，元组，元组模式，表。SimpleDb做出了如下的抽象：</p><ul><li>实现字段抽象的接口：<code>Field</code>。由于字段的类型是多样的，所以使用<code>Field</code>接口实现了更高一级的抽象，每个字段类型必须实现这个接口。这里仅实现了两种类型的字段int和String。</li><li>实现元组管理两个重要的类：<ul><li><code>tuple</code>：实现对元组的抽象。同一张表中的元组具有相同的元组模式，但是不同表中的元组不一定具有相同的元组模式。因此每个元组对象需要有一个属性用于记录它的元组模式。其实这一点我是根据<code>Tuple</code>类的构造器有个元组模式参数想到的。元组是一组字段（或者说字段值）的集合。因此，元组需要有集合属性用于存储该元组包含的字段。此外每个元组都有唯一的ID，用于唯一表示元组的位置。于是，SimpleDb用<code>RecordID</code>来唯一表示元组的位置。实现这个<code>RecordID</code>并不难。</li><li><code>TupleDesc</code>：实现对元组模式的抽象。</li></ul></li><li>实现目录管理的类：<code>CataLog</code>。</li><li>实现缓冲池抽象的类：<code>BufferPool</code>。它实现对内存缓冲池的抽象。首先定义了一些属性，每一个页包含多少字节，该缓冲池包含多少页。然后定义了对缓冲池的访问操作。<strong>由于前面的lab用到的缓冲池的内容不多，所以不过多介绍</strong>。</li><li>实现存储访问的类：<ul><li><code>HeapPage</code>：对缓存中页的抽象。页，实际上也是磁盘块。</li><li><code>HeapFile</code>：如果将页，磁盘块，缓存块等认为是物理上的概念，那么堆文件仍然像逻辑上的概念，因为它不实际存在。但它又似乎是一种物理上的概念，因为一个堆文件可由以多个页的形式实际存在。我把它理解为介于页和数据库表中间的一种概念。数据库中的表如果要存储在磁盘上，那么肯定需要用页（磁盘块）进行存储。但一个表大概率会占多个页，所以，就用堆文件实现了对这些页的组织。堆文件与数据库表是一对一的。</li></ul></li></ul><h3 id="二、具体实现类的详细介绍"><a href="#二、具体实现类的详细介绍" class="headerlink" title="二、具体实现类的详细介绍"></a>二、具体实现类的详细介绍</h3><h4 id="1、IntField"><a href="#1、IntField" class="headerlink" title="1、IntField"></a>1、IntField</h4><p><strong>属性</strong>：<code>IntField</code>并没有特别复杂的地方。包含一个基本的属性<code>value</code>，也就是该字段的值</p><h4 id="2、StringField"><a href="#2、StringField" class="headerlink" title="2、StringField"></a>2、StringField</h4><h4 id="3、Tuple"><a href="#3、Tuple" class="headerlink" title="3、Tuple"></a>3、Tuple</h4><h4 id="4、TupleDesc"><a href="#4、TupleDesc" class="headerlink" title="4、TupleDesc"></a>4、TupleDesc</h4><h4 id="5、CataLog"><a href="#5、CataLog" class="headerlink" title="5、CataLog"></a>5、CataLog</h4><h4 id="6、BufferPool"><a href="#6、BufferPool" class="headerlink" title="6、BufferPool"></a>6、BufferPool</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> SimpleDb </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SimpleDb </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>funda</title>
       <link href="/2020/04/08/funda/"/>
       <url>/2020/04/08/funda/</url>
@@ -46,7 +271,7 @@
       <link href="/2020/03/20/ChangeNoThird/"/>
       <url>/2020/03/20/ChangeNoThird/</url>
       
-        <content type="html"><![CDATA[<p><strong>主要是利用异或操作。不过，我们首先需要确定$a \bigoplus a=0$</strong><br>该操作并没有带来性能上的提升，下面是步骤详解。<br>| 步骤 | a | b|备注|<br>|-|-|-|-|<br>| 初始| $23$| $56$|- |<br>| 第一步| $23$| $23\bigoplus 56$|令b中有56|<br>| 第二步| $23\bigoplus23\bigoplus56=56$| $23\bigoplus 56$| 结合b去掉23只保留56，存储在a中|<br>| 第三步| $56$| $56\bigoplus23\bigoplus 56=23$| 结合a去掉56，只保留23，存储在b中|</p><p><strong>下面是测试程序：</strong></p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">void</span> <span class="token function">exchange</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Before: a=%d,b=%d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>    b <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>    a <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>    b <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"After:  a=%d,b=%d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">23</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">56</span><span class="token punctuation">;</span>    <span class="token function">exchange</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>利用上面的方法，实现了对数组元素的交换：</strong></p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>x<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>y<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token operator">*</span>y <span class="token operator">=</span> <span class="token operator">*</span>x<span class="token operator">^</span><span class="token operator">*</span>y<span class="token punctuation">;</span>    <span class="token operator">*</span>x <span class="token operator">=</span> <span class="token operator">*</span>x<span class="token operator">^</span><span class="token operator">*</span>y<span class="token punctuation">;</span>    <span class="token operator">*</span>y <span class="token operator">=</span> <span class="token operator">*</span>x<span class="token operator">^</span><span class="token operator">*</span>y<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">void</span> <span class="token function">reverse_array</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> cnt<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> first<span class="token punctuation">;</span>    <span class="token keyword">int</span> last<span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span>first<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>last<span class="token operator">=</span>cnt<span class="token number">-1</span><span class="token punctuation">;</span>first<span class="token operator">&lt;=</span>last<span class="token punctuation">;</span>first<span class="token operator">++</span><span class="token punctuation">,</span>last<span class="token operator">--</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>first <span class="token operator">==</span> last<span class="token punctuation">)</span>        <span class="token punctuation">{</span>            <span class="token keyword">break</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token function">swap</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">[</span>first<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>a<span class="token punctuation">[</span>last<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> aLength <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Before: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> i<span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>aLength<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a[%d]=%d, "</span><span class="token punctuation">,</span>i<span class="token punctuation">,</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">reverse_array</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> aLength<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\nAfter:  "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> j<span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>aLength<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a[%d]=%d, "</span><span class="token punctuation">,</span>j<span class="token punctuation">,</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p><strong>主要是利用异或操作。不过，我们首先需要确定$a \bigoplus a=0$</strong><br>该操作并没有带来性能上的提升，下面是步骤详解。</p><table><thead><tr><th>步骤</th><th>a</th><th>b</th><th>备注</th></tr></thead><tbody><tr><td>初始</td><td>$23$</td><td>$56$</td><td></td></tr><tr><td>第一步</td><td>$23$</td><td>$23\bigoplus 56$</td><td>令b中有56</td></tr><tr><td>第二步</td><td>$23\bigoplus23\bigoplus56=56$</td><td>$23\bigoplus 56$</td><td>结合b去掉23只保留56，存储在a中</td></tr><tr><td>第三步</td><td>$56$</td><td>$56\bigoplus23\bigoplus 56=23$</td><td>结合a去掉56，只保留23，存储在b中</td></tr></tbody></table><p><strong>下面是测试程序：</strong></p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">void</span> <span class="token function">exchange</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Before: a=%d,b=%d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>    b <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>    a <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>    b <span class="token operator">=</span> a<span class="token operator">^</span>b<span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"After:  a=%d,b=%d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">23</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">56</span><span class="token punctuation">;</span>    <span class="token function">exchange</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>利用上面的方法，实现了对数组元素的交换：</strong></p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>x<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>y<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token operator">*</span>y <span class="token operator">=</span> <span class="token operator">*</span>x<span class="token operator">^</span><span class="token operator">*</span>y<span class="token punctuation">;</span>    <span class="token operator">*</span>x <span class="token operator">=</span> <span class="token operator">*</span>x<span class="token operator">^</span><span class="token operator">*</span>y<span class="token punctuation">;</span>    <span class="token operator">*</span>y <span class="token operator">=</span> <span class="token operator">*</span>x<span class="token operator">^</span><span class="token operator">*</span>y<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">void</span> <span class="token function">reverse_array</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> cnt<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> first<span class="token punctuation">;</span>    <span class="token keyword">int</span> last<span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span>first<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>last<span class="token operator">=</span>cnt<span class="token number">-1</span><span class="token punctuation">;</span>first<span class="token operator">&lt;=</span>last<span class="token punctuation">;</span>first<span class="token operator">++</span><span class="token punctuation">,</span>last<span class="token operator">--</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>first <span class="token operator">==</span> last<span class="token punctuation">)</span>        <span class="token punctuation">{</span>            <span class="token keyword">break</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token function">swap</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">[</span>first<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>a<span class="token punctuation">[</span>last<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> aLength <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Before: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> i<span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>aLength<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a[%d]=%d, "</span><span class="token punctuation">,</span>i<span class="token punctuation">,</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">reverse_array</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> aLength<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\nAfter:  "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> j<span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>aLength<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"a[%d]=%d, "</span><span class="token punctuation">,</span>j<span class="token punctuation">,</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
