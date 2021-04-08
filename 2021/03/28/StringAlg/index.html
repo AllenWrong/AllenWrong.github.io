@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Jack语言, Guan">
-    <meta name="description" content="从零开始构建一台现代计算机，本章介绍Jack语言的特性，主要包括基本语言，面向对象，类的设计和内存回收">
+    <meta name="keywords" content="StringAlg">
+    <meta name="description" content="字符串左移输入：字符串String以及左移多少个字符k输出：左移后的字符串String例如：String=”abcdef”，k=2。那么我们期待的输出为”cdefab”思路：核心数学思想：$(x^{-1}y^{-1})^{-1}$。对于一个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Jack语言 | Guan</title>
+    <title>StringAlg | Guan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -496,12 +496,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Jack语言</h1>
+                    <h1 class="description center-align post-title">StringAlg</h1>
                 </div>
             </div>
         </div>
@@ -618,8 +618,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Jack%E8%AF%AD%E8%A8%80/">
-                                <span class="chip bg-color">Jack语言</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -630,8 +630,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%A6%81%E7%B4%A0/" class="post-category">
-                                计算机系统要素
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -643,28 +643,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-06
+                    2021-03-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-06
+                    2021-03-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 				
@@ -680,20 +680,66 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>计算机系统要素，从零开始构建现代计算机（nand2tetris）<br>如果完成了本书所有的项目 你将会获得以下成就</strong></p>
-<ul>
-<li>构建出一台计算机（在模拟器上运行）</li>
-<li>实现一门语言和相应的语言标准库</li>
-<li>实现一个简单的编译器</li>
-</ul>
-<p><strong>而且，这本书的门槛非常低，只要你能熟练运用一门编程语言即可。本课程综合了数字电路，计算机组成原理，计算机体系架构，操作系统，编译原理，数据结构等的主要内容，搭建了计算机平台的构建的框架，并未深入细节，如果需要了解细节，可由本书作为主线，逐步完善的知识体系。</strong></p>
-<p><a href="https://github.com/AllenWrong/nand2tetris" target="_blank" rel="noopener">项目地址Github</a></p>
-<hr>
-<h2 id="1-本章重点内容"><a href="#1-本章重点内容" class="headerlink" title="1.本章重点内容"></a>1.本章重点内容</h2><ul>
-<li>了解Jack语言</li>
-</ul>
-<h2 id="2-详细内容"><a href="#2-详细内容" class="headerlink" title="2.详细内容"></a>2.详细内容</h2><h3 id="Jack语言规范简述"><a href="#Jack语言规范简述" class="headerlink" title="Jack语言规范简述"></a>Jack语言规范简述</h3><p><strong>程序入口</strong>：与Java语言类似，Jack语言执行总是从Main类的main函数开始执行，所以每个Jack程序至少要包含一个Main类，该类必须包含一个main函数。<br><strong>函数、方法、构造函数</strong>：在类级别上的操作，类似于Java中的静态函数，用函数表示；作用在当前对象上的操作用方法表示；构造函数用于创建新的对象。<br><strong>程序结构</strong>：Jack中的基本编程单元是类。每个类存在于独立的文件中。因此Jack是一种面向对象的语言。<br><strong>变量</strong>：Jack中有四种类型的变量：成员字段，静态变量，局部变量和参数变量。<br><strong>数据类型</strong>：Jack支持三种基本数据类型：int，char，boolean。其他的数据类型，又可以称为对象类型，例如String，可以基于这些基本数据类型进行扩展。<br><strong>Array类</strong>：Jack程序使用内置的Array类来声明和构建数组，该类是Jack标准库的一部分。该类并没有指定类型，它可以包含任意类型的数据。该数组是一维的。<br><strong>Strings类</strong>：字符串使用内置类Strings来声明。<br><strong>类型转换</strong>：Jack是弱类型语言。该语言规范并没有定义从一种类型转为另一种类型的结果。类型转换主要包括这三种：字符和整数能够根据Unicode规范在必要时相互转换；整数可被赋给任何对象类型的引用变量，这时该整数被当做是内存中的地址；对象变量可被转换成Array变量，反之亦然，经过转换就可以像访问数组中的数据项一样去访问对象中的成员，反之亦然，这也是对象序列化的基本方法。<br><strong>变量的类型和作用域</strong>：静态变量定义在类这一级，被该类的素有对象共享，参考之前的内存段的划分即可理解为什么静态变量会被共享。成员字段变量用于定义类对象的属性。局部变量被子程序使用，仅存在与子程序的生存周期内，这里参考堆栈虚拟机2可以很好的理解底层原理。参数变量用于传递变量给子程序。<br><strong>表达式</strong>：Jack语言中没有定义运算符的优先级。为的是简化编译器的设计，所以涉及到优先级的表达式必须用括号显式说明优先级。<br><strong>构造函数</strong>：对象的构造可以分为两个阶段：内存分配和构造对象。内存分配阶段开辟内存段，然后创建指向该内存段的指针。构造对象阶段完成对象的构造。<br><strong>对象内存回收dispose()</strong>：当对象使用完毕后必须进行内存释放，这与C编程类型，而Java却不用考虑这个问题，因为Java提供了垃圾回收机制。也许在Jack开发完成了，可以对其进行扩展，进而实现垃圾回收机制。这是操作系统提供的一种服务。</p>
-<p><strong>本章的课程项目主要是演示和尝试去测试，对于有编程经验的人来讲几乎可以不做，本章的重点在于了解Jack语言的语法，能编写Jack程序！</strong></p>
+                <h4 id="字符串左移"><a href="#字符串左移" class="headerlink" title="字符串左移"></a>字符串左移</h4><p><strong>输入：</strong>字符串String以及左移多少个字符k<br><strong>输出：</strong>左移后的字符串String<br><strong>例如：</strong>String=”abcdef”，k=2。那么我们期待的输出为”cdefab”<br><strong>思路：</strong>核心数学思想：$(x^{-1}y^{-1})^{-1}$。对于一个字符串xy，这里的x和y并不仅仅是指两个字符而是代表字符串的两个部分，因此这里也体现了抽象的方法。对于字符串xy经过上面的公式可以得到yx，这就是解答这个题的核心数学思想。令x代表ab，令y代表cdef，这样就转到了这个题目。到这一步，就只剩下写代码了。可以看出来，这里的核心数学操作只有一个那就是取逆。因此，代码的核心部分应该就是reverse函数。我是用Java写的，Java的字符串类型是不可变的，因此处理的时候，将字符串转换成了char数组。</p>
+<pre class="line-numbers language-java"><code class="language-java">    <span class="token comment" spellcheck="true">/**
+     * 翻转字符串。比如，要翻转1234中的12，那么from是0，to是1
+     * @param chs 将字符串转换成的数组
+     * @param from 翻转的起始索引
+     * @param to 转换的终止索引
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> chs<span class="token punctuation">,</span> <span class="token keyword">int</span> from<span class="token punctuation">,</span> <span class="token keyword">int</span> to<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>from <span class="token operator">&lt;</span> to<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">char</span> ch <span class="token operator">=</span> chs<span class="token punctuation">[</span>from<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            chs<span class="token punctuation">[</span>from<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> chs<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            chs<span class="token punctuation">[</span>to<span class="token operator">--</span><span class="token punctuation">]</span> <span class="token operator">=</span> ch<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="字符串的全排列"><a href="#字符串的全排列" class="headerlink" title="字符串的全排列"></a>字符串的全排列</h4><p><strong>输入：</strong>字符串String<br><strong>输出：</strong>该字符串全排列的所有情况<br><strong>例如：</strong>String=”123”。那么我们期待的输出为：123,132,213,231,312,321。顺序可以不同<br><strong>思路：</strong>将字符串全排列问题认为是一个全排列问题，我想大家应该不会有意见。全排列问题是一个大概念，字符串的全排列是它的一个子集。如果将字符串中的字符认为是一种抽象的表示的话，那么我们可以衍生出其他的同类问题。比如：将字符认为是对对象的抽象，那么我们可以得到对象的全排列问题；将字符认为是对结点的抽象，那么我们可以得到对结点的全排列问题。要解决全排列问题，可能要强迫自己接受一个事实，那就是全排列问题可以是一个递归问题。这是用递归算法求解全排列问题的出发点，认清问题的类型，才能够选择合适的方法。我目前还没有深刻的理解全排列问题可以是一个递归问题这个事实，但是我已经让我自己接受了这个事实，我还需要花点时间慢慢的理解它。如果你很难接受这个知识点的话，那么可以观察一下全排列的数学公式。它是阶乘的形式，阶乘是递归的。这个现象可以带给我们一种递归的感觉，让我们先感觉到全排列有点递归的意思，辅助我们接收这个知识点。至于深刻理解这个问题，恐怕还要费点时间。总之，递归的观点是解决全排列问题的一个出发点。把一个四个字符的字符串1234进行全排列，让1分别和后面的三个字符进行交换以表示第一个位置上可以取得的所有情况，然后保持第一个位置不变，对后面的三个字符进行全排列，这样的三个字符的全排列仍然是相同的情况，只不过规模更小了，那么我们只需要做相同的操作，让第一个字符分别和后面的两个字符进行交换以表示第一个位置上可以取得的所有情况，然后保持第一个位置不变，对后面的两个字符进行全排列…这样下去，将会到达一种平凡的情况，对一个字符进行全排列，这时候只需要做简单打印字符串的操作就可以了。下面是代码：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Permutation</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 由于字符串是不可变的，所以将它转换成字符数组进行处理</span>
+    <span class="token keyword">private</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> chs<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">Permutation</span><span class="token punctuation">(</span>String string<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>chs <span class="token operator">=</span> string<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/** 递归函数 */</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">permutate</span><span class="token punctuation">(</span><span class="token keyword">int</span> from<span class="token punctuation">,</span> <span class="token keyword">int</span> to<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 当from=to的时候，表示从这个字符开始到这个字符结束，进行全排列</span>
+        <span class="token comment" spellcheck="true">// 即对单个字符进行全排列，这就是终止条件，递归进入了一种平凡的</span>
+        <span class="token comment" spellcheck="true">// 情况</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>from <span class="token operator">==</span> to<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>chs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">// 如果不是平凡的情况，那么就交换字符，然后对除第一个字符之外的</span>
+        <span class="token comment" spellcheck="true">// 后面的字符进行全排列(from+1)体现了这一点。</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> from<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> to<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// from表示本次要进行全排列的字符串的第一个字符的索引。for</span>
+            <span class="token comment" spellcheck="true">// 循环表示，从这个子串的第一个字符开始，分别同第一个字符</span>
+            <span class="token comment" spellcheck="true">// 进行交换，然后对更小的字串进行全排列。完成之后，再交换</span>
+            <span class="token comment" spellcheck="true">// 回来。之所以要交换回来，是因为from位置上的字符要和其后</span>
+            <span class="token comment" spellcheck="true">// 面的字串上的每个字符进行交换，你换了一次但不换回来，那</span>
+            <span class="token comment" spellcheck="true">// 到下一次你去哪找from上的字符。</span>
+            <span class="token function">swap</span><span class="token punctuation">(</span>from<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">permutate</span><span class="token punctuation">(</span>from <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> to<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">swap</span><span class="token punctuation">(</span>from<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/** 交换i位置和j位置上的字符 */</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">char</span> temp <span class="token operator">=</span> chs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        chs<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> chs<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        chs<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/** 暴露给用户的方法调用 */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doPermutation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">permutate</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>chs<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="带重复字符的字符串的全排列"><a href="#带重复字符的字符串的全排列" class="headerlink" title="带重复字符的字符串的全排列"></a>带重复字符的字符串的全排列</h4><p><strong>输入：</strong>字符串String，其中可以有重复字符，可以没有重复字符，但是算法会考虑到重复字符的问题<br><strong>输出：</strong>该字符串全排列的所有情况，并且会考虑重复字符的情况<br><strong>例如：</strong>String=”122”。那么我们期待的输出为：122,212,221。顺序可以不同<br><strong>思路：</strong></p>
 
             </div>
             <hr/>
@@ -709,7 +755,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://allenwrong.github.io" rel="external nofollow noreferrer">AndrewGuan</a>
+                    <a href="https://allenwrong.github.io" rel="external nofollow noreferrer">Guanguan</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -719,7 +765,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://allenwrong.github.io/2020/02/06/Jack/Jack9/">https://allenwrong.github.io/2020/02/06/Jack/Jack9/</a>
+                    <a href="https://allenwrong.github.io/2021/03/28/StringAlg/">https://allenwrong.github.io/2021/03/28/StringAlg/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -732,7 +778,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="https://allenwrong.github.io" target="_blank">AndrewGuan</a>
+                    <a href="https://allenwrong.github.io" target="_blank">Guanguan</a>
                     !
                 </span>
             </div>
@@ -757,8 +803,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Jack%E8%AF%AD%E8%A8%80/">
-                                    <span class="chip bg-color">Jack语言</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -1187,36 +1233,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/06/Jack/Jack10/">
+                <a href="/2021/03/28/StringAlg/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Jack10">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="StringAlg">
                         
-                        <span class="card-title">Jack10</span>
+                        <span class="card-title">StringAlg</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            字符串左移输入：字符串String以及左移多少个字符k输出：左移后的字符串String例如：String=”abcdef”，k=2。那么我们期待的输出为”cdefab”思路：核心数学思想：$(x^{-1}y^{-1})^{-1}$。对于一个
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            AndrewGuan
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1228,31 +1288,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/06/Jack/Jack8/">
+                <a href="/2021/03/10/CSKnowledgeSys/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="虚拟机II：程序控制">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="理想的计算机科学知识体系">
                         
-                        <span class="card-title">虚拟机II：程序控制</span>
+                        <span class="card-title">理想的计算机科学知识体系</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            从零开始构建一台现代计算机，本章构建Hack堆栈虚拟机的第二部分，实现程序控制流和函数调用。需要深刻理解虚拟内存段
+                            这是我非常喜欢的计算机科学知识结构，也是很理想的计算机科学知识结构，原则上每个CS毕业的同学都应该具备这些技能。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%A6%81%E7%B4%A0/" class="post-category">
-                                    计算机系统要素
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" class="post-category">
+                                    计算机科学
                                 </a>
                             
                             
@@ -1262,8 +1322,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A0%86%E6%A0%88%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">堆栈虚拟机</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">
+                        <span class="chip bg-color">计算机科学</span>
                     </a>
                     
                 </div>

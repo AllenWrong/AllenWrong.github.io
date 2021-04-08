@@ -650,21 +650,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-10
+                    2021-03-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    17 分
                 </div>
                 
 				
@@ -1101,7 +1101,123 @@ WHERE movieid in (SELECT movieid
               WHERE name = 'Art Garfunkel') AND name != 'Art Garfunkel'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
-
+<h2 id="8-Using-Null"><a href="#8-Using-Null" class="headerlink" title="8. Using Null"></a>8. Using Null</h2><p><strong>We can use the phrase IS NULL to pick out fields. We can use IS NOT NULL similarly.</strong></p>
+<ol>
+<li>List the teachers who have NULL for their department.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
+FROM teacher
+WHERE dept IS NULL<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Note the INNER JOIN misses the teachers with no department and the departments with no teacher. (This example show that what the effect of INNER JOIN looks like.)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name, dept.name
+FROM teacher 
+INNER JOIN dept ON (teacher.dept=dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Use a different JOIN so that all teachers are listed. (This example show that what the effect of the left join looks like.)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name, dept.name
+FROM teacher
+LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Use a different JOIN so that all departments are listed. (This example show that what the effect of the right join looks like.)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name, dept.name
+FROM teacher
+RIGHT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Use COALESCE to print the mobile number. Use the number ‘07986 444 2266’ if there is no number given. <pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, COALESCE(mobile, '07986 444 2266')
+FROM teacher<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li>Use the COALESCE function and a LEFT JOIN to print the teacher name and department name. Use the string ‘None’ where there is no department.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name, COALESCE(dept.name, 'None')
+FROM teacher 
+LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Use COUNT to show the number of teachers and the number of mobile phones.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT COUNT(name), COUNT(mobile)
+FROM teacher<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li>Use COUNT and GROUP BY dept.name to show each department and the number of staff. Use a RIGHT JOIN to ensure that the Engineering department is listed.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT dept.name, COUNT(teacher.name)
+FROM teacher RIGHT JOIN dept ON (teacher.dept = dept.id)
+GROUP BY dept.name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Use CASE to show the name of each teacher followed by ‘Sci’ if the teacher is in dept 1 or 2 and ‘Art’ otherwise.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name,
+ CASE WHEN teacher.dept = 1
+      THEN 'Sci'
+      WHEN teacher.dept = 2
+      THEN 'Sci'
+      ELSE'Art'
+ END
+FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Or we can use the combination of condition like the following answer:<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name,
+ CASE WHEN teacher.dept = 1 OR teacher.dept = 2
+      THEN 'Sci'
+      ELSE'Art'
+ END
+FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Use CASE to show the name of each teacher followed by ‘Sci’ if the teacher is in dept 1 or 2, show ‘Art’ if the teacher’s dept is 3 and ‘None’ otherwise.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name,
+CASE WHEN teacher.dept = 1 OR teacher.dept = 2
+     THEN 'Sci'
+     WHEN teacher.dept = 2
+     THEN 'Art'
+     ELSE'None'
+END
+FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h2 id="8-NSS-Tutorial"><a href="#8-NSS-Tutorial" class="headerlink" title="8+. NSS Tutorial"></a>8+. NSS Tutorial</h2><ol>
+<li>Show the the percentage who STRONGLY AGREE<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT A_STRONGLY_AGREE
+FROM nss
+WHERE question='Q01'
+AND institution='Edinburgh Napier University'
+AND subject='(8) Computer Science'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Show the institution and subject where the score is at least 100 for question 15.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT institution, subject
+FROM nss
+WHERE question='Q15'
+AND score >= 100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Show the institution and score where the score for ‘(8) Computer Science’ is less than 50 for question ‘Q15’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT institution, score
+FROM nss
+WHERE question='Q15'
+AND subject='(8) Computer Science'
+AND score < 50<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Show the subject and total number of students who responded to question 22 for each of the subjects ‘(8) Computer Science’ and ‘(H) Creative Arts and Design’.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT subject, SUM(response)
+FROM nss
+WHERE question='Q22'
+AND (subject='(H) Creative Arts and Design'
+     OR subject='(8) Computer Science')
+GROUP BY subject<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Show the subject and total number of students who A_STRONGLY_AGREE to question 22 for each of the subjects ‘(8) Computer Science’ and ‘(H) Creative Arts and Design’.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT subject, SUM(response * A_STRONGLY_AGREE / 100)
+FROM nss
+WHERE question='Q22'
+AND (subject='(H) Creative Arts and Design'
+    OR subject='(8) Computer Science')
+GROUP BY subject<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h2 id="9-Window-functions"><a href="#9-Window-functions" class="headerlink" title="9-. Window functions"></a>9-. Window functions</h2><h2 id="9-Window-LAG"><a href="#9-Window-LAG" class="headerlink" title="9+. Window LAG"></a>9+. Window LAG</h2><h2 id="9-Self-join"><a href="#9-Self-join" class="headerlink" title="9. Self join"></a>9. Self join</h2><h2 id="10-1-SELECT-Quiz"><a href="#10-1-SELECT-Quiz" class="headerlink" title="10.1 SELECT Quiz"></a>10.1 SELECT Quiz</h2><ol>
+<li>Select the code which produces this table<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population
+FROM world
+WHERE population BETWEEN 1000000 AND 1250000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Pick the result you would obtain from this code:<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population
+FROM world
+WHERE name LIKE 'Al%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+Answer: table-E</li>
+<li>Select the code which shows the countries that end in A or L<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
+WHERE name LIKE '%a' OR name LIKE '%l'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li>Pick the result from the query<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name,length(name)
+FROM world
+WHERE length(name)=5 and continent='Europe'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+Answer: table C</li>
+<li>Here are the first few rows of the world table:. Pick the result you would obtain from this code:<br><code>SELECT name, area*2 FROM world WHERE population = 64000</code><br>Answer: table c</li>
+<li>Select the code that would show the countries with an area larger than 50000 and a population smaller than 10000000<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, area, population
+FROM world
+WHERE area > 50000 AND population < 10000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Select the code that shows the population density of China, Australia, Nigeria and France<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population/area
+FROM world
+WHERE name IN ('China', 'Nigeria', 'France', 'Australia')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h2 id="10-2-BBC-QUIZ"><a href="#10-2-BBC-QUIZ" class="headerlink" title="10.2 BBC QUIZ"></a>10.2 BBC QUIZ</h2><h2 id="10-3-Nobel-Quiz"><a href="#10-3-Nobel-Quiz" class="headerlink" title="10.3 Nobel Quiz"></a>10.3 Nobel Quiz</h2><h2 id="10-4-Nested-SELECT-Quiz"><a href="#10-4-Nested-SELECT-Quiz" class="headerlink" title="10.4 Nested SELECT Quiz"></a>10.4 Nested SELECT Quiz</h2><h2 id="10-5-SUM-and-COUNT-Quiz"><a href="#10-5-SUM-and-COUNT-Quiz" class="headerlink" title="10.5 SUM and COUNT Quiz"></a>10.5 SUM and COUNT Quiz</h2><h2 id="10-6-JOIN-Quiz"><a href="#10-6-JOIN-Quiz" class="headerlink" title="10.6 JOIN Quiz"></a>10.6 JOIN Quiz</h2><h2 id="10-7-JOIN-Quiz-2"><a href="#10-7-JOIN-Quiz-2" class="headerlink" title="10.7 JOIN Quiz 2"></a>10.7 JOIN Quiz 2</h2><h2 id="10-8-Using-Null-Quiz"><a href="#10-8-Using-Null-Quiz" class="headerlink" title="10.8 Using Null Quiz"></a>10.8 Using Null Quiz</h2><h2 id="10-9-Self-join-Quiz"><a href="#10-9-Self-join-Quiz" class="headerlink" title="10.9 Self join Quiz"></a>10.9 Self join Quiz</h2>
             </div>
             <hr/>
 
@@ -1832,7 +1948,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.8k</span>&nbsp;字
+                class="white-color">45.1k</span>&nbsp;字
             
             
             

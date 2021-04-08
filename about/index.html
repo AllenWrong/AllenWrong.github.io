@@ -549,7 +549,7 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">33</a></span>
+    <span class="count"><a href="/">34</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -579,7 +579,7 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">33</a></span>
+    <span class="count"><a href="/">34</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -735,7 +735,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03"]
+            data: ["2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03","2021-04"]
         },
         yAxis: {
             type: 'value',
@@ -745,7 +745,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [4,0,0,0,0,0,0,0,0,0,7,5,2],
+                data: [0,0,0,0,0,0,0,0,0,7,5,3,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -787,7 +787,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"计算机系统","value":2},{"name":"云计算","value":1},{"name":"数据库","value":3},{"name":"英语","value":1},{"name":"Java","value":1},{"name":"计算机科学","value":1},{"name":"算法","value":1},{"name":"深度学习","value":1},{"name":"SQL","value":2},{"name":"SimpleDb","value":1},{"name":"编译原理","value":2},{"name":"计算机网络","value":1},{"name":"代数","value":1},{"name":"闪烁之狐","value":1},{"name":"学习方法","value":1},{"name":"Linux","value":1},{"name":"线性代数","value":2},{"name":"计算机系统要素","value":8}],
+                data: [{"name":"云计算","value":1},{"name":"计算机系统","value":2},{"name":"计算机科学","value":1},{"name":"编译原理","value":2},{"name":"数据库","value":3},{"name":"学习方法","value":1},{"name":"计算机网络","value":1},{"name":"代数","value":1},{"name":"闪烁之狐","value":1},{"name":"英语","value":1},{"name":"线性代数","value":2},{"name":"算法","value":2},{"name":"Linux","value":1},{"name":"SQL","value":2},{"name":"Java","value":1},{"name":"深度学习","value":1},{"name":"SimpleDb","value":1},{"name":"计算机系统要素","value":8}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -811,7 +811,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["数据库","编译原理","线性代数","堆栈虚拟机","大端法小端法","云计算","计算机系统","英语","Java多线程","计算机科学"]
+                data: ["数据库","编译原理","线性代数","算法","堆栈虚拟机","云计算","大端法小端法","计算机科学","计算机系统","阅读文献"]
             }
         ],
         yAxis: [
@@ -824,7 +824,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [3,2,2,2,1,1,1,1,1,1],
+                data: [3,2,2,2,2,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -958,6 +958,32 @@
         
         <div class="col s12 m6 l4" data-aos="fade-up">
             <div class="info center-align">
+                <a href="https://github.com/AllenWrong/nand2tetris" class="icon"
+                   style="background: linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)" target="_blank">
+                    <i class="fas fa-laptop"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://github.com/AllenWrong/nand2tetris" target="_blank">Hack Computer</a>
+                </div>
+                <div class="info-desc">亲自动手，从零开始构建了一个计算机系统。本项目从与非门开始，构建了与或非门，加法器，ALU，PC， 寄存器，RAM，CPU，Memory，Hack计算机平台，汇编编译器，Jack虚拟机，Jack编译器，操作系统。</div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="" class="icon"
+                   style="background: linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)" target="_blank">
+                    <i class="fas fa-database"></i>
+                </a>
+                <div class="info-title">
+                    <a href="" target="_blank">SimpleDB</a>
+                </div>
+                <div class="info-desc">开发一个简单的数据库。实现了元组，元组模式，关系表，堆文件，页，缓存等来实现数据管理。实现了缓存替换策略LRU。 实现了insert、delete、select、join、group by、order by操作符。实现基于代价的优化器，利用left-deep-tree实现Join操作的优化器。 在Page粒度下利用2PL协议以及NO STEAL/FORCE缓存管理策略实现事务的ACID特性。</div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
                 <a href="https://github.com/AllenWrong/SelectCourse" class="icon"
                    style="background: linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)" target="_blank">
                     <i class="fas fa-file-alt"></i>
@@ -966,32 +992,6 @@
                     <a href="https://github.com/AllenWrong/SelectCourse" target="_blank">选课管理系统</a>
                 </div>
                 <div class="info-desc">一个Java Web项目，使用MySQL数据库，实现了开课，排课，选课，课程管理，成绩管理等功能.</div>
-            </div>
-        </div>
-        
-        <div class="col s12 m6 l4" data-aos="fade-up">
-            <div class="info center-align">
-                <a href="https://github.com/AllenWrong/nand2tetris" class="icon"
-                   style="background: linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)" target="_blank">
-                    <i class="fas fa-database"></i>
-                </a>
-                <div class="info-title">
-                    <a href="https://github.com/AllenWrong/nand2tetris" target="_blank">Hack Computer</a>
-                </div>
-                <div class="info-desc">亲自动手，从零开始构建了一个计算机系统。本项目从与非门开始，构建了与或非门，加法器，ALU，PC，寄存器，RAM，CPU，Memory，Hack计算机平台，汇编编译器，Jack虚拟机，Jack编译器，操作系统。</div>
-            </div>
-        </div>
-        
-        <div class="col s12 m6 l4" data-aos="fade-up">
-            <div class="info center-align">
-                <a href="https://github.com/blinkfox/typora-vue-theme" class="icon"
-                   style="background: linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)" target="_blank">
-                    <i class="fas fa-file-alt"></i>
-                </a>
-                <div class="info-title">
-                    <a href="https://github.com/blinkfox/typora-vue-theme" target="_blank">typora-vue-theme</a>
-                </div>
-                <div class="info-desc">This is a typora theme inspired by Vue document style.</div>
             </div>
         </div>
         
@@ -1356,7 +1356,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.8k</span>&nbsp;字
+                class="white-color">45.1k</span>&nbsp;字
             
             
             
