@@ -11,6 +11,18 @@
         <content type="html"><![CDATA[<h2 id="练习英文科技论文常用的短语"><a href="#练习英文科技论文常用的短语" class="headerlink" title="练习英文科技论文常用的短语"></a>练习英文科技论文常用的短语</h2><style>    .input{        width:450px;    }</style><p>例如：<br>在这个方向上：<span><input style="width:450px" id = "input" type="text" name="username"/>  </span><span id="demo"></span></p><p><button id = "mySubmit">提交</button>    <button id = "myClear">清除</button>    <button id = "hint">提示</button></p><script>    document.getElementById("mySubmit").onclick=function(){display()};    document.getElementById("myClear").onclick=function(){clear()};    document.getElementById("hint").onclick=function(){hint()};    function display(){        var content = document.getElementById("input").value;        if (content == "in this direction") {            document.getElementById("demo").innerHTML="You are right";        } else {            document.getElementById("demo").innerHTML="You are wrong, try again";        }    }    function clear() {        document.getElementById("demo").innerHTML="";    }    function hint() {        document.getElementById("demo").innerHTML="in this direction";    }    function func(event){        event.preventDefault();    }    function check(){        console.log("check")    }</script>]]></content>
       
       
+      <categories>
+          
+          <category> 示例 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 示例 </tag>
+            
+        </tags>
       
     </entry>
     
