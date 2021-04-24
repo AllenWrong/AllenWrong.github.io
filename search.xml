@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>如何学习</title>
+      <link href="/2021/04/24/HowToLearn/"/>
+      <url>/2021/04/24/HowToLearn/</url>
+      
+        <content type="html"><![CDATA[<h2 id="练习英文科技论文常用的短语"><a href="#练习英文科技论文常用的短语" class="headerlink" title="练习英文科技论文常用的短语"></a>练习英文科技论文常用的短语</h2><style>    .input{        width:450px;    }</style><p>例如：<br>在这个方向上：<span><input style="width:450px" id = "input" type="text" name="username"/>  </span><span id="demo"></span></p><p><button id = "mySubmit">提交</button>    <button id = "myClear">清除</button>    <button id = "hint">提示</button></p><script>    document.getElementById("mySubmit").onclick=function(){display()};    document.getElementById("myClear").onclick=function(){clear()};    document.getElementById("hint").onclick=function(){hint()};    function display(){        var content = document.getElementById("input").value;        if (content == "in this direction") {            document.getElementById("demo").innerHTML="You are right";        } else {            document.getElementById("demo").innerHTML="You are wrong, try again";        }    }    function clear() {        document.getElementById("demo").innerHTML="";    }    function hint() {        document.getElementById("demo").innerHTML="in this direction";    }    function func(event){        event.preventDefault();    }    function check(){        console.log("check")    }</script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>408面试总结</title>
+      <link href="/2021/04/22/fushi408/"/>
+      <url>/2021/04/22/fushi408/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h4 id="一、线性表对比"><a href="#一、线性表对比" class="headerlink" title="一、线性表对比"></a>一、线性表对比</h4><p>主要关注线性表的一些优缺点和适应性问题。</p><h5 id="1-顺序表"><a href="#1-顺序表" class="headerlink" title="1.顺序表"></a>1.顺序表</h5><p>顺序表不利于插入和删除操作，但是访问元素比较方便（相对于链表而言）。</p><h5 id="2-单链表"><a href="#2-单链表" class="headerlink" title="2.单链表"></a>2.单链表</h5><p>单链表有利于插入和删除操作，但是访问特定的元素时，需要从头开始逐个遍历。</p><h5 id="3-双链表"><a href="#3-双链表" class="headerlink" title="3.双链表"></a>3.双链表</h5><p>双链表使得链表能够方便的访问前驱，当然链表本身就能够访问后继。</p><h5 id="4-循环链表"><a href="#4-循环链表" class="headerlink" title="4.循环链表"></a>4.循环链表</h5><p><strong>循环单链表：</strong></p><ul><li>循环单链表使得从任何一个结点开始都可以遍历整个链表。在直观上有一个环的感觉就可以了</li><li>通常使用带尾结点的循环单链表。它在表头和表尾进行操作的时间复杂度都为O(1)。若不在表尾进行操作，那么也可以使用带头结点的循环单链表。</li></ul><p><strong>循环双链表：（使得循环单链表具有了方便访问前驱的功能）</strong></p><ul><li>对链表的操作更加方便了。只设置一个结点，就可以方便的在表头和表尾进行插入和删除操作。</li></ul><h4 id="二、栈和队列"><a href="#二、栈和队列" class="headerlink" title="二、栈和队列"></a>二、栈和队列</h4><h5 id="1-栈的分类"><a href="#1-栈的分类" class="headerlink" title="1.栈的分类"></a>1.栈的分类</h5><p>顺序栈，链栈，共享栈。对这些结构有个直观上的感觉。</p><h5 id="2-栈的应用"><a href="#2-栈的应用" class="headerlink" title="2.栈的应用"></a>2.栈的应用</h5><p>括号匹配，表达式求值，总之是适用于先进后出的场景。</p><h5 id="3-队列的分类"><a href="#3-队列的分类" class="headerlink" title="3.队列的分类"></a>3.队列的分类</h5><p>循环队列（解决了普通队列假溢出的问题）。链队。双端队列（支持在头尾都进行插入和删除）</p><h5 id="4-队列的应用"><a href="#4-队列的应用" class="headerlink" title="4.队列的应用"></a>4.队列的应用</h5><p>层次遍历，广度优先算法，总之是适用于先进先出的场景。</p><h4 id="三、树"><a href="#三、树" class="headerlink" title="三、树"></a>三、树</h4><h4 id="四、图"><a href="#四、图" class="headerlink" title="四、图"></a>四、图</h4><p>这里主要关注图的存储结构。</p><h5 id="1-邻接矩阵"><a href="#1-邻接矩阵" class="headerlink" title="1.邻接矩阵"></a>1.邻接矩阵</h5><p>对邻接矩阵的直观理解：用一个矩阵来表示图。其中的0表示没有边，1表示有边<br>最大的问题是空间复杂度高，因此它适用于稠密图，不适用于稀疏图<br>另外，这种方法便于删除边，不便于删除顶点。因为删除顶点的话，相当于删除某一行和某一列，这就要涉及到大量的数据的移动。</p><h5 id="2-邻接表"><a href="#2-邻接表" class="headerlink" title="2.邻接表"></a>2.邻接表</h5><p>对邻接表的直观理解：利用边结点和顶点结点对边和顶点进行抽象。顶点结点包括一个指针域，用于链接所有与该顶点相连的边。<br>邻接表改善了邻接矩阵空间复杂度太高的问题，从而，它适用于稠密图和稀疏图。但是它也引入了新的问题。</p><ul><li>当邻接表存储有向图时，不方便求顶点的入度。因为顶点结点链接的都是从该顶点发射出去的边，而不是进入该顶点的边。</li><li>当邻接表存储无向图时，由于一个边连接两个顶点，因此这两个顶点都会链接一个表示该边的边结点。这就造成了信息冗余。一方面，这会浪费存空间。另一方面，在删除顶点和删除边的时候都要考虑删除冗余的那一份信息，这很不方便。</li></ul><h5 id="3-十字链表"><a href="#3-十字链表" class="headerlink" title="3.十字链表"></a>3.十字链表</h5><p>十字链表用于存储有向图，它是对邻接表的改进，因此它保留了邻接表的优点，比如空间复杂度低。<br>理解十字链表最关键的就是理解它的两种结点：边结点和顶点结点。</p><ul><li>边结点：有两个特殊的指针域，一个用于链接与边头相同的边，一个用于链接与边尾相同的边。还有两个特殊的域，一个用于存储边头部顶点编号，一个用于存储边尾部顶点编号。</li><li>顶点结点：有两个特殊的指针域，一个用于链接指向该顶点的边，一个用于链接从该顶点发射出去的边。<br>正是这种抽象机制改善了邻接表不方便求入度的问题。</li></ul><h5 id="4-邻接多重表"><a href="#4-邻接多重表" class="headerlink" title="4.邻接多重表"></a>4.邻接多重表</h5><p>邻接多重表用于存储无向图，它是对邻接表的改进，因此它保留了邻接表的优点，比如空间复杂度低。<br>理解邻接多重表的关键就在于理解它的两种结点：边结点和顶点结点。</p><ul><li>边结点：有两个特殊的指针域，一个用于链接与本边左端所连结点相同的边，另一个用于链接与本边右端所连结点相同的边。还有两个特殊的数据域，分别用于存储本边两端所连顶点的编号。这和十字链表基本是相似的。</li><li>顶点结点：除了数据域外，还有一个特殊的指针域，用于链接与该顶点相连的所有边。<br>这样的机制能够消除冗余的结点，因此解决了邻接表存储无向图存在的问题。</li></ul><h5 id="5-广度优先遍历"><a href="#5-广度优先遍历" class="headerlink" title="5.广度优先遍历"></a>5.广度优先遍历</h5><p>能够用语言把这个算法的过程大致的描述出来。从图的某个顶点开始遍历，先遍历完与它相连的未被遍历过的所有结点，然后再去遍历与这些结点相连的所有未被遍历过的结点，直到所有结点都被遍历完。</p><h5 id="6-深度优先遍历"><a href="#6-深度优先遍历" class="headerlink" title="6.深度优先遍历"></a>6.深度优先遍历</h5><p>能够用语言把这个算法的过程大致的描述出来。从图的某个起始顶点开始遍历，遍历与该顶点相连的未被访问过的任一顶点w，然后再访问与W相邻的任一顶点u，重复这个过程，当不能再向下时，变回到u，再遍历与它相邻的未被访问的其他任一结点，重复这个过程，直到遍历完所有的结点。</p><h4 id="五、查找"><a href="#五、查找" class="headerlink" title="五、查找"></a>五、查找</h4><h5 id="1-顺序查找"><a href="#1-顺序查找" class="headerlink" title="1.顺序查找"></a>1.顺序查找</h5><p>对无序表：从表的开始向表尾逐个元素对比。<br>对有序表：从表的开始向表尾逐个元素对比，直到找到元素，或者找到比目标元素大的值，或者到达表尾则认为是查找失败。</p><h5 id="2-折半查找"><a href="#2-折半查找" class="headerlink" title="2.折半查找"></a>2.折半查找</h5><p>首先要了解，它是一个查找效率很高的一种查找，它要求所有查找的表示有序的。<br>它首先要找到一个中间元素，这个中间元素可以将表划分为较大的部分和较小的部分。将目标元素和这个中间元素进行比较，如果目标元素小于中间元素，则去较小的部分继续做折半查找，否则则去较大的部分继续做折半查找。知道找到元素或者没有元素可以查。<br>只适用于有序顺序表。时间复杂度为对数级。</p><h5 id="3-分块查找"><a href="#3-分块查找" class="headerlink" title="3.分块查找"></a>3.分块查找</h5><p>将查找表分为若干块，块内元素可以无序，但是块与块之间必须是有序的。将每个块中的最大元素提取出来构成一张索引表。块间可以用折半查找，块内可以用顺序查找。</p><h5 id="4-B树和B-树的区别"><a href="#4-B树和B-树的区别" class="headerlink" title="4.B树和B+树的区别"></a>4.B树和B+树的区别</h5><p>关键字与子树的区别：</p><ul><li>B树中，n个关键字的结点含有n+1个子树</li><li>B+树中，n个关键字的结点含有n个子树</li></ul><p>叶结点和非叶结点的区别：</p><ul><li>B树中，叶结点与非叶结点的内容不会重复</li><li>B+树中，叶结点包含所有的关键字，非叶结点只起索引作用</li></ul><h5 id="5-散列查找"><a href="#5-散列查找" class="headerlink" title="5.散列查找"></a>5.散列查找</h5><p>利用散列函数，输入待查找关键字，输出关键字的存储地址。<br>构造散列函数的方法：这里只例举了两个，其他的可以去查书。直接定址法，除留余数法。<br>解决冲突的方法，开放定址法和拉链法。</p><ul><li>开放定址法的核心就是应该偏移多大的数，根据其偏移的数的不同划分了以下几种。<ul><li>线性探测：冲突地址加上一个线性序列中的元素，直到没有冲突</li><li>平方探测：冲突地址偏移一个平方数</li><li>再散列法：冲突地址加的偏移量是经过一个散列函数计算出来的</li></ul></li><li>拉链法：将地址冲突的关键字拉成一个链。</li></ul><h4 id="六、排序"><a href="#六、排序" class="headerlink" title="六、排序"></a>六、排序</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> 复试408 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 复试408 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>StringAlg</title>
       <link href="/2021/03/28/StringAlg/"/>
       <url>/2021/03/28/StringAlg/</url>
