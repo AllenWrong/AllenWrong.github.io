@@ -683,102 +683,128 @@
                 <h2 id="1-SELECT-name"><a href="#1-SELECT-name" class="headerlink" title="1 SELECT name"></a>1 SELECT name</h2><p><strong>Some pattern matching queries</strong></p>
 <ol>
 <li>Find the country that start with Y<pre class="line-numbers language-SQl"><code class="language-SQl">SELECT name FROM world
- WHERE name LIKE 'F%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+ WHERE name LIKE 'F%'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the countries that end with y<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
- WHERE name LIKE '%y'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+ WHERE name LIKE '%y'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the countries that contain the letter x<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
- WHERE name LIKE '%x%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+ WHERE name LIKE '%x%'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the countries that end with land<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
-WHERE name LIKE '%land'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+WHERE name LIKE '%land'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the countries that start with C and end with ia<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
-WHERE name LIKE 'C%ia'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+WHERE name LIKE 'C%ia'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the country that has oo in the name<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
-WHERE name LIKE '%oo%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+WHERE name LIKE '%oo%'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the countries that have three or more a in the name<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
- WHERE name LIKE '%a%a%a%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+ WHERE name LIKE '%a%a%a%'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the countries that have “t” as the second character.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
 WHERE name LIKE '_t%'
-ORDER BY name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+ORDER BY name
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find the countries that have two “o” characters separated by two others.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
-WHERE name LIKE '%o__o%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+WHERE name LIKE '%o__o%'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the countries that have exactly four characters.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
-WHERE name LIKE '____'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+WHERE name LIKE '____'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Find the country where the name is the capital city.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM world
-WHERE name = capital;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE name = capital;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find the country where the capital is the country plus “City”.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM world
-WHERE capital = concat(name, ' City');<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE capital = concat(name, ' City');
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find the capital and the name where the capital includes the name of the country.<pre class="line-numbers language-SQL"><code class="language-SQL">select capital,name
 from world
-where capital like '%' + name + '%';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+where capital like '%' + name + '%';
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find the capital and the name where the capital is an extension of name of the country.<pre class="line-numbers language-SQL"><code class="language-SQL">select capital,name
 from world
-where capital like name + '_%';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+where capital like name + '_%';
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="2-SELECT-from-WORLD-Tutorial"><a href="#2-SELECT-from-WORLD-Tutorial" class="headerlink" title="2 SELECT from WORLD Tutorial"></a>2 SELECT from WORLD Tutorial</h2><p><strong>use the SELECT command on the table world</strong></p>
 <ol>
-<li>show the name, continent and population of all countries.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, continent, population FROM world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>show the name, continent and population of all countries.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, continent, population FROM world
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li>Show the name for the countries that have a population of at least 200 million. 200 million is 200000000, there are eight zeros.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM world
-WHERE population > 200000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE population > 200000000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Give the name and the per capita GDP for those countries with a population of at least 200 million.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, gdp/population
 FROM world
-WHERE population > 200000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE population > 200000000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the name and population in millions for the countries of the continent ‘South America’. Divide the population by 1000000 to get population in millions.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population/1000000 'population / millions'
 FROM world
-WHERE continent = 'South America'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE continent = 'South America'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the name and population for France, Germany, Italy<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population
 FROM world
-WHERE name in ('France', 'Germany', 'Italy')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE name in ('France', 'Germany', 'Italy')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the countries which have a name that includes the word ‘United’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM world
-WHERE name like '%United%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE name like '%United%'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the countries that are big by area or big by population. Show name, population and area.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population, area
 FROM world
-WHERE area > 3000000 or population > 250000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE area > 3000000 or population > 250000000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Exclusive OR (XOR). Show the countries that are big by area (more than 3 million) or big by population (more than 250 million) but not both. Show name, population and area.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population, area
 FROM world
 WHERE 
  (area > 3000000 and population <= 250000000) or
- (area < 3000000 and population > 250000000)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ (area < 3000000 and population > 250000000)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>For South America show population in millions and GDP in billions both to 2 decimal places.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, round(population/1000000, 2), round(gdp/1000000000, 2)
 FROM world
-WHERE continent = 'South America'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE continent = 'South America'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show per-capita GDP for the trillion dollar countries to the nearest $1000.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, round(gdp/population, -3)
 FROM world
-WHERE gdp > 1000000000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE gdp > 1000000000000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the name and capital where the name and the capital have the same number of characters.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, capital
 FROM world
-WHERE len(name) = len(capital)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE len(name) = len(capital)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the name and the capital where the first letters of each match. Don’t include countries where the name and the capital are the same word.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, capital
 FROM world
-WHERE name <> capital and left(name, 1) = left(capital, 1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE name <> capital and left(name, 1) = left(capital, 1)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find the country that has all the vowels and no spaces in its name.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM world
@@ -788,66 +814,80 @@ name LIKE '%o%' and
 name LIKE '%e%' and
 name LIKE '%i%' and
 name LIKE '%u%' and
-name NOT LIKE '% %'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+name NOT LIKE '% %'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="3-SELECT-from-Nobel-Tutorial"><a href="#3-SELECT-from-Nobel-Tutorial" class="headerlink" title="3 SELECT from Nobel Tutorial"></a>3 SELECT from Nobel Tutorial</h2><p><strong>We continue practicing simple SQL queries on a single table.</strong></p>
 <ol>
 <li>Change the query shown so that it displays Nobel prizes for 1950.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT yr, subject, winner
 FROM nobel
-WHERE yr = 1950<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE yr = 1950
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show who won the 1962 prize for Literature.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT winner
 FROM nobel
 WHERE yr = 1962
-AND subject = 'Literature'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+AND subject = 'Literature'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the year and subject that won ‘Albert Einstein’ his prize.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT yr, subject
 FROM nobel
-WHERE winner = 'Albert Einstein'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE winner = 'Albert Einstein'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Give the name of the ‘Peace’ winners since the year 2000, including 2000.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT winner
 FROM nobel
-WHERE yr >= 2000 and subject = 'Peace'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE yr >= 2000 and subject = 'Peace'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show all details (yr, subject, winner) of the Literature prize winners for 1980 to 1989 inclusive.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT yr, subject, winner
 FROM nobel
-WHERE subject = 'Literature' AND yr BETWEEN 1980 AND 1989<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE subject = 'Literature' AND yr BETWEEN 1980 AND 1989
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show all details of the presidential winners:(Theodore Roosevelt,Woodrow Wilson,Jimmy Carter,Barack Obama)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT * FROM nobel
 WHERE winner 
- IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+ IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the winners with first name John<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT winner
 FROM nobel
-WHERE winner LIKE 'John %'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE winner LIKE 'John %'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the year, subject, and name of Physics winners for 1980 together with the Chemistry winners for 1984.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT yr, subject,winner
 FROM nobel
 WHERE (yr = 1980 AND subject = 'Physics')
-or (yr = 1984 AND subject = 'Chemistry')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+or (yr = 1984 AND subject = 'Chemistry')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the year, subject, and name of winners for 1980 excluding Chemistry and Medicine<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT yr, subject, winner
 FROM nobel
-WHERE yr = 1980 AND subject NOT IN ('Chemistry', 'Medicine')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE yr = 1980 AND subject NOT IN ('Chemistry', 'Medicine')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show year, subject, and name of people who won a ‘Medicine’ prize in an early year (before 1910, not including 1910) together with winners of a ‘Literature’ prize in a later year (after 2004, including 2004)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT yr, subject, winner
 FROM nobel
 WHERE (subject = 'Medicine' AND yr < 1910) OR
-  (subject = 'Literature' AND yr >= 2004)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+  (subject = 'Literature' AND yr >= 2004)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find all details of the prize won by PETER GRÜNBERG.(There contains an Non-ASCII characters)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT *
 FROM nobel
-WHERE winner = 'PETER GRÜNBERG'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE winner = 'PETER GRÜNBERG'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find all details of the prize won by EUGENE O’NEILL.(There contains an single qutoes)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT *
 FROM nobel
-WHERE winner = 'EUGENE O''NEILL'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE winner = 'EUGENE O''NEILL'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the winners, year and subject where the winner starts with Sir. Show the the most recent first, then by name order.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT winner, yr, subject
 FROM nobel
 WHERE winner LIKE 'Sir_%'
-ORDER BY yr DESC, winner<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+ORDER BY yr DESC, winner
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>The expression subject IN (‘Chemistry’,’Physics’) can be used as a value - it will be 0 or 1. Show the 1984 winners and subject ordered by subject and winner name; but list Chemistry and Physics last.<br><code>...</code></li>
 </ol>
@@ -857,21 +897,24 @@ ORDER BY yr DESC, winner<span aria-hidden="true" class="line-numbers-rows"><span
 FROM world
 WHERE population >
   (SELECT population FROM world
-   WHERE name='Russia')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+   WHERE name='Russia')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the countries in Europe with a per capita GDP greater than ‘United Kingdom’.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM world
 WHERE gdp/population >
   (SELECT gdp/population 
    FROM world
-   WHERE name = 'United Kingdom') AND continent = 'Europe'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+   WHERE name = 'United Kingdom') AND continent = 'Europe'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the name and continent of countries in the continents containing either Argentina or Australia. Order by name of the country.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, continent
 FROM world
 WHERE continent in
   (SELECT continent 
    FROM world
-   WHERE name IN ('Argentina', 'Australia'))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+   WHERE name IN ('Argentina', 'Australia'))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Which country has a population that is more than Canada but less than Poland? Show the name and the population.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population
 FROM world 
@@ -882,128 +925,155 @@ WHERE population >
    And population <
   (SELECT population
    FROM world
-   WHERE name='Poland')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+   WHERE name='Poland')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name,
     CONCAT(ROUND(100*population/(SELECT population FROM world WHERE name='Germany'), 0),'%') 'percentage' 
 FROM world 
-WHERE continent='Europe' <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE continent='Europe' 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Which countries have a GDP greater than every country in Europe? [Give the name only.] (Some countries may have NULL gdp values)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM world
-WHERE gdp > ALL(SELECT gdp FROM world WHERE continent='Europe' and gdp > 0)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE gdp > ALL(SELECT gdp FROM world WHERE continent='Europe' and gdp > 0)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find the largest country (by area) in each continent, show the continent, the name and the area:<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT continent, name, area FROM world x
 WHERE area >= ALL(SELECT area FROM world y
-                 WHERE y.continent=x.continent AND area > 0)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                 WHERE y.continent=x.continent AND area > 0)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List each continent and the name of the country that comes first alphabetically.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT continent, 
     name
 FROM world x
 WHERE name <= ALL(SELECT name
                FROM world y
-               WHERE y.continent = x.continent)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+               WHERE y.continent = x.continent)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Find the continents where all countries have a population &lt;= 25000000. Then find the names of the countries associated with these continents. Show name, continent and population.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, continent, population
 FROM world x
 WHERE 25000000 >= ALL(SELECT population
                    FROM world y
-                   WHERE x.continent = y.continent)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                   WHERE x.continent = y.continent)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Some countries have populations more than three times that of any of their neighbours (in the same continent). Give the countries and continents.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, continent
 FROM world x
 WHERE population >= ALL(SELECT 3*population 
                         FROM world y
                         WHERE x.continent = y.continent AND population > 0
-                        AND y.name != x.name)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                        AND y.name != x.name)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="5-SUM-and-COUNT"><a href="#5-SUM-and-COUNT" class="headerlink" title="5. SUM and COUNT"></a>5. SUM and COUNT</h2><p><strong>This tutorial is about aggregate functions such as COUNT, SUM and AVG. An aggregate function takes many values and delivers just one value. For example the function SUM would aggregate the values 2, 4 and 5 to deliver the single value 11.</strong><br><strong>The difference of the ‘HAVING’ and ‘WHERE’: The HAVING clause is tested after the GROUP BY. The WHERE filter takes place before the aggregating function.</strong></p>
 <ol>
 <li>Show the total population of the world.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT SUM(population)
-FROM world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+FROM world
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>List all the continents - just once each.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT DISTINCT(continent)
-FROM world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+FROM world
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Give the total GDP of Africa<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT SUM(gdp)
 FROM world
-WHERE continent = 'Africa'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE continent = 'Africa'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>How many countries have an area of at least 1000000<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT COUNT(name)
 FROM world
-WHERE area>=1000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE area>=1000000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>What is the total population of (‘Estonia’, ‘Latvia’, ‘Lithuania’)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT SUM(population)
 FROM world
-WHERE name in ('Estonia', 'Latvia', 'Lithuania')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE name in ('Estonia', 'Latvia', 'Lithuania')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>For each continent show the continent and number of countries.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT continent, COUNT(name) 'number of countries'
 FROM world
-GROUP BY continent<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+GROUP BY continent
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>For each continent show the continent and number of countries with populations of at least 10 million.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT continent, COUNT(name)
 FROM world
 WHERE population >= 10000000
-GROUP BY continent<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+GROUP BY continent
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the continents that have a total population of at least 100 million.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT continent
 FROM world
 GROUP BY continent
-HAVING SUM(population) >= 100000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+HAVING SUM(population) >= 100000000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="5-The-JOIN-operation"><a href="#5-The-JOIN-operation" class="headerlink" title="5. The JOIN operation"></a>5. The JOIN operation</h2><p><strong>This tutorial introduces JOIN which allows you to use data from two or more tables. The tables contain all matches and goals from UEFA EURO 2012 Football Championship in Poland and Ukraine.</strong></p>
 <ol>
 <li>Modify it to show the matchid and player name for all goals scored by Germany. To identify German players, check for: teamid = ‘GER’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT matchid, player
 FROM goal
-WHERE teamid='GER'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE teamid='GER'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show id, stadium, team1, team2 for just game 1012<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT id,stadium,team1,team2
 FROM game
-WHERE id = '1012'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE id = '1012'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Modify it to show the player, teamid, stadium and mdate for every German goal.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT player,teamid,stadium,mdate
 FROM game JOIN goal ON (id=matchid)
-WHERE teamid='GER'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE teamid='GER'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the team1, team2 and player for every goal scored by a player called Mario player LIKE ‘Mario%’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT team1, team2, player
 FROM game JOIN goal ON (id = matchid)
-WHERE player LIKE 'Mario%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE player LIKE 'Mario%'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show player, teamid, coach, gtime for all goals scored in the first 10 minutes gtime&lt;=10<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT player, teamid, coach,gtime
 FROM goal JOIN eteam on (teamid=id)
-WHERE gtime<=10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE gtime<=10
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the dates of the matches and the name of the team in which ‘Fernando Santos’ was the team1 coach.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT mdate, teamname
 FROM game JOIN eteam ON (team1=eteam.id)
-WHERE coach = 'Fernando Santos'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE coach = 'Fernando Santos'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the player for every goal scored in a game where the stadium was ‘National Stadium, Warsaw’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT player
 FROM game JOIN goal ON (id = matchid)
-WHERE stadium = 'National Stadium, Warsaw'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE stadium = 'National Stadium, Warsaw'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Instead show the name of all players who scored a goal against Germany.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT DISTINCT(player)
 FROM game JOIN goal ON matchid = id 
- WHERE ((team1='GER' OR team2='GER') AND teamid != 'GER')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+ WHERE ((team1='GER' OR team2='GER') AND teamid != 'GER')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show teamname and the total number of goals scored.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teamname, COUNT(player)
 FROM eteam JOIN goal ON id=teamid
-GROUP BY teamname<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+GROUP BY teamname
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the stadium and the number of goals scored in each stadium.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT stadium, COUNT(player)
 FROM game JOIN goal ON(id=matchid)
-GROUP BY stadium<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+GROUP BY stadium
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>For every match involving ‘POL’, show the matchid, date and the number of goals scored.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT matchid, mdate, COUNT(player)
 FROM game JOIN goal ON (matchid = id) 
 WHERE (team1 = 'POL' OR team2 = 'POL')
-GROUP BY matchid, mdate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+GROUP BY matchid, mdate
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>For every match where ‘GER’ scored, show matchid, match date and the number of goals scored by ‘GER’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT matchid, mdate,COUNT(player)
 FROM game JOIN goal on(id=matchid)
 WHERE teamid='GER'
-GROUP BY matchid, mdate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+GROUP BY matchid, mdate
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><pre class="line-numbers language-SQL"><code class="language-SQL">SELECT mdate,
 team1,
@@ -1012,63 +1082,75 @@ team2,
 SUM(CASE WHEN teamid=team2 THEN 1 ELSE 0 END) score2
 FROM game LEFT JOIN goal ON (matchid = id)
 GROUP BY mdate, matchid, team1,team2
-ORDER BY mdate, matchid, team1, team2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ORDER BY mdate, matchid, team1, team2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="7-More-JOIN-operations"><a href="#7-More-JOIN-operations" class="headerlink" title="7. More JOIN operations"></a>7. More JOIN operations</h2><p><strong>This tutorial introduces the notion of a join. The database consists of three tables movie , actor and casting .</strong></p>
 <ol>
 <li>List the films where the yr is 1962 [Show id, title]<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT id, title
 FROM movie
-WHERE yr=1962<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE yr=1962
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Give year of ‘Citizen Kane’.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT yr
 FROM movie
-WHERE title = 'Citizen Kane'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE title = 'Citizen Kane'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List all of the Star Trek movies, include the id, title and yr (all of these movies include the words Star Trek in the title). Order results by year.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT id, title, yr
 FROM movie
 WHERE title LIKE '%Star Trek%'
-ORDER BY yr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+ORDER BY yr
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>What id number does the actor ‘Glenn Close’ have?<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT id
 FROM actor
-WHERE name = 'Glenn Close'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE name = 'Glenn Close'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>What is the id of the film ‘Casablanca’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT id
 FROM movie
-WHERE title = 'Casablanca'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE title = 'Casablanca'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Obtain the cast list for ‘Casablanca’.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM movie JOIN casting ON (movie.id = movieid)
         JOIN actor ON (actor.id = actorid)
-WHERE title = 'Casablanca'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE title = 'Casablanca'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Obtain the cast list for the film ‘Alien’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM movie JOIN casting ON (movie.id = movieid)
         JOIN actor ON (actorid = actor.id)
-WHERE title = 'Alien'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE title = 'Alien'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the films in which ‘Harrison Ford’ has appeared<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT title
 FROM movie JOIN casting ON (movie.id = movieid)
         JOIN actor ON (actorid = actor.id)
-WHERE name = 'Harrison Ford'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE name = 'Harrison Ford'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the films where ‘Harrison Ford’ has appeared - but not in the starring role. [Note: the ord field of casting gives the position of the actor. If ord=1 then this actor is in the starring role]<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT title
 FROM movie JOIN casting ON (movie.id = movieid)
         JOIN actor ON (actorid = actor.id)
-WHERE name = 'Harrison Ford' AND ord != 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE name = 'Harrison Ford' AND ord != 1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the films together with the leading star for all 1962 films.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT title, name
 FROM movie JOIN casting ON (movie.id = movieid)
        JOIN actor ON (actor.id = actorid)
-WHERE yr = 1962 AND ord = 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+WHERE yr = 1962 AND ord = 1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Which were the busiest years for ‘Rock Hudson’, show the year and the number of movies he made each year for any year in which he made more than 2 movies.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT yr, COUNT(title) 
 FROM movie JOIN casting ON movie.id=movieid
        JOIN actor   ON actorid=actor.id
 WHERE name='Rock Hudson'
 GROUP BY yr
-HAVING COUNT(title) > 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+HAVING COUNT(title) > 2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the film title and the leading actor for all of the films ‘Julie Andrews’ played in.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT title, name
 FROM movie JOIN casting ON (movie.id = movieid)
@@ -1076,7 +1158,8 @@ FROM movie JOIN casting ON (movie.id = movieid)
 WHERE movieid IN
 (SELECT movieid
  FROM casting JOIN actor ON (actor.id = actorid)
- WHERE name = 'Julie Andrews') AND ord = 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ WHERE name = 'Julie Andrews') AND ord = 1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Obtain a list, in alphabetical order, of actors who’ve had at least 15 starring roles.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM movie JOIN casting ON (movie.id = movieid)
@@ -1084,54 +1167,65 @@ FROM movie JOIN casting ON (movie.id = movieid)
 WHERE ord = 1
 GROUP BY name
 HAVING COUNT(name) >= 15 
-ORDER BY name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ORDER BY name
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List the films released in the year 1978 ordered by the number of actors in the cast, then by title.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT title, COUNT(name)
 FROM movie JOIN casting ON (movie.id = movieid)
        JOIN actor ON (actorid = actor.id)
 WHERE yr = 1978
 GROUP BY title
-ORDER BY COUNT(name) DESC, title<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ORDER BY COUNT(name) DESC, title
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>List all the people who have worked with ‘Art Garfunkel’.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM movie JOIN casting ON (movie.id = movieid)
        JOIN actor ON (actorid = actor.id)
 WHERE movieid in (SELECT movieid
               FROM actor JOIN casting ON (actor.id = actorid)
-              WHERE name = 'Art Garfunkel') AND name != 'Art Garfunkel'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+              WHERE name = 'Art Garfunkel') AND name != 'Art Garfunkel'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="8-Using-Null"><a href="#8-Using-Null" class="headerlink" title="8. Using Null"></a>8. Using Null</h2><p><strong>We can use the phrase IS NULL to pick out fields. We can use IS NOT NULL similarly.</strong></p>
 <ol>
 <li>List the teachers who have NULL for their department.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name
 FROM teacher
-WHERE dept IS NULL<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE dept IS NULL
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Note the INNER JOIN misses the teachers with no department and the departments with no teacher. (This example show that what the effect of INNER JOIN looks like.)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name, dept.name
 FROM teacher 
-INNER JOIN dept ON (teacher.dept=dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+INNER JOIN dept ON (teacher.dept=dept.id)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Use a different JOIN so that all teachers are listed. (This example show that what the effect of the left join looks like.)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name, dept.name
 FROM teacher
-LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+LEFT JOIN dept ON (teacher.dept = dept.id)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Use a different JOIN so that all departments are listed. (This example show that what the effect of the right join looks like.)<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name, dept.name
 FROM teacher
-RIGHT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+RIGHT JOIN dept ON (teacher.dept = dept.id)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Use COALESCE to print the mobile number. Use the number ‘07986 444 2266’ if there is no number given. <pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, COALESCE(mobile, '07986 444 2266')
-FROM teacher<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+FROM teacher
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Use the COALESCE function and a LEFT JOIN to print the teacher name and department name. Use the string ‘None’ where there is no department.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name, COALESCE(dept.name, 'None')
 FROM teacher 
-LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+LEFT JOIN dept ON (teacher.dept = dept.id)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Use COUNT to show the number of teachers and the number of mobile phones.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT COUNT(name), COUNT(mobile)
-FROM teacher<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+FROM teacher
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Use COUNT and GROUP BY dept.name to show each department and the number of staff. Use a RIGHT JOIN to ensure that the Engineering department is listed.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT dept.name, COUNT(teacher.name)
 FROM teacher RIGHT JOIN dept ON (teacher.dept = dept.id)
-GROUP BY dept.name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+GROUP BY dept.name
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Use CASE to show the name of each teacher followed by ‘Sci’ if the teacher is in dept 1 or 2 and ‘Art’ otherwise.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name,
  CASE WHEN teacher.dept = 1
@@ -1140,13 +1234,15 @@ GROUP BY dept.name<span aria-hidden="true" class="line-numbers-rows"><span></spa
       THEN 'Sci'
       ELSE'Art'
  END
-FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 Or we can use the combination of condition like the following answer:<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name,
  CASE WHEN teacher.dept = 1 OR teacher.dept = 2
       THEN 'Sci'
       ELSE'Art'
  END
-FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Use CASE to show the name of each teacher followed by ‘Sci’ if the teacher is in dept 1 or 2, show ‘Art’ if the teacher’s dept is 3 and ‘None’ otherwise.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT teacher.name,
 CASE WHEN teacher.dept = 1 OR teacher.dept = 2
@@ -1155,7 +1251,8 @@ CASE WHEN teacher.dept = 1 OR teacher.dept = 2
      THEN 'Art'
      ELSE'None'
 END
-FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="8-NSS-Tutorial"><a href="#8-NSS-Tutorial" class="headerlink" title="8+. NSS Tutorial"></a>8+. NSS Tutorial</h2><ol>
@@ -1163,58 +1260,69 @@ FROM teacher LEFT JOIN dept ON (teacher.dept = dept.id)<span aria-hidden="true" 
 FROM nss
 WHERE question='Q01'
 AND institution='Edinburgh Napier University'
-AND subject='(8) Computer Science'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+AND subject='(8) Computer Science'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the institution and subject where the score is at least 100 for question 15.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT institution, subject
 FROM nss
 WHERE question='Q15'
-AND score >= 100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+AND score >= 100
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the institution and score where the score for ‘(8) Computer Science’ is less than 50 for question ‘Q15’<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT institution, score
 FROM nss
 WHERE question='Q15'
 AND subject='(8) Computer Science'
-AND score < 50<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+AND score < 50
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the subject and total number of students who responded to question 22 for each of the subjects ‘(8) Computer Science’ and ‘(H) Creative Arts and Design’.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT subject, SUM(response)
 FROM nss
 WHERE question='Q22'
 AND (subject='(H) Creative Arts and Design'
      OR subject='(8) Computer Science')
-GROUP BY subject<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+GROUP BY subject
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Show the subject and total number of students who A_STRONGLY_AGREE to question 22 for each of the subjects ‘(8) Computer Science’ and ‘(H) Creative Arts and Design’.<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT subject, SUM(response * A_STRONGLY_AGREE / 100)
 FROM nss
 WHERE question='Q22'
 AND (subject='(H) Creative Arts and Design'
     OR subject='(8) Computer Science')
-GROUP BY subject<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+GROUP BY subject
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="9-Window-functions"><a href="#9-Window-functions" class="headerlink" title="9-. Window functions"></a>9-. Window functions</h2><h2 id="9-Window-LAG"><a href="#9-Window-LAG" class="headerlink" title="9+. Window LAG"></a>9+. Window LAG</h2><h2 id="9-Self-join"><a href="#9-Self-join" class="headerlink" title="9. Self join"></a>9. Self join</h2><h2 id="10-1-SELECT-Quiz"><a href="#10-1-SELECT-Quiz" class="headerlink" title="10.1 SELECT Quiz"></a>10.1 SELECT Quiz</h2><ol>
 <li>Select the code which produces this table<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population
 FROM world
-WHERE population BETWEEN 1000000 AND 1250000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE population BETWEEN 1000000 AND 1250000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Pick the result you would obtain from this code:<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population
 FROM world
-WHERE name LIKE 'Al%'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE name LIKE 'Al%'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 Answer: table-E</li>
 <li>Select the code which shows the countries that end in A or L<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name FROM world
-WHERE name LIKE '%a' OR name LIKE '%l'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+WHERE name LIKE '%a' OR name LIKE '%l'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li>Pick the result from the query<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name,length(name)
 FROM world
-WHERE length(name)=5 and continent='Europe'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE length(name)=5 and continent='Europe'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 Answer: table C</li>
 <li>Here are the first few rows of the world table:. Pick the result you would obtain from this code:<br><code>SELECT name, area*2 FROM world WHERE population = 64000</code><br>Answer: table c</li>
 <li>Select the code that would show the countries with an area larger than 50000 and a population smaller than 10000000<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, area, population
 FROM world
-WHERE area > 50000 AND population < 10000000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE area > 50000 AND population < 10000000
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li>Select the code that shows the population density of China, Australia, Nigeria and France<pre class="line-numbers language-SQL"><code class="language-SQL">SELECT name, population/area
 FROM world
-WHERE name IN ('China', 'Nigeria', 'France', 'Australia')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+WHERE name IN ('China', 'Nigeria', 'France', 'Australia')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 <h2 id="10-2-BBC-QUIZ"><a href="#10-2-BBC-QUIZ" class="headerlink" title="10.2 BBC QUIZ"></a>10.2 BBC QUIZ</h2><h2 id="10-3-Nobel-Quiz"><a href="#10-3-Nobel-Quiz" class="headerlink" title="10.3 Nobel Quiz"></a>10.3 Nobel Quiz</h2><h2 id="10-4-Nested-SELECT-Quiz"><a href="#10-4-Nested-SELECT-Quiz" class="headerlink" title="10.4 Nested SELECT Quiz"></a>10.4 Nested SELECT Quiz</h2><h2 id="10-5-SUM-and-COUNT-Quiz"><a href="#10-5-SUM-and-COUNT-Quiz" class="headerlink" title="10.5 SUM and COUNT Quiz"></a>10.5 SUM and COUNT Quiz</h2><h2 id="10-6-JOIN-Quiz"><a href="#10-6-JOIN-Quiz" class="headerlink" title="10.6 JOIN Quiz"></a>10.6 JOIN Quiz</h2><h2 id="10-7-JOIN-Quiz-2"><a href="#10-7-JOIN-Quiz-2" class="headerlink" title="10.7 JOIN Quiz 2"></a>10.7 JOIN Quiz 2</h2><h2 id="10-8-Using-Null-Quiz"><a href="#10-8-Using-Null-Quiz" class="headerlink" title="10.8 Using Null Quiz"></a>10.8 Using Null Quiz</h2><h2 id="10-9-Self-join-Quiz"><a href="#10-9-Self-join-Quiz" class="headerlink" title="10.9 Self join Quiz"></a>10.9 Self join Quiz</h2>
@@ -1948,7 +2056,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.6k</span>&nbsp;字
+                class="white-color">49k</span>&nbsp;字
             
             
             

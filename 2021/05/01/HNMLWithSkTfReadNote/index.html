@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="wDAE-GNNReadNote">
-    <meta name="description" content="文章关注分类权重生成，提出使用降噪自动编码器来生成分类器的权重。并且使用图神经网络实现了这个降噪自动编码机。">
+    <meta name="keywords" content="HNMLWithSkTfReadNote">
+    <meta name="description" content="本文是阅读《hand on machine learning with scikit-learn and tensorflow》的笔记。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>《Generating Classification Weights with GNN Denoising Autoencoders for Few-Shot Learning》论文阅读 | Guan</title>
+    <title>HNMLWithSkTfReadNote | Guan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -496,12 +496,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">《Generating Classification Weights with GNN Denoising Autoencoders for Few-Shot Learning》论文阅读</h1>
+                    <h1 class="description center-align post-title">HNMLWithSkTfReadNote</h1>
                 </div>
             </div>
         </div>
@@ -616,25 +616,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">小样本学习</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E8%AE%BA%E6%96%87/" class="post-category">
-                                论文
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -643,28 +630,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-24
+                    2021-05-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-28
+                    2021-05-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    69
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    1 分
                 </div>
                 
 				
@@ -680,23 +667,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>文章提出使用降噪自动编码器来生成分类器的权重。并且使用图神经网络实现了这个降噪自动编码机。本质上还是一种学习参数更新策略的元学习算法，使得模型参数能够根据在基础数据集上得到的模型和少量的新样本进行更新，在适应新任务的同时，且不会忘记旧任务。</p>
-<p>定义分类器的网络结构分为两个部分：第一部分是特征提取器$F(·|\theta)$，θ是特征提取器的参数；第二部分是分类器$C(·|w)$，w是分类器的参数，这是本文要关注的重点，它包括N个类别的权重向量，$w={(w_i)}_{i=1}^{N}$。第一部分$F$用于将输入的图像$x$提取成一个特征向量$z=F(x|\theta)$。第二部分接收这个特征向量$z$，利用权重$w$来计算分类得分，得分最高的类别当然就是该模型最终预测的类别，$[s_1,…,s_N]=[z^Tw_1,…z^Tw_N]$。</p>
-<p>作者假设，模型已经在基类$N_{bs}$训练集$D^{bs}<em>{tr}$上训练过了，即模型能够识别基类中的样本（基类是和新类相对的概念）。从而对应于基类中的类别的权重向量就有了，它们的符号表示为：$w^{bs}=(w^{bs}_i)^{N</em>{bs}}<em>{i=1}$。这样我们的目标是来学习一个函数$g(·|\phi)$，给该函数输入基类的分类权重向量和一些新的训练数据，函数要能够输出一个新的分类权重向量，这个新的权重向量既能够用于基类数据的分类又能够用于新数据的分类。公式如下：<br>$$w=(w_i)^{N=N</em>{bs}+N_{nv}}<em>{i=1}=g(D^{nv}</em>{tr},w^{bs}|\phi)\tag{1}$$ $$D_{tr}^{nv}=\cup_{i=N_{bs}+1}^{N_{bs}+N_{nv}}(x_{k,i})<em>{k=1}^{K}\tag{2}$$ $$D</em>{tr}^{bs}=\cup_{i=1}^{N_{bs}}(x_{k,i})_{k=1}^{K}\tag{3}$$ 其中$K$表示每个类中训练样本的个数，$k$表示第k个训练样本，$i$表示第i个类。$\phi$是生成函数的待学习的参数。该权重生成函数是由一个降噪自动编码器组成的。降噪自动编码器由图神经网络实现的。它的输入包括新类的数据集和基类的权重。新类的数据集是在进行权重初始化的时候使用的，提取每个类中样本的特征，求出特征的平均值作为权重的初始值。基类的权重直接作为权重的初始值。</p>
-<h3 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h3><p><strong>梯度公式：</strong><br>$$\frac{\partial logp(w)}{\partial w}\approx\frac{1}{\sigma^2}(r(w)-w)\tag{4}$$ 我认为：可以将$p(w)$理解成目标函数，即我们想要最大化的对象，优化过程最重要的就是要用到梯度进行梯度下降或者梯度上升。右边的部分就是用于估计梯度式子。其中$\sigma^2$是高斯噪声的方差，$r(w)$是降噪自动编码器，$w$是输入的权重。利用这个式子可以估计梯度。</p>
-<p><strong>更新权重</strong> 当我们训练好了我们的降噪自动编码器就可以利用公式5进行梯度上升来更新权重了。下面最重要的问题就是权重初始值是如何获得的？基类的权重实际上是已知的。因此对于基类，权重的初始值就是这个已知值。而对于新类，它的权重初始值是用各个各个类别的样本的特征向量的平均值来替代（公式6）。<br>$$w\leftarrow w+\epsilon<em>\frac{\partial logp(w|D_{tr})}{\partial w}=w+\epsilon</em>(r(w)-w)\tag{5}$$ $$w_i=\begin{cases}w_{i}^{bs} &amp; if\ i\ is\ a\ base\ class\\frac{1}{K}\sum^{K}<em>{k=1}F(x</em>{k,i}|\theta) &amp; otherwise\end{cases}\tag{6}$$ 至此，权重生成函数首先利用公式6来生成初始权重，然后利用公式5来进行权重更新。在公式5中有一个重要的部分$r(w)$，即降噪自动编码器，下面就介绍降噪自动编码器是如何实现的。</p>
-<h3 id="降噪自动编码机"><a href="#降噪自动编码机" class="headerlink" title="降噪自动编码机"></a>降噪自动编码机</h3><p>给降噪自动编码器输入加入噪声的数据，它能够清理这些噪声，然后输出干净版本的数据。通过训练，降噪自动编码器能够学习数据的结构。<br><strong>输入：</strong> 加噪的权重向量<br><strong>输出：</strong> 干净的权重向量</p>
-<p>本文使用的是基于episode$^{[1]}$的训练方法。利用伪新类构建的数据集来训练DAE。所谓伪新类是指，这些类是从基类中抽取的一部分类，我们把它当做是新类，实际上，它并不是。伪新类中类的数量为$\tilde{N}<em>{nv}$。抽取完伪新类后，剩余的部分($\tilde{N}</em>{bs}=N_{bs}-\tilde{N}_{nv}$)继续作为基类。对伪新类中每个类抽取$K$个样本作为训练数据集，每个类抽取$M$个样本作为验证数据集。</p>
-<p>对DAE输入加入高斯噪声的初始化的权重$\tilde{w}$，DAE输出它重构出的权重$\hat{w}$。加噪过程见公式7.<br>$$\tilde{w}={\tilde{w_i}+\epsilon}^{\tilde{N}=\tilde{N}<em>{bs}+\tilde{N}</em>{nv}}_{i=1} \ \epsilon\sim N(0,\sigma)\tag{7}$$ 这里要注意的是，输入的w包含所有的基类(伪新类和剩余基类)的权重向量。因为他要对所有基类上的类别都进行计算分类得分。</p>
-<h4 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h4><p>损失函数由两部分组成，一部分是DAE重构出的权重和已知的权重的差的均方值。另一部分是在验证集上计算出来的分类损失。该分类损失的核心部分仍然是交叉熵。见公式8<br>$$\frac{1}{N}\sum_{i=1}^{\tilde{N}}||\hat{w}<em>i-{w}_i^{*}||^2+\frac{1}{M}\sum</em>{m=1}^{M}loss(x_m,y_m|\tilde{w})\tag{8}$$ 是不是利用这个损失函数来计算梯度，然后更新降噪自动编码器的参数，也就是训练DAE。</p>
-<h3 id="图神经网络"><a href="#图神经网络" class="headerlink" title="图神经网络"></a>图神经网络</h3><h4 id="构建图"><a href="#构建图" class="headerlink" title="构建图"></a>构建图</h4><p>GNN能够考虑到类之间的关系，因此作者选择使用GNN来实现DAE。图$G=(V,E)$中的一个结点表示一个类。如果两个结点之间存在边，则表示这两个类具有很大的相似度。本文中，对每个结点都选择与它最相似的10个结点相连。通过两个类的权重向量的余弦相似度值来衡量两个类的相似程度。边的权值在余弦相似度值的基础上又加了一个softmax操作。这样就能够保证，与某个结点相连的10个边上的权值之和为1。第i个类（结点）的所有的邻居用$\mathcal{N}(i)={j, \forall(i,j)\in E}$来表示。用$h^{(l)}=(h_{i}^{(l)})_{i=1}^{N}$来表示图中N个类在图神经网络第$l$层计算出的特征向量。</p>
-<p><strong>图神经网络一般由两个函数组成</strong>：一个是聚集函数，用于从邻居结点上聚集信息；另一个是更新函数，综合考虑结点当前的状态，以及从邻居结点上聚集的信息来更新结点的状态。在本文中的聚集函数定义如公式9，更新函数定义如公式10<br>$$h_{\mathcal{N(i)}}^{(l)}=AGGREGATE(h_{j}^{(l)}, \forall j\in \mathcal{N(i)})\tag{9}$$ $$h_{i}^{(l+1)}=UPDATE(h_{i}^{(l)},h_{\mathcal{N(i)}}^{(l)})\tag{10}$$</p>
-<h4 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h4><p><strong>输入：</strong> 与每个结点相邻的所有邻居结点的特征向量。<br><strong>输出：</strong> 来自邻居结点信息向量的线性组合。</p>
-<p>一般来说，聚集函数直接将来自邻居结点的信息向量进行线性组合，如公式11所示。<br>$$h_{\mathcal{N(i)}}^{(l)}=\sum_{j\in \mathcal{N(i)}}a_{ij}*q^{(i)}(h^{(l)}<em>{i}, h^{(l)}</em>{j})\tag{11}$$ 在公式11中，$q^{(i)}(h^{(l)}<em>{i}, h^{(l)}</em>{j})$就是用于计算来自邻居结点的信息向量。本文在实现$q$函数的时候受到了关系网络的启发。首先将输入的两个向量分别在相同的全连接线性层（是不是就是说没用加激活函数的层）上进行计算，然后将计算之后的输出加在一块。之后再经过BatchNorm + Dropout + LeakyReLU来得到最终的消息向量。</p>
-<h4 id="更新函数"><a href="#更新函数" class="headerlink" title="更新函数"></a>更新函数</h4><p><strong>输入：</strong> 每个结点的第l层的特征向量以及聚集到的信息向量<br><strong>输出：</strong> 第l+1层的特征向量</p>
-<p>更新函数的具体工作原理如公式12<br>$$h_{i}^{(l+1)}=[h_{i}^{(l)};u^{(l)}([h_{i}^{(l)};h_{\mathcal{N(i)}}^{(l)}])]\tag{12}$$ 更新函数的输入有两个向量，一个是从邻居结点上聚集到的信息$h_{\mathcal{N(i)}}^{(l)}$，另一个是结点在前一层计算出的特征向量$h_{i}^{(l)}$。它首先将这两个向量合并，然后在非线性的一个函数中进行传播，途经a fully connected linear layer + BatchNorm + Dropout + LeakyReLU + L2-normalization units。这个过程就是$u^{(l)}(·)$的作用。计算出结果后再同$h_{i}^{(l)}$合并作为新的特征向量。但是GNN的最后一层也就是预测层不同于之前的部分，它的计算公式如公式13 $$\delta w_i, o_i=[u^{(L-1)}([h_{i}^{(L-1)};h_{\mathcal{N(i)}}^{(L-1)}])]\tag{13}$$ 其中$u^{(L-1)}$的结构是：a fully connected linear layer + L2 normalization units，这部分用于计算$\delta w_i$；a fully connected linear layer + sigmoid unit，这部分用于计算$o_i$。使用公式14来计算重构的权重，其中$o_i$像一个控制门，来控制$\delta w_i$的贡献。<br>$$\hat{w}_i=w_i+o_i\odot \delta w_i\tag{14}$$。</p>
-<h3 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h3><p>1、首先构建基类和伪新类数据集。伪新类模拟了模型未见过的类别。<br>2、初始化权重向量，然后加入高斯噪声。对基类和伪新类都加噪。<br>3、将加噪的权重向量输入到降噪自动编码机中（图神经网络），让降噪自动编码器输出重构的权重向量。<br>4、计算损失。一部分是重构的权重和已知权重的差别，一部分是利用重构的权重预测伪新类得到的损失。<br>5、利用这个损失来计算梯度，完成自动编码器的训练。<br>6、利用训练好的自动编码器来进行梯度上升，生成权重。</p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>[1]episode training：每一个episode便是训练一次，有点类似于传统训练方法里的一个batch，然后这个episode内部由两部分构成：support set和query set.<a href="http://www.xuwei.io/2019/07/01/few-shot-learning%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="noopener">$^{[1]}$</a><br>[2]support set：在构建这个episode时候，会从全量数据中每个episode都随机选择一些类别，比如C个类别，然后从数据集中同样随机从这选定的C个类别中选取同样数量的K个样本，这便构成了support set，总共包含C * K个样本。一般而言模型会在这个上面进行一次训练。这样构造出来的任务便是C-way K-shot.<a href="http://www.xuwei.io/2019/07/01/few-shot-learning%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="noopener">$^{[1]}$</a><br>[3]query set: 和support set类似，会在剩下的数据集样本中给C个类采样一些样本作为query set，一般而言，模型在support set进行一次训练后，会在query set上求得loss.<a href="http://www.xuwei.io/2019/07/01/few-shot-learning%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="noopener">$^{[1]}$</a><br>[4]小样本学习：并不是所有情况下，训练样本都足够，在训练样本少的情况下学习模型参数。<br>[5]高斯噪声：噪声服从高斯分布.<a href="https://baike.baidu.com/item/%E9%AB%98%E6%96%AF%E5%99%AA%E5%A3%B0" target="_blank" rel="noopener">$^{[2]}$</a><br>[6]图神经网络：<a href="https://blog.csdn.net/u012526436/article/details/106528029" target="_blank" rel="noopener">$^{[3]}$</a><a href="https://mp.weixin.qq.com/s?__biz=MzIyNjM2MzQyNg==&mid=2247566810&idx=1&sn=bf1c700c56ea01529d4bfc7641539111&chksm=e8721497df059d811161e1ebbc71c978b4bf10bec72d96756b8d7c1a0782ea2af25505fa96f9&mpshare=1&scene=23&srcid=0425KHhzwAGTOpFyQuUWlwOF&sharer_sharetime=1619282653136&sharer_shareid=d1285551df2fe01b22e99f17b2eb99fb#rd" target="_blank" rel="noopener">$^{[4]}$</a><br>[7]softmax：一种激活函数。这里有关于temperature parameter的介绍<a href="https://zhuanlan.zhihu.com/p/132785733" target="_blank" rel="noopener">$^{[5]}$</a><br>[8]消融实验：有一点像控制变量的感觉。作者提出了一种方案，同时改变了多个条件/参数，他在接下去的消融实验中，会一一控制一个条件/参数不变，来看看结果，到底是哪个条件/参数对结果的影响更大。<a href="https://blog.csdn.net/Sandwichsauce/article/details/89162570" target="_blank" rel="noopener">$^{[6]}$</a><br>[9]元学习：具备自学能力，能够充分利用过去的经验来指导未来的任务。它被认为是通用人工智能的关键。</p>
+                <h3 id="第10章"><a href="#第10章" class="headerlink" title="第10章"></a>第10章</h3><h4 id="调参"><a href="#调参" class="headerlink" title="调参"></a>调参</h4><blockquote>
+<p>1、要调哪些参数<br>2、各个参数调试的一般性方法是什么<br>可以调的参数：网络结构，神经网络的层数，每层中神经元的个数，每层的激活函数，权重的初始化方法</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -722,7 +695,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://allenwrong.github.io/2021/04/24/wDAE-GNNReadNote/">https://allenwrong.github.io/2021/04/24/wDAE-GNNReadNote/</a>
+                    <a href="https://allenwrong.github.io/2021/05/01/HNMLWithSkTfReadNote/">https://allenwrong.github.io/2021/05/01/HNMLWithSkTfReadNote/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,11 +732,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">小样本学习</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1190,49 +1159,39 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/04/26/TransMatchReadNote/">
+                <a href="/2021/05/01/HNMLWithSkTfReadNote/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="《TransMatch· A Transfer-Learning Scheme for Semi-Supervised Few-Shot Learning》论文阅读">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="HNMLWithSkTfReadNote">
                         
-                        <span class="card-title">《TransMatch· A Transfer-Learning Scheme for Semi-Supervised Few-Shot Learning》论文阅读</span>
+                        <span class="card-title">HNMLWithSkTfReadNote</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这篇文章提出了一种半监督小样本学习的迁移学习模式，该方法能够重充分利用有标签的基类和无标签的新类上的信息
+                            本文是阅读《hand on machine learning with scikit-learn and tensorflow》的笔记。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-01
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AE%BA%E6%96%87/" class="post-category">
-                                    论文
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Guanguan
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">小样本学习</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1243,39 +1202,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/24/HowToLearn/">
+                <a href="/2021/04/26/PaperReadBlogFramework/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="如何学习">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="论文阅读笔记的博客框架">
                         
-                        <span class="card-title">如何学习</span>
+                        <span class="card-title">论文阅读笔记的博客框架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            练习英文科技论文常用的短语
-    .input{
-        width:450px;
-    }
-
-例如：在这个方向上：  
-提交    清除    提示
-
-    document.getElementById("mySubmit
+                            本文给出了我在阅读论文做总结时使用的博客框架、排版结构和一些经验方法。主要包括必须回答的问题以及用大小标题来表示内容。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%A4%BA%E4%BE%8B/" class="post-category">
-                                    示例
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" class="post-category">
+                                    学习方法
                                 </a>
                             
                             
@@ -1285,8 +1236,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A4%BA%E4%BE%8B/">
-                        <span class="chip bg-color">示例</span>
+                    <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">论文阅读</span>
                     </a>
                     
                 </div>
@@ -1424,13 +1375,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
-
 
     <footer class="page-footer bg-color">
     <div class="container row center-align" style="margin-bottom: 15px !important;">
@@ -1443,7 +1387,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.6k</span>&nbsp;字
+                class="white-color">49k</span>&nbsp;字
             
             
             

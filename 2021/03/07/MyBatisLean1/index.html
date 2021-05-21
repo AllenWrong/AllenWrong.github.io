@@ -697,11 +697,13 @@
 <h2 id="MyBaits的运行原理"><a href="#MyBaits的运行原理" class="headerlink" title="MyBaits的运行原理"></a>MyBaits的运行原理</h2><h2 id="Mybatis的占位符与拼接符"><a href="#Mybatis的占位符与拼接符" class="headerlink" title="Mybatis的占位符与拼接符"></a>Mybatis的占位符与拼接符</h2><p><code>#{}</code>是Mybatis的占位符，在传参时在参数值外面添加一对单引号。</p>
 <pre class="line-numbers language-SQL"><code class="language-SQL">select * from user where cname=#{value}
 转换后
-select * from user where cname='zhangsan'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+select * from user where cname='zhangsan'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><code>${}</code>符号是MyBatis 的拼接符，对传入的参数不做任何修饰，直接进行简单的字符串拼接。</p>
 <pre class="line-numbers language-SQL"><code class="language-SQL">select * from user where cname=${value}
 转换后
-select * from user where cname=zhangsan<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+select * from user where cname=zhangsan
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="MyBatis原始Dao的开发方式"><a href="#MyBatis原始Dao的开发方式" class="headerlink" title="MyBatis原始Dao的开发方式"></a>MyBatis原始Dao的开发方式</h2><h2 id="MyBatis的高级Mapper代理"><a href="#MyBatis的高级Mapper代理" class="headerlink" title="MyBatis的高级Mapper代理"></a>MyBatis的高级Mapper代理</h2><p>原始Dao的开发方式在创建Dao接口的之后还要定义其实现类。使用MyBatis高级Mapper代理的方式，只需要定义接口即可，不用再为接口提供实现类。但要编写mapper.xml配置文件。而且mapper.xml配置文件和接口的定义需要遵循一定的开发规范：</p>
 <ul>
 <li>为了体现高级Mapper代理的方式，可以将接口名使用Mapper进行结尾（例如：UserMapper）。并将mapper.xml文件的namespace命名空间指定为Mapper接口的地址。（例如：<code>&lt;mapper namespace=&quot;com.andrewguan.user.dao.UserMapper&quot;&gt;</code>）</li>
@@ -736,7 +738,8 @@ select * from user where cname=zhangsan<span aria-hidden="true" class="line-numb
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dataSource</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environment</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>environments</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上述xml文件中属性的解释：</p>
 <ol>
 <li>transactionManager 元素用于配置事务管理。type指定它的类型为jdbc</li>
@@ -748,12 +751,14 @@ select * from user where cname=zhangsan<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAliases</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAlias</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.andrewguan.user.pojo.User<span class="token punctuation">"</span></span> <span class="token attr-name">alias</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAlias</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.andrewguan.role.pojo.Role<span class="token punctuation">"</span></span> <span class="token attr-name">alias</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>role<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这段代码的意思为type指定的类型起别名，在mapper.xml的文件中指定parameterType或resultType时可以使用别名，从而简化了代码。</p>
 <p><strong>2. 批量别名定义</strong></p>
 <pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAliases</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.andrewguan.user.pojo<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>为这个包下的所有的类起别名，别名就是类名，大小写都可以。</p>
 <p><strong>Mybatis内置的别名</strong><br>值得一提的是，简单类型的别名前面有一个下划线<br>| 别名 | 映射类型 | 别名 | 映射类型 | 别名 | 映射类型 |<br>| —- |  —— | —- | ——- | —- |  ——- |<br>| _byte | byte | _long | long | _short | short |<br>| _int | int | _integer | int | _boolean | boolean |<br>| _float | float | short | Short | string | String |<br>| byte | Byte | _long | long | int | Integer |<br>| integer | Integer | float | Float | double | Double |<br>| boolean | Boolean | decimal | BigDecimal | bigdecimal | BigDecimal |<br>| object | Object | map | Map | hashMap | HashMap |<br>| list | List | arrayList | ArrayList | collection | Collection |<br>| iterator | Iterator |   |   |   |   |  </p>
 <p>在Idea中创建Maven项目<br>MyBatisPom.xml的配置</p>
@@ -1490,7 +1495,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.6k</span>&nbsp;字
+                class="white-color">49k</span>&nbsp;字
             
             
             

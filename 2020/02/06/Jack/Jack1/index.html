@@ -713,17 +713,21 @@
 <h3 id="and门"><a href="#and门" class="headerlink" title="and门"></a>and门</h3><p>输入管脚：a，b<br>输出管脚：out<br>公式如下：$$out=\overline{\overline{ab}1}$$从公式来看使用两个与非门即可实现，其中一个输入是常量true。</p>
 <h3 id="and16"><a href="#and16" class="headerlink" title="and16"></a>and16</h3><p>这个门是16位按位与门，对每个位执行与操作即可<br>输入管脚：a[16], b[16]<br>输出管脚：out[16];<br>伪码：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">15</span><span class="token punctuation">:</span>
-    out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> and b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+    out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> and b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="not"><a href="#not" class="headerlink" title="not"></a>not</h3><p>非门，利用与非门实现<br>输入管脚：in<br>输出管脚：out<br>公式：$$out=\overline{\overline{in}1}$$</p>
 <h3 id="not16"><a href="#not16" class="headerlink" title="not16"></a>not16</h3><p>16位按位非门，利用已经实现的非门对每位取非即可<br>输入管脚：in[16]<br>输出管脚：out[16]<br>伪码：    </p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">for</span> i<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">15</span><span class="token punctuation">:</span>
-    out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> not in<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+    out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> not in<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="or"><a href="#or" class="headerlink" title="or"></a>or</h3><p>或门，利用与非门和已经实现的非门来实现<br>输入管脚：a[16], b[16]<br>输出管脚：out[16]<br>公式：$$out=\overline{\overline{a}\overline{b}}$$</p>
 <h3 id="or16"><a href="#or16" class="headerlink" title="or16"></a>or16</h3><p>16位按位或<br>输入管脚：a[16], b[16]<br>输出管脚：out[16]<br>伪码：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">15</span><span class="token punctuation">:</span>
-    out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> or b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+    out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> or b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="or8way"><a href="#or8way" class="headerlink" title="or8way"></a>or8way</h3><p>8位全或<br>输入管脚：in[8]<br>输出管脚：out<br>伪码：</p>
-<pre class="line-numbers language-c"><code class="language-c">out <span class="token operator">=</span> <span class="token punctuation">(</span>in<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> or in<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> or <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> or in<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-c"><code class="language-c">out <span class="token operator">=</span> <span class="token punctuation">(</span>in<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> or in<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> or <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> or in<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h3><p>异或门，使用非门，与门，或门来实现，到最底层都是通过与非门实现的<br>输入管脚：a, b<br>输出管脚：out<br>公式：$$out=\overline{a}b+a\overline{b}$$</p>
 <h3 id="mux"><a href="#mux" class="headerlink" title="mux"></a>mux</h3><p>数据选择器，又称多路选择器，根据选择位，确定输出那个值<br>输入管脚：a, b, sel<br>输出管脚：out<br>公式：（根据真值表得到公式）$$out=a\overline{sel}+bsel$$</p>
 <h3 id="mux16"><a href="#mux16" class="headerlink" title="mux16"></a>mux16</h3><p>16位按位选择，只需对每一位分别进行选择即可<br>输入管脚：a[16], b[16],sel<br>输出管脚：out[16]<br>伪码：</p>
@@ -731,17 +735,20 @@
     <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">0</span>
         out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
     <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">1</span>
-        out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        out<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="mux4way16"><a href="#mux4way16" class="headerlink" title="mux4way16"></a>mux4way16</h3><p>16为四选一选择器，类似分治的方法，先两两进行选择，然后再从选出的内容中进行选择<br>输入管脚：a[16], b[16], c[16], d[16], sel[2];<br>输出管脚：out[16]<br>伪码：<br>先根据，sel[0]进行选择，再根据sel[1]进行选择即可</p>
 <pre class="line-numbers language-c"><code class="language-c">out <span class="token operator">=</span> a <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">00</span>
       b <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">01</span>
       c <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">10</span>
-      d <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">11</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+      d <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">11</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="mux8way16"><a href="#mux8way16" class="headerlink" title="mux8way16"></a>mux8way16</h3><p>16为八选一选择器，类似分治的方法，先四四进行选择，然后再从选出的两个中进行选择<br>输入管脚：a[16], b[16], c[16], d[16], e[16], f[16], g[16], h[16], sel[3]<br>输出管脚：out[16]<br>伪码：<br>先根据，sel[0..1]进行选择，再根据sel[2]进行选择即可</p>
 <pre class="line-numbers language-c"><code class="language-c">out <span class="token operator">=</span> a <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">000</span>
       b <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">001</span>
       etc<span class="token punctuation">.</span>
-      h <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">111</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+      h <span class="token keyword">if</span> sel <span class="token operator">==</span> <span class="token number">111</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="dmux"><a href="#dmux" class="headerlink" title="dmux"></a>dmux</h3><p><strong>真值表</strong> </p>
 <table>
 <thead>
@@ -1523,7 +1530,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.6k</span>&nbsp;字
+                class="white-color">49k</span>&nbsp;字
             
             
             

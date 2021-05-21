@@ -699,20 +699,23 @@
     <span class="token keyword">while</span><span class="token punctuation">(</span>R1<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         R1<span class="token operator">--</span><span class="token punctuation">;</span>
         sum<span class="token operator">=</span>sum<span class="token operator">+</span>a<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="实现一个简单的I-O处理程序"><a href="#实现一个简单的I-O处理程序" class="headerlink" title="实现一个简单的I/O处理程序"></a>实现一个简单的I/O处理程序</h3><p>这个I/O程序比较简单，只需要在屏幕上打印黑色像素即可。项目中关于本程序的描述是这样的：Runs an infinite loop that listens to the keyboard input. When a key is pressed (any key), the program blackens the screen, i.e. writes “black” in every pixel; the screen should remain fully black as long as the key is pressed.  When no key is pressed, the program clears the screen, i.e. writes “white” in every pixel; the screen should remain fully clear as long as no key is pressed.<br>书中关于本程序的描述：这个程序是个无限循环程序，它侦测键盘的输入。当按下任一键时，程序将屏幕变黑，即将“black”写入每个像素。当没有键按下时，屏幕应该被清屏。你以任何空间顺序来选择屏幕的变黑和清屏，只要连续地按一个键足够长时间，屏幕就会全黑，长时间不按键就会清屏。<br>看完两端，便会有一个几个问题：<br>1、如何定义无限循环？<br>2、什么意味着监听到按键？<br>3、监听到按键后，如何将屏幕变黑？<br>4、如何清屏？<br>实际上这些问题并不难，重点理解这个过程。首先需要注意的是SCREEN和KBD被预定义为表示屏幕内存映像和键盘内存映像的基地址。<br>接下来我们逐个解决这些问题：<br><strong>如何定义无限循环？</strong><br>定义无限循环很简单，重点在于结束时候的跳转，只要我们保证，它总是跳转到起始位置即可，代码如下：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token punctuation">(</span>LOOP<span class="token punctuation">)</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 @LOOP
-<span class="token number">0</span><span class="token punctuation">;</span>JMP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">0</span><span class="token punctuation">;</span>JMP
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>什么意味着监听到按键？</strong><br>如果有按键，那么键盘内存映像中一定不能为0，所以只要判断基地址KBD中的内容是否大于零即可。由于程序是在无限循环执行，所以只要按键不停，那么KBD的内容就不为零，程序就会一直检测到有按键，然后会一直在屏幕上打印。如果键盘内存映像中的值为0，说明没有按键，此时，应该去执行清屏操作（跳转过去的方式有多种，这里只列出了一种）。所以这个功能的代码如下：</p>
 <pre class="line-numbers language-c"><code class="language-c">@KBD
 D<span class="token operator">=</span>M    <span class="token comment" spellcheck="true">// get the basic address of th keyboard memory-map</span>
 @FILL
 D<span class="token punctuation">;</span>JGT  <span class="token comment" spellcheck="true">// if D is greater than zero, jump to FILL</span>
 @CLEAR <span class="token comment" spellcheck="true">// if D is not greater than zero, jump to CLEAR</span>
-<span class="token number">0</span><span class="token punctuation">;</span>JMP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">0</span><span class="token punctuation">;</span>JMP
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>如何将屏幕变黑？</strong><br>实际上这就是前面程序代码中FILL实现的功能。首先我么得确定，将那个单元变黑，实际上就是将该单元存储的值置为-1（参考补码的内容理解细节）。因此，我们要判断屏幕内存映像中第一个可用单元（当前单元）是什么，因此，我们需要一个单元来存储当前单元的地址，不妨存储在M[0]中，接着，如何判断屏幕内存映像是否已满，即屏幕已经全部置黑。这可以通过将当前单元地址与屏幕内存映像的最大单元地址进行比较，因此，我们需要来存储最大单元地址，不妨用M[1]。需要注意的是，当前单元表示的是第一个可用单元。如果没有可用单元的话，那么M[1]-M[0]&lt;0，如果等于零，则表示，最后一个单元可用。现在完成了是否已满的判断，如果满，那么我们无法写入黑色像素，直接返回LOOP，如果未满，则继续在当前单元写入黑色像素，写完之后返回LOOP。如果按键不停的话，那么循环会一直检测到按键，也就会一直执行FILL模块，每执行一次会填充一各单元的黑色像素，因此，在屏幕上看到的像素显示应该是有时间差距的，而不是连续的。本模块的代码如下：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">/* 这段代码应该定义在LOOP之前 */</span>
 @SCREEN
@@ -741,7 +744,8 @@ D<span class="token operator">=</span>M   <span class="token comment" spellcheck
 D<span class="token operator">=</span>D<span class="token operator">+</span><span class="token number">1</span> <span class="token comment" spellcheck="true">// add the current address</span>
 M<span class="token operator">=</span>D
 @LOOP
-<span class="token number">0</span><span class="token punctuation">;</span>JMP <span class="token comment" spellcheck="true">// return to the LOOP</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">0</span><span class="token punctuation">;</span>JMP <span class="token comment" spellcheck="true">// return to the LOOP</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>如何清屏？</strong><br>这个问题类似于第三个问题的反过程。当程序检测到没有按键时，就会进入清屏的子程序。然后进行清屏操作。如果要清屏，我们只需要获得程序当前地址，对它减一，然后与SCREEN比较是否小与SCREEN（因为小与SCREEN意味着清屏结束），如果大于或等于那么我们就将当前地址中的内容置零，也就是清屏。那么结束条件，前面已经提到了，就是小与SCREEN一位置结束。在这种汇编程序中，通过是将两数相减，然后跟零比较来判断两数的大小。代码如下：</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token punctuation">(</span>CLEAR<span class="token punctuation">)</span>
 @<span class="token number">0</span>
@@ -756,7 +760,8 @@ D<span class="token operator">=</span>M     <span class="token comment" spellche
 A<span class="token operator">=</span>D     <span class="token comment" spellcheck="true">// store the current address in the A register</span>
 M<span class="token operator">=</span><span class="token number">0</span>     <span class="token comment" spellcheck="true">// clear the "black", in another word</span>
 @LOOP
-<span class="token number">0</span><span class="token punctuation">;</span>JMP   <span class="token comment" spellcheck="true">// return to LOOP</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">0</span><span class="token punctuation">;</span>JMP   <span class="token comment" spellcheck="true">// return to LOOP</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1507,7 +1512,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.6k</span>&nbsp;字
+                class="white-color">49k</span>&nbsp;字
             
             
             

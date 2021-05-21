@@ -693,16 +693,17 @@
             chs<span class="token punctuation">[</span>from<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> chs<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">;</span>
             chs<span class="token punctuation">[</span>to<span class="token operator">--</span><span class="token punctuation">]</span> <span class="token operator">=</span> ch<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="字符串的全排列"><a href="#字符串的全排列" class="headerlink" title="字符串的全排列"></a>字符串的全排列</h4><p><strong>输入：</strong>字符串String<br><strong>输出：</strong>该字符串全排列的所有情况<br><strong>例如：</strong>String=”123”。那么我们期待的输出为：123,132,213,231,312,321。顺序可以不同<br><strong>思路：</strong>将字符串全排列问题认为是一个全排列问题，我想大家应该不会有意见。全排列问题是一个大概念，字符串的全排列是它的一个子集。如果将字符串中的字符认为是一种抽象的表示的话，那么我们可以衍生出其他的同类问题。比如：将字符认为是对对象的抽象，那么我们可以得到对象的全排列问题；将字符认为是对结点的抽象，那么我们可以得到对结点的全排列问题。要解决全排列问题，可能要强迫自己接受一个事实，那就是全排列问题可以是一个递归问题。这是用递归算法求解全排列问题的出发点，认清问题的类型，才能够选择合适的方法。我目前还没有深刻的理解全排列问题可以是一个递归问题这个事实，但是我已经让我自己接受了这个事实，我还需要花点时间慢慢的理解它。如果你很难接受这个知识点的话，那么可以观察一下全排列的数学公式。它是阶乘的形式，阶乘是递归的。这个现象可以带给我们一种递归的感觉，让我们先感觉到全排列有点递归的意思，辅助我们接收这个知识点。至于深刻理解这个问题，恐怕还要费点时间。总之，递归的观点是解决全排列问题的一个出发点。把一个四个字符的字符串1234进行全排列，让1分别和后面的三个字符进行交换以表示第一个位置上可以取得的所有情况，然后保持第一个位置不变，对后面的三个字符进行全排列，这样的三个字符的全排列仍然是相同的情况，只不过规模更小了，那么我们只需要做相同的操作，让第一个字符分别和后面的两个字符进行交换以表示第一个位置上可以取得的所有情况，然后保持第一个位置不变，对后面的两个字符进行全排列…这样下去，将会到达一种平凡的情况，对一个字符进行全排列，这时候只需要做简单打印字符串的操作就可以了。下面是代码：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Permutation</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 由于字符串是不可变的，所以将它转换成字符数组进行处理</span>
     <span class="token keyword">private</span> <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> chs<span class="token punctuation">;</span>
-
+    
     <span class="token keyword">public</span> <span class="token function">Permutation</span><span class="token punctuation">(</span>String string<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>chs <span class="token operator">=</span> string<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
+    
     <span class="token comment" spellcheck="true">/** 递归函数 */</span>
     <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">permutate</span><span class="token punctuation">(</span><span class="token keyword">int</span> from<span class="token punctuation">,</span> <span class="token keyword">int</span> to<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 当from=to的时候，表示从这个字符开始到这个字符结束，进行全排列</span>
@@ -711,7 +712,7 @@
         <span class="token keyword">if</span> <span class="token punctuation">(</span>from <span class="token operator">==</span> to<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>chs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-
+        
         <span class="token comment" spellcheck="true">// 如果不是平凡的情况，那么就交换字符，然后对除第一个字符之外的</span>
         <span class="token comment" spellcheck="true">// 后面的字符进行全排列(from+1)体现了这一点。</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> from<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> to<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -726,19 +727,20 @@
             <span class="token function">swap</span><span class="token punctuation">(</span>from<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-
+    
     <span class="token comment" spellcheck="true">/** 交换i位置和j位置上的字符 */</span>
     <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">char</span> temp <span class="token operator">=</span> chs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
         chs<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> chs<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
         chs<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
+    
     <span class="token comment" spellcheck="true">/** 暴露给用户的方法调用 */</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doPermutation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token function">permutate</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>chs<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="带重复字符的字符串的全排列"><a href="#带重复字符的字符串的全排列" class="headerlink" title="带重复字符的字符串的全排列"></a>带重复字符的字符串的全排列</h4><p><strong>输入：</strong>字符串String，其中可以有重复字符，可以没有重复字符，但是算法会考虑到重复字符的问题<br><strong>输出：</strong>该字符串全排列的所有情况，并且会考虑重复字符的情况<br><strong>例如：</strong>String=”122”。那么我们期待的输出为：122,212,221。顺序可以不同<br><strong>思路：</strong></p>
 
             </div>
@@ -1478,7 +1480,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.6k</span>&nbsp;字
+                class="white-color">49k</span>&nbsp;字
             
             
             

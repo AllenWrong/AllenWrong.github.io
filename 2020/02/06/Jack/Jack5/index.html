@@ -699,7 +699,7 @@
 <li>Computer：完整的一个计算机平台。运行在仿真平台上</li>
 </ul>
 <h2 id="2-实现总结"><a href="#2-实现总结" class="headerlink" title="2.实现总结"></a>2.实现总结</h2><h3 id="Memory："><a href="#Memory：" class="headerlink" title="Memory："></a>Memory：</h3><p>输入管脚：in[16], load, address[15]<br>输出管脚：out[16]<br>Memory芯片主要由三个底层芯片构建：RAM16K，Screen，KeyBoard。同时我们必须通过这三个底层芯片来实现一个统一的逻辑地址空间，这个空间从地址0到24567。构建这个连续的地址空间的方法我们可以参考之前第三章由小RAM构建大RAM的方法。<br>内存的功能首先能够根据address选定需要进行操作的单元。<br>然后将load信号给指定的内存单元。根据load信号判断是进行写入还是继续保持。<br>下面进行地址连线：参考自计算机组成原理（注意此地址只有15位）<br>RAM16K的地址空间：000 0000 0000 0000 ~ ‭011 1111 1111 1111‬<br>屏幕内存映像的地址空间(8K)：‭100 0000 0000 0000‬ ~ ‭101 1111 1111 1111‬<br>键盘内存影响的地址空间：‭110000000000000<br>1、首先根据地址进行判断，应该将控制信号发送给哪个地址空间。可以使用DMux实现‬<br>根据第15位进行二选一，可以选出RAM和映像，然后再对选出的结果进行二选一，根据第14位进行选择可以选出屏幕和键盘。由于所给出的地址空间不会超过110000000000000‬，所以我们只需要进行一次判断就可以了，而不用考虑后面13位的判断。<br>2、然后将控制信号，输入数据和片内选择地址给各自的地址空间即可<br>Screen和Keyboard芯片都是内置好的，因此直接调用接口即可。实际上我们也可以根据第三章的方法构建自己的Screen和Keyboard</p>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>输入管脚：inM[16], instruction[16], reset<br>输出管脚：outM[16], writeM, addressM[15], pc[15]<br>CPU实现的一种推荐方案：<br><img src="https://img-blog.csdnimg.cn/20200118154540944.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjM0Mjgz,size_16,color_FFFFFF,t_70" alt=""><br>1、回顾一下第四章的指令格式：<br>A-指令：$0vvv\ vvvv\ vvvv\ vvvv$。MSB0，其余15位表示地址值<br>C-指令：$111a\ c_1c_2c_3c_4\ c_5c_6d_1d_2\ d_3j_1j_2j_3$。MSB为1，接着的两位无效。a位域控制与D进行计算的是A还是M，c位域是计算操作的控制，$d_1$控制是否将ALU的计算结果存在A中，$d_2$控制是否将ALU的计算结果存在D中，$d_3$控制是否将ALU的计算结果存在M中，$j_1j_2j_3$是指示调转的控制。<br>2、解码指令<br>如果是A指令，那么要将地址加载到A寄存器中，如果是C-指令，则考虑$d_1$，是否需要将ALU的计算结果保存在A寄存器中。不妨暂时将第一个Mux的控制位记为$c_m$，将A寄存器的控制位记作$c_a$。那么我们可以得到以下真值表：</p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>输入管脚：inM[16], instruction[16], reset<br>输出管脚：outM[16], writeM, addressM[15], pc[15]<br>CPU实现的一种推荐方案：<br><img src="https://img-blog.csdnimg.cn/20200118154540944.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjM0Mjgz,size_16,color_FFFFFF,t_70"><br>1、回顾一下第四章的指令格式：<br>A-指令：$0vvv\ vvvv\ vvvv\ vvvv$。MSB0，其余15位表示地址值<br>C-指令：$111a\ c_1c_2c_3c_4\ c_5c_6d_1d_2\ d_3j_1j_2j_3$。MSB为1，接着的两位无效。a位域控制与D进行计算的是A还是M，c位域是计算操作的控制，$d_1$控制是否将ALU的计算结果存在A中，$d_2$控制是否将ALU的计算结果存在D中，$d_3$控制是否将ALU的计算结果存在M中，$j_1j_2j_3$是指示调转的控制。<br>2、解码指令<br>如果是A指令，那么要将地址加载到A寄存器中，如果是C-指令，则考虑$d_1$，是否需要将ALU的计算结果保存在A寄存器中。不妨暂时将第一个Mux的控制位记为$c_m$，将A寄存器的控制位记作$c_a$。那么我们可以得到以下真值表：</p>
 <table>
 <thead>
 <tr>
@@ -734,7 +734,7 @@
 <td>1</td>
 </tr>
 </tbody></table>
-<p>由真值表我们可以得到控制位的公式：$c_m=\overline{[15]},c_a=\overline{[15]\overline{d_1}}$。<br>对于A-指令以上的工作就已经足够了。而对于C-指令我们还需要做其他的工作。<br>3、C-指令的解码<br>C指令的$d_1$位已经被解析完了。接下来从左向右开始解码。$a$是控制选择A/M的控制位，所以它应该在与指令最高位取与后给第二个Mux。$c_1 .. c_6$是控制计算函数的，所以它们应该给ALU的控制位，注意要与指令最高位取与。$d_2$是控制计算结果是否保存在D中的，所以它与指令最高位取与后作为控制信号给D寄存器，$d_3$是控制计算结果是否保存在M中的，所以它作为输出与指令最高位取与后给writeM。接下来$j_1j_2j_3$是控制跳转的，总体上来看，只有两种现象，一种是顺序执行，即PC加一，另一种是跳转到地址为A中的地址的单元。根据课本给出的编码：<br><img src="https://img-blog.csdnimg.cn/20200118160732658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjM0Mjgz,size_16,color_FFFFFF,t_70" alt=""><br>那么究竟是否需要跳转要根据ALU的计算结果进行判断，ALU有两个特别的输出信号：zr（当计算结果等于0时为1），ng（当计算结果小于零时为1）。所以我们可以推出$\overline{ng+zr}$（当计算结果大于零时为1）。结合jump域和ALU的输出结果，可以得到如下真值表：</p>
+<p>由真值表我们可以得到控制位的公式：$c_m=\overline{[15]},c_a=\overline{[15]\overline{d_1}}$。<br>对于A-指令以上的工作就已经足够了。而对于C-指令我们还需要做其他的工作。<br>3、C-指令的解码<br>C指令的$d_1$位已经被解析完了。接下来从左向右开始解码。$a$是控制选择A/M的控制位，所以它应该在与指令最高位取与后给第二个Mux。$c_1 .. c_6$是控制计算函数的，所以它们应该给ALU的控制位，注意要与指令最高位取与。$d_2$是控制计算结果是否保存在D中的，所以它与指令最高位取与后作为控制信号给D寄存器，$d_3$是控制计算结果是否保存在M中的，所以它作为输出与指令最高位取与后给writeM。接下来$j_1j_2j_3$是控制跳转的，总体上来看，只有两种现象，一种是顺序执行，即PC加一，另一种是跳转到地址为A中的地址的单元。根据课本给出的编码：<br><img src="https://img-blog.csdnimg.cn/20200118160732658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjM0Mjgz,size_16,color_FFFFFF,t_70"><br>那么究竟是否需要跳转要根据ALU的计算结果进行判断，ALU有两个特别的输出信号：zr（当计算结果等于0时为1），ng（当计算结果小于零时为1）。所以我们可以推出$\overline{ng+zr}$（当计算结果大于零时为1）。结合jump域和ALU的输出结果，可以得到如下真值表：</p>
 <table>
 <thead>
 <tr>
@@ -1499,7 +1499,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.6k</span>&nbsp;字
+                class="white-color">49k</span>&nbsp;字
             
             
             
