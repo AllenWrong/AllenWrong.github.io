@@ -1,0 +1,20 @@
+# Site settings
+title: Andrew Guan blog
+email: 884691896@qq.com
+description: "凡夫俗子，混得碎银几两罢了"
+baseurl: ""
+url: "http://allengwrong.github.io"
+github_username:  AllenWrong
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+  
+host: 127.0.0.1
+port: 4001

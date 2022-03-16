@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<style>
+  .wrap {
+      max-width: 900px;
+  }
+  p {
+      /* font-family: sans-serif; */
+      /* font-family: Yahei; */
+      font-size: 17px;
+      overflow-wrap: break-word; /* allow wrapping of very very long strings, like txids */
+  }
+  .post pre,
+  .post code {
+      background-color: #fafafa;
+      font-size: 13px; /* make code smaller for this post... */
+  }
+  pre {
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
+</style>
+
+<div class="home">
+  
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <br>
+        {{ post.excerpt }}
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
