@@ -51,15 +51,13 @@ class FormatContent:
 
         header = f'---\n' \
                  f'layout: post\n' \
-                 f'omments: true\n' \
                  f'title: "{input_file.split(".")[0]}"\n' \
                  f'excerpt: ""\n' \
-                 f'date: {self.time_stamp_to_time(time.time(), True)}\n' \
                  f'mathjax: false\n' \
                  f"---\n"
         txt = header + txt
 
-        with open("./" + "f_" + input_file, "w") as f:
+        with open("./" + "f_" + input_file, "w", encoding="utf-8") as f:
             f.write(txt)
 
 

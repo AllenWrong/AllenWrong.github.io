@@ -1,11 +1,10 @@
 ---
 layout: post
-omments: true
-title: "LR Scheduler"
+title: LR Scheduler
 excerpt: ""
-date: 2022-03-15 18:13:09
 mathjax: false
 ---
+
 ```python
 from torch.optim.lr_scheduler import LambdaLR, MultiplicativeLR, StepLR, MultiStepLR
 from torch.optim.lr_scheduler import ConstantLR, LinearLR, ExponentialLR, CosineAnnealingLR 
@@ -42,9 +41,9 @@ cfg = Config()
 
 ## LambdaLR
 
-���ݴ������������lambda����ѧϰ�ʵĵ�����������ѧϰ�� = ���ѧϰ�� * ������������ֵ
+根据传入的匿名函数lambda进行学习率的调整。调整的学习率 = 最初学习率 * 匿名函数返回值
 
-- lr_lambda: ����ָ��һ����������lambda��ÿ��lambdaӦ�õ���Ӧ��optimizer��ȥ���ú����������ǵ�ǰ��epoch��ֵ��
+- lr_lambda: 可以指定一组匿名函数lambda，每个lambda应用到对应的optimizer上去。该函数的输入是当前的epoch数值。
 
 ```python
 def train(model, optimizer, scheduler, cfg):
@@ -74,9 +73,9 @@ plt.plot(lrs)
 
 ## MultiplicativeLR
 
-�������������ķ���ֵ���е���ѧϰ�ʣ�������ѧϰ�� = ��ǰѧϰ�� * ���������ķ���ֵ�����֮ǰ��ͬ���ǣ������������ۻ��ĳ˷���
+根据匿名函数的返回值进行调整学习率，调整的学习率 = 当前学习率 * 匿名函数的返回值。这和之前不同的是，这里做的是累积的乘法。
 
-- lr_lambda: ����ָ��һ����������lambda��ÿ��lambdaӦ�õ���Ӧ��optimizer��ȥ���ú����������ǵ�ǰ��epoch��ֵ��
+- lr_lambda: 可以指定一组匿名函数lambda，每个lambda应用到对应的optimizer上去。该函数的输入是当前的epoch数值。
 
 ```python
 optimizer = optim.Adam(model.parameters(), 0.1)
@@ -92,11 +91,11 @@ plt.plot(lrs)
 
 ## StepLR
 
-ÿ����step_size��epoch��ͽ���˥����˥��������Ϊgamma��������ѧϰ�� = ��ǰ��ѧϰ�� * gamma
+每经过step_size个epoch后就进行衰减，衰减的因子为gamma。调整的学习率 = 当前的学习率 * gamma
 
-- step_size: ÿ����step_size��epoch����˥��
+- step_size: 每经过step_size个epoch进行衰减
 
-- gamma: ˥��������
+- gamma: 衰减的因子
 
 ```python
 optimizer = optim.Adam(model.parameters(), 0.1)
@@ -112,11 +111,11 @@ plt.plot(lrs)
 
 ## MultiStepLR
 
-���ض���epoch������ѧϰ��˥����˥��������Ϊgamma��������ѧϰ�� = ��ǰѧϰ�� * gamma
+在特定的epoch处进行学习率衰减，衰减的因子为gamma，调整的学习率 = 当前学习率 * gamma
 
-- milestones: ����һϵ�н���˥����epoch
+- milestones: 包含一系列进行衰减的epoch
 
-- gamma: ˥������
+- gamma: 衰减因子
 
 ```python
 optimizer = optim.Adam(model.parameters(), 0.1)
@@ -132,11 +131,11 @@ plt.plot(lrs)
 
 ## ConstantLR
 
-ѧϰ�ʰ�ĳ����������ָ����epoch���ٻָ���ֵ���ó���Ϊ���ѧϰ�ʳ�˥������
+学习率按某个常量持续指定的epoch后，再恢复初值。该常量为最初学习率乘衰减因子
 
-- factor: ˥������
+- factor: 衰减因子
 
-- total_iters: �������ٸ�epoch
+- total_iters: 持续多少个epoch
 
 ```python
 optimizer = optim.Adam(model.parameters(), 0.1)
@@ -170,9 +169,9 @@ plt.plot(lrs)
 
 ## ExponentialLR
 
-ÿ��һ���ͽ���˥����˥��������Ϊgamma��������ѧϰ�� = ��ǰѧϰ�� * gamma
+每隔一步就进行衰减，衰减的因子为gamma，调整的学习率 = 当前学习率 * gamma
 
-- gamma: ˥������
+- gamma: 衰减因子
 
 ```python
 optimizer = optim.Adam(model.parameters(), 0.1)
@@ -188,11 +187,11 @@ plt.plot(lrs)
 
 ## CosineAnnealingLR
 
-�����˻�˥������
+余弦退火衰减法。
 
-- T_max: lr�䶯����С��������2T_max�����Ҫ��֤�����ļ���epochѧϰ���ǲ��ϼ�С�ġ���ôT_maxӦ�����������Ĺ�ϵ��epoch = (2k+1)T_max
+- T_max: lr变动的最小正周期是2T_max。如果要保证在最后的几个epoch学习率是不断减小的。那么T_max应该满足这样的关系：epoch = (2k+1)T_max
 
-- eta_min: ��С��ѧϰ��
+- eta_min: 最小的学习率
 
 ```python
 optimizer = optim.Adam(model.parameters(), 1e-4)
@@ -208,13 +207,13 @@ plt.plot(lrs)
 
 ## ReduceLROnPlateau
 
-����Scheduler���Ը���ָ�꣬��ĳ��ָ�겻������������ʱ��ͽ���ѧϰ��˥����
+这种Scheduler可以跟踪指标，当某个指标不再满足提升的时候就进行学习率衰减。
 
-- mode: min����max������acc֮���ָ����max������loss֮���ָ����min
-- factor: ˥��������
-- patience: ��patience��epoch�ڸ��ٵ�ָ�겻��������˥��
-- threshold: �Ը��ٵ�ָ���趨��������ֵ
-- min_lr: ��С��ѧϰ��
+- mode: min或者max。对于acc之类的指标用max，对于loss之类的指标用min
+- factor: 衰减的因子
+- patience: 若patience个epoch内跟踪的指标不提升，就衰减
+- threshold: 对跟踪的指标设定的提升阈值
+- min_lr: 最小的学习率
 
 ```python
 auc = [
@@ -258,11 +257,11 @@ plt.plot(lrs)
 
 ## CosineAnnealingWarmRestarts
 
-���������������˻��ڿ�ʼ�׶Σ�ѧϰ�ʾͽ����˻�Ȼ�󵽴�T_0��ʱ�򣬽��е�0�����������Ժ�ÿ�� $T_{t+1}= T_t*T_{mult}$�����һ����������$T_t$��ʾ��t�μ��$T_t$ ��epoch�ٽ�����������������������С�T������Ϊ[10, 20, 40, 80]���Ӷ���������epoch������Ϊ[10, 10+20, 30+40, 70+80]
+带热重启的余弦退火。在开始阶段，学习率就进行退火，然后到达T_0的时候，进行第0次热重启。以后每隔 $T_{t+1}= T_t*T_{mult}$后进行一次热重启。$T_t$表示第t次间隔$T_t$个epoch再进行热重启。在下面的例子中。T的序列为[10, 20, 40, 80]，从而热重启的epoch的序列为[10, 10+20, 30+40, 70+80]
 
-- T_0: ��һ����������epoch
-- T_mult: T�����ı���
-- eta_min: ��С��ѧϰ�ʣ�Ĭ����0
+- T_0: 第一次热重启的epoch
+- T_mult: T增长的倍数
+- eta_min: 最小的学习率，默认是0
 
 ```python
 cfg.epoch = 100

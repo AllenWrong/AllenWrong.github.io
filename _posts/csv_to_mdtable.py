@@ -8,7 +8,7 @@ def csv_to_mdtable(csv_file, out_file):
     content = ""
     for i in range(df.shape[0]):
         content += "| " + " | ".join(df.iloc[i, :].tolist()) + " |\n"
-    with open("./Papers.md", "w") as f:
+    with open("./Papers.md", "w", encoding="utf-8") as f:
         f.write(header + content)
         
         
