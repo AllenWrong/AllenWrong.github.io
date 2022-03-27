@@ -12,7 +12,6 @@ def time_stamp_to_time(timestamp, more=False):
 def mkfile(file_name):
     header = f'---\n\
 layout: post\n\
-comments: true\n\
 title: "{file_name}"\n\
 excerpt: ""\n\
 date: {time_stamp_to_time(time.time(), True)}\n\
