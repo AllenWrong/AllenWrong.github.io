@@ -6,9 +6,7 @@ keywords: htoReadaPaper
 date: 2020-02-26 11:08:32
 mathjax: false
 categories: 学习方法
-tags:
-  - 阅读文献
-  - 文献调查
+tags: 阅读文献
 excerpt: 这篇文章大致的描述了三遍阅读法（three pass method），这个三遍阅读法既可用于阅读文献，也可用于文献调查，期末突击等。
 top: true
 ---
