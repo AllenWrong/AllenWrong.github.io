@@ -170,8 +170,8 @@ a:visited { color: #205caa; }
 .post-header { margin: 10px 0 30px; }
 
 .post-header h1 {
-  font-size: 36px;
-  letter-spacing: -1.75px;
+  font-size: 32px;
+  letter-spacing: 1.25px;
   line-height: 1;
   font-weight: 600;
 }
@@ -202,18 +202,18 @@ a:visited { color: #205caa; }
 }
 
 .post-content h2 {
-  font-size: 32px;
-  letter-spacing: -1.25px;
+  font-size: 28px;
+  letter-spacing: 1.25px;
 }
 
 .post-content h3 {
-  font-size: 26px;
-  letter-spacing: -1px;
+  font-size: 24px;
+  letter-spacing: 1px;
 }
 
 .post-content h4 {
   font-size: 20px;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
 }
 
 .post-content blockquote {
