@@ -1,8 +1,6 @@
 ---
-layout: page
-title: Auotation
-permalink: /quotation/
-includelink: true
+layout: article
+titles: Auotation
 ---
 
 

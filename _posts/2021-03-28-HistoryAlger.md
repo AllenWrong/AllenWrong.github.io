@@ -1,14 +1,10 @@
 ---
-layout: post
 title: 代数课程体系
 author: Guanguan
 keywords: 代数
-date: 2021-01-31 11:47:44
 mathjax: true
-categories: 代数
 tags: 代数
 excerpt: 本文是在学习南开大学的数学导论时的做的笔记。由于代数对于计算机比较重要，因此只记录了代数部分的内容。
-top:
 ---
 
 ## 一、代数类课程体系

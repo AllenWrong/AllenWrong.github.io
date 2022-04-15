@@ -11,11 +11,10 @@ def time_stamp_to_time(timestamp, more=False):
     
 def mkfile(file_name):
     header = f'---\n\
-layout: post\n\
 title: "{file_name}"\n\
 excerpt: ""\n\
-date: {time_stamp_to_time(time.time(), True)}\n\
 mathjax: false\n\
+tags: \n\
 ---'
     file_name = time_stamp_to_time(time.time()) + "-" + file_name + ".md"
     with open(file_name, "w") as f:

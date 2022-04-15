@@ -1,14 +1,11 @@
 ---
-layout: post
 title: 理想的计算机科学知识体系
 author: Guanguan
 keywords: CSKnowledgeSys
 date: 2021-03-10 22:09:21
-mathjax:
 categories: 计算机科学
 tags: 计算机科学
 excerpt: 这是我非常喜欢的计算机科学知识结构，也是很理想的计算机科学知识结构，原则上每个CS毕业的同学都应该具备这些技能。
-top:
 ---
 
 <a href="http://www.penglixun.com/study/computer_science_knowledge_hierarchy.html">文章出处：http://www.penglixun.com/study/computer_science_knowledge_hierarchy.html</a>

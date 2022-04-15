@@ -1,13 +1,10 @@
 ---
-layout: post
 title: 链表的一些常用操作
 author: Guanguan
 keywords: 链表
 date: 2021-02-20 11:44:59
-mathjax: false
 tags: 算法
 excerpt: 本文记录了刷LeetCode过程中遇到的一些常用的链表操作技巧，这些技巧由程序片段表示的，熟练掌握这些技巧可以提高对链表的操作水平。
-top:
 ---
 
 * 目录

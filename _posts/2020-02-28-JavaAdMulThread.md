@@ -1,10 +1,8 @@
 ---
-layout: post
 title: JavaAdMulThread
 author: Guanguan
 keywords: JavaAdMulThread
 date: 2020-02-28 18:38:09
-mathjax: false
 tags: Java多线程
 excerpt: 本篇博客主要是关于Java多线程的学习总结，并附有示例程序。比较广泛的记录了Java多线程的内容，并没有过多地涉及细节。
 ---

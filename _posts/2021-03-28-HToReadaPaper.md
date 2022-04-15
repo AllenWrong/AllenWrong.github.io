@@ -1,14 +1,11 @@
 ---
-layout: post
 title: 如何阅读文献
 author: Guanguan
 keywords: htoReadaPaper
 date: 2020-02-26 11:08:32
-mathjax: false
 categories: 学习方法
 tags: 阅读文献
 excerpt: 这篇文章大致的描述了三遍阅读法（three pass method），这个三遍阅读法既可用于阅读文献，也可用于文献调查，期末突击等。
-top: true
 ---
 
 本博客是对文献《How to Read a Paper》的读后总结。<a href="http://web.stanford.edu/class/cs343/resources/how-to-read-a-paper.pdf">原文</a>

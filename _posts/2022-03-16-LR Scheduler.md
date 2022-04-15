@@ -1,5 +1,4 @@
 ---
-layout: post
 title: LR Scheduler
 excerpt: "关于Pytorch中LR Scheduler的一些演示"
 mathjax: true
