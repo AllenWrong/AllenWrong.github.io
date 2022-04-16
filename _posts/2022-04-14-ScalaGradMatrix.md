@@ -446,7 +446,7 @@ $$
 
 **使用同样的方法，我们也来看一下对$$A$$的梯度**。下面使用$$a_{ij}+\delta a$$来表示$$a_{ij}$$发生了$$\delta a$$的变换，用$$da_{ij}$$来表示标量对$$a_{ij}$$的梯度。
 
-当$$a_{11}+\delta a$$是，C发送的变化为：
+当$$a_{11}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
@@ -454,7 +454,7 @@ w_{11}\delta a & 0 \\ 0 & 0
 \end{bmatrix}
 $$
 
-当$$a_{12}+\delta a$$是，C发送的变化为：
+当$$a_{12}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
@@ -463,7 +463,7 @@ w_{12}\delta a & w_{11} \delta a \\
 \end{bmatrix}
 $$
 
-当$$a_{13}+\delta a$$是，C发送的变化为：
+当$$a_{13}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
@@ -471,7 +471,7 @@ $$
 \end{bmatrix}
 $$
 
-当$$a_{21}+\delta a$$是，C发送的变化为：
+当$$a_{21}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
@@ -480,7 +480,7 @@ w_{11}\delta a & 0
 \end{bmatrix}
 $$
 
-当$$a_{22}+\delta a$$是，C发送的变化为：
+当$$a_{22}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
@@ -489,7 +489,7 @@ w_{12}\delta a & w_{11}\delta a
 \end{bmatrix}
 $$
 
-当$$a_{23}+\delta a$$是，C发送的变化为：
+当$$a_{23}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
@@ -498,7 +498,7 @@ $$
 \end{bmatrix}
 $$
 
-当$$a_{31}+\delta a$$是，C发送的变化为：
+当$$a_{31}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
@@ -507,7 +507,7 @@ w_{21}\delta a & 0
 \end{bmatrix}
 $$
 
-当$$a_{32}+\delta a$$是，C发送的变化为：
+当$$a_{32}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
@@ -516,7 +516,7 @@ w_{22}\delta a & w_{21}\delta a
 \end{bmatrix}
 $$
 
-当$$a_{33}+\delta a$$是，C发送的变化为：
+当$$a_{33}+\delta a$$时，C发送的变化为：
 
 $$
 \begin{bmatrix}
