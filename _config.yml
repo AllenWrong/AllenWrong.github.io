@@ -132,7 +132,7 @@ comments:
     repository  : AllenWrong.github.io # GitHub repo
     owner       : AllenWrong # GitHub repo owner
     admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-      - 37206177
+      - AllenWrong
 
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
