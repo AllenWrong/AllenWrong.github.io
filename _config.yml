@@ -129,7 +129,7 @@ comments:
   gitalk:
     clientID    : 8da534c0f6086b1a48a5 # GitHub Application Client ID
     clientSecret: bfc4623f886e34baececbe73905021052f3dab8c # GitHub Application Client Secret
-    repository  : https://github.com/AllenWrong/AllenWrong.github.io # GitHub repo
+    repository  : AllenWrong.github.io # GitHub repo
     owner       : AllenWrong # GitHub repo owner
     admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
       - 37206177
