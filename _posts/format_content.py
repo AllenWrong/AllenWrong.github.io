@@ -51,7 +51,6 @@ class FormatContent:
         txt = self._replace_img(txt)
 
         header = f'---\n' \
-                 f'layout: post\n' \
                  f'title: "{input_file.split(".")[0]}"\n' \
                  f'excerpt: ""\n' \
                  f'mathjax: false\n' \
@@ -63,7 +62,7 @@ class FormatContent:
         
 
 if __name__ == '__main__':
-    new_names = rename([sys.argv[1]])
     format_eng = FormatContent()
-    format_eng.run(new_names[0])
+    format_eng.run(sys.argv[1])
+    rename([sys.argv[1]])
     print("Format content done!")

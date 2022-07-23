@@ -1,8 +1,7 @@
 ---
-layout: post
-title: "2022-07-23-AlgSummary"
-excerpt: ""
-mathjax: false
+title: "AlgSummary"
+excerpt: "常用算法和数据结构的简单个人总结。"
+mathjax: true
 ---
 
 ## 排序
