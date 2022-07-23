@@ -93,6 +93,7 @@
         display: none;
         &[data-processed] {
           display: block;
+          text-align: center;
         }
       }
     }
@@ -207,6 +208,7 @@
     width: 100%;
     border-collapse: collapse;
     @include overflow(auto);
+    display: inline-table;
     thead, tfoot {
       background-color: $text-background-color;
     }
