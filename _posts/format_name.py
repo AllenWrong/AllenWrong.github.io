@@ -29,12 +29,15 @@ def time_stamp_to_time(timestamp):
 def rename(md_files):
     
     not_match_names = check_match(md_files)
-    
+
+    new_names = []
     for file in not_match_names:
         create_time = time_stamp_to_time(os.path.getmtime(file))
         new_name = create_time + "-" + file
         os.rename(file, new_name)
+        new_names.append(new_name)
     print(f"format name done! changed {len(not_match_names)} names")
+    return new_names
 
-
-rename(get_md_files())
+if __name__ == "__main__":
+    rename(get_md_files())

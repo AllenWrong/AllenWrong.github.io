@@ -1,6 +1,7 @@
 import re
 import sys
 import time
+from format_name import rename
 
 """
 This file is used to format the content of markdown file which is export by ipython notebook.
@@ -54,13 +55,15 @@ class FormatContent:
                  f'title: "{input_file.split(".")[0]}"\n' \
                  f'excerpt: ""\n' \
                  f'mathjax: false\n' \
-                 f"---\n"
+                 f"---\n\n"
         txt = header + txt
 
-        with open("./" + "f_" + input_file, "w", encoding="utf-8") as f:
+        with open("./" + input_file, "w", encoding="utf-8") as f:
             f.write(txt)
-
+        
 
 if __name__ == '__main__':
+    new_names = rename([sys.argv[1]])
     format_eng = FormatContent()
-    format_eng.run(sys.argv[1])
+    format_eng.run(new_names[0])
+    print("Format content done!")
