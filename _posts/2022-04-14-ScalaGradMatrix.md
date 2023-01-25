@@ -661,3 +661,45 @@ $$
 
 即：$$dA=padded(dC)conv(*)W^{rotate}$$。可以验证这个式子计算出来的结果和我们一开始分析的结果是一致的
 
+## cmu10-714 dlsys 总结
+
+总结自动微分实现过程中常用算子的梯度求法。使用torch进行举例。
+
+### EWiseAdd
+
+矩阵元素加法。
+
+### AddScalar
+
+### EWiseMul
+
+### MulScalar
+
+### PowerScalar
+
+### EWiseDiv
+
+### DivScalar
+
+### Transpose
+
+### Reshape
+
+### BroadcastTo
+
+### Summation
+
+### MatMul
+
+### Negate
+
+### Log
+
+### Exp
+
+### ReLU
+
+### LogSumExp
+
+
+

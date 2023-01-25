@@ -64,7 +64,6 @@
 
 以下面这颗二叉树为例：
 
-<center>
 
 ```mermaid
 graph TB
@@ -76,7 +75,6 @@ graph TB
    C((3))-->G((7))
 ```
 
-</center>
 
 **前序遍历**
 
@@ -95,3 +93,214 @@ graph TB
 **后序遍历**
 
 后序遍历是通过改动前序遍历而得到的，因此这里就不讲为什么后序遍历要使用栈了。这里主要是讲一下如何改动前序遍历得到后续遍历的结果。后序遍历是：左右中。反过来是：中右左。前序遍历是中左右，这里的区别是对左右子树的访问顺序的不容。这种差异是非常好改动的。在前序遍历过程中，我们先将右孩子入栈，再将左孩子入栈，就实现了先访问左孩子。如果我们先将左孩子入栈，再将右孩子入栈得到的就会使中右左的访问结果。然后将访问的结果翻转一下就得到了左右中的访问结果。
+
+**深度优先遍历**
+
+深度优先遍历的主要思想是我们先沿着一个树枝走到枝末。然后再去遍历其他的树枝。以上图为例，这里我们首先访问1，访问完1后，此时我们有两个选择，要么访问2，要么访问3。假设我们先访问2，那么3就需要暂时保存一下，后面我们再访问。这时候需要什么样的数据结构保存呢，不妨先往下看，访问完2，我们又有两个选择4和5，我们选择访问4，然后将5暂存。至此，我们暂存了两个元素3和5，但是很显然的是我们要先访问5再访问3，这给我们的暗示就是可能需要一种先进后出的数据结构，即栈。尝试会证明栈的选择是正确的。
+
+**广度优先遍历**
+
+广度优先遍历的主要思想是我们先访问完一各结点的所有孩子后，再去访问孩子的孩子。这种一层一层的遍历方法很显然要使用队列。
+
+### 二叉搜索树
+
+给定一个序列[7, 3, 10, 12, 5, 1, 9, 2]，我们想要进行高效的查询和删改。要进行高效的查询，可以使用有序数组来存储，然后利用二分查找即可。但是数组并不利于增加和删除元素，当增加和删除元素的时候要进行元素的移动，这个操作是很低效的。而链表在增加和删除元素的时候是非常高效的，但是链表的查询是线性时间的，这差于对数时间的二分查找。二叉搜索树同时具备高效查询和高效增删元素的特点。二叉搜索树的高效得益于从树的根结点到树的叶结点的路径长度为log(n)，但是也会出现阶段的情况，即一棵树只有左子树或只有右子树，这时从根结点到叶结点的路径长度为n。
+
+于是，又有了对二叉搜索树的进一步的优化，即平衡二叉树。平衡二叉树的特点是它要么是一颗空树，要么两个子树的高度差不超过1。平衡二叉树是一种概念，它有多种实现方式如：红黑树，2-3树，AVL树，替罪羊树，伸展树，Treap等。
+
+#### 二叉搜索树的创建
+
+二叉搜索树的创建的过程也就是二叉搜索树增加元素的过程。这个过程要保证二叉搜索树的特性。
+
+#### 二叉搜索树的遍历
+
+二叉搜索树是一种特殊的二叉树，因此，适用于二叉树的遍历方法同样适用于二叉搜索树。如：前序遍历，中序遍历，后序遍历，DFS，BFS，层次遍历。
+
+#### 二叉搜索树的删除
+
+```mermaid
+graph TB
+   A((6))-->B((4))
+   A((6))-->C((7))
+   B((4))-->D((3))
+   B((4))-->E((5))
+   C((7))-->G((8))
+```
+
+二叉搜索树的删除是一个难点。在删除元素的过程中要保证二叉搜索树的特性。在二叉搜索树中将结点的类型分为以下四类：
+
+- 根叶结点。根节点也是叶结点，这种情况下树只有一个结点。
+- 叶结点。这里的叶结点表示有父结点的叶结点，区别于根叶结点。如：3,5,8
+- 只有一颗子树的结点。只有一颗子树的结点可能是根结点，也可能是非根非叶结点。如：7
+- 有两颗子树的结点。这样的结点可能是根结点，也可能是非根非叶结点。如：4,6
+
+对于不同的结点类型有不同的删除策略。但是必须先找到待删除的结点及其父结点才能进行删除，伪码如下：
+
+```java
+// val 是待删除的结点的值
+target = search(val);
+parent = searchParent(val);
+```
+
+然后我们再逐个分析：
+
+**根叶结点的删除**
+
+根叶结点的删除比较简单。直接将根结点置空即可
+
+```java
+if (target.left == null && target.right == null && parent == null) {
+    root = null;
+}
+```
+
+**叶结点的删除**
+
+我们要找到待删除的结点及其父结点。若待删除的结点是父结点的左孩子，那么将父结点的左孩子置空。若待删除的结点是父结点的右孩子，那么将父结点的右孩子置空。伪码如下：
+
+```java
+// 我们知道这种情况下父结点不会为空，如果父结点为空，就会进入第一种情况
+} else if (target.left == null && target.right == null) {
+    
+    // 若待删除的结点是父结点的左孩子，那么将父结点的左孩子置空
+    if (parent.left != null && parent.left.equals(target)) {
+        parent.left = null;
+    
+    // 若待删除的结点是父结点的右孩子，那么将父结点的右孩子置空
+    } else {
+        parent.right = null;
+    }
+}
+```
+
+**有两颗子树的结点**
+
+有两种策略：1、从待删除结点的左子树上找到最大结点，将此结点删除，并用此结点的值替换待删除结点的值。2、从待删除结点的右子树上找到最小结点，将此结点删除，并用此结点的值替换待删除结点的值。这里用右子树上的最小结点进行替换，伪码如下：
+
+```java
+} else if (target.left != null && target.right != null) {
+    target.val = delRightMin(target.right);
+}
+
+// ---- 辅助函数 ----
+/** 从待删除结点的右子树上找到最小结点，将此结点删除，然后返回结点的值。 */
+public T delRightMin(Node right) {
+    Node p = right;
+    while (p.left != null) {
+        p = p.left;
+    }
+    delete(p);
+    return p.val;
+}
+```
+
+**只有一颗子树的结点**
+
+这种情况比较复杂。父结点可能为空，父结点为空时，表明target是根结点，此时直接让根结点指向子树即可。当父结点不为空时：将target结点从父结点上删除需要判断target是左孩子还是右孩子，这有两种情况。由于此时target只有一颗子树，这个子树有可能是target的左子树也有可能是target的右子树，这里还有两种情况。综合起来共有四种情况。下面做简单的分析：
+
+- 若父结点为空，让根结点指向子树。
+- 父结点不空，且target是父结点的左孩子，并且target有左子树。让target的左子树成为父结点的左孩子。
+- 父结点不空，且target是父结点的左孩子，并且target有右子树。让target的右子树成为父结点的左孩子。
+- 父结点不空，且target是父结点的右孩子，并且target有左子树。让target的左子树成为父结点的右孩子。
+- 父结点不空，且target是父结点的右孩子，并且target有右子树。让target的右子树成为父结点的右孩子。
+
+伪码如下：
+
+```java
+} else {
+    // 若父结点为空，让根结点指向子树。
+    if (parent == null) {
+        root = target.left == null ? target.right : target.left;
+    } else {
+        
+        // 父结点不空，且target是父结点的左孩子
+        if (parent.left.equals(target)) {
+    
+            // target有左子树，让target的左子树成为父结点的左孩子
+            if (target.left != null) {
+                parent.left = target.left;
+    
+            // target有右子树，让target的右子树成为父结点的左孩子
+            } else {
+                parent.left = target.right;
+            }
+            
+        // 父结点不空，且target是父结点的右孩子
+        } else {
+            
+            // target有左子树，让target的左子树成为父结点的右孩子
+            if (target.left != null) {
+                parent.right = target.left;
+            
+            // target有右子树，让target的右子树成为父结点的右孩子
+            } else {
+                parent.right = target.right;
+            }
+        }
+    }
+}
+```
+
+#### 平衡二叉树
+
+**---- 二叉搜索树的平衡化**
+
+![四种不平衡的情况](https://cdn.jsdelivr.net/gh/AllenWrong/BlogCDN/img/20200322085717165.png)
+
+在添加结点或删除结点后都要保证二叉树的平衡性。二叉树不平衡的情况有四种。但是其核心的调整策略就是左旋和右旋。混合旋转的情况也都是基于左旋和右旋实现的。伪码如下：
+
+```java
+public void leftRotate() {
+    // 利用不平衡结点的值新建一个结点。4中的结点2
+    newNode = new Node(target.val);
+    
+    // 设置新建结点的左子树和右子树
+    newNode.left = target.left;
+    newNode.right = target.right.left;
+    
+    // 更新target结点的值
+    target.val = target.right.val;
+    
+    // 更新target结点的左右孩子
+    target.right = target.right.right;
+    target.left = newNode;
+}
+
+public void rightRotate() {
+    // 利用不平衡结点的值新建一个结点。1中的结点6
+    newNode = new Node(target.val);
+    
+    // 设置新建结点的左右子树
+    newNode.left = target.left.right;
+    newNode.right = target.right;
+    
+    // 更新target结点的值
+    target.val = target.right.val;
+    
+    // 更新target结点的左右孩子
+    target.left = target.left.left;
+    target.right = newNode();
+}
+
+public void balance() {
+    if (leftHeight() - rightHeight() > 1) {
+        // 图中情况2
+        if (target.left.leftHeight() < target.left.rightHeight()) {
+            target.left.leftRotate();
+        }
+        target.rightRotate();
+        return;
+    }
+    
+    if (rightHeight() - leftHeight() > 1) {
+        // 图中情况3
+        if (target.right.leftHeight() > target.right.right.Height()) {
+            target.right.rightRotate();
+        }
+        target.leftRotate();
+    }
+}
+```
+
+
+
