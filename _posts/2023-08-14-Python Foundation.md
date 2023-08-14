@@ -1,5 +1,5 @@
 ---
-title: "2023-08-14-Python Foundation"
+title: "Python Foundation"
 author: Guanguan
 excerpt: "本文是介绍了Python的一些非常基础但底层的内容。"
 tags: "默认标签"
