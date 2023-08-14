@@ -1,3 +1,11 @@
+---
+title: "2023-08-14-Python Foundation"
+author: Guanguan
+excerpt: "本文是介绍了Python的一些非常基础但底层的内容。"
+tags: "默认标签"
+mathjax: false
+---
+
 《Data Structure and Algorithms in Python》阅读记录。非常好的一本书，适用于有一点Python基础后进行深入学习。
 
 ## Python预备
@@ -104,8 +112,8 @@ str是不可变类型。这意味着不能改变某个字符串的中间某个�
 letters = ''
 for c in doc:
     if c.isalpha():
-        letters += c 
-    
+        letters += c
+
 # 可行的方案1
 letters = ''.join([c for c in doc if c.isalpha()])
 
