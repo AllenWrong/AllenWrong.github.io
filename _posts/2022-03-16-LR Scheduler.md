@@ -1,6 +1,7 @@
 ---
 title: LR Scheduler
-excerpt: "关于Pytorch中LR Scheduler的一些演示"
+excerpt: "关于Pytorch中常见的LR Scheduler的一些演示"
+tag: "学习率调度器"
 mathjax: true
 ---
 

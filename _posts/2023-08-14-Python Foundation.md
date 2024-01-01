@@ -1,8 +1,7 @@
 ---
 title: "Python Foundation"
-author: Guanguan
-excerpt: "本文是介绍了Python的一些非常基础但底层的内容。"
-tags: "默认标签"
+excerpt: "本文是介绍了有关Python的非常基础、底层的内容。文章正在更新中。。。"
+tags: "新文章在写"
 mathjax: false
 ---
 

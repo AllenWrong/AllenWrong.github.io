@@ -1,6 +1,5 @@
 ---
 title: 代数课程体系
-author: Guanguan
 keywords: 代数
 mathjax: true
 tags: 代数

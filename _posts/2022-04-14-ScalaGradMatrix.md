@@ -2,6 +2,7 @@
 title: "标量对矩阵求导的直观理解"
 excerpt: "本文企图以一种直观简单而不失严谨性的方式来理解标量对矩阵的求导。尽管理解的方式在数学上并不严谨，但是由于它的简单和直观性，丧失一些严谨性也是值得的"
 mathjax: true
+tags: "矩阵微分"
 ---
 
 * 目录
@@ -660,46 +661,6 @@ w_{12} & w_{11}
 $$
 
 即：$$dA=padded(dC)conv(*)W^{rotate}$$。可以验证这个式子计算出来的结果和我们一开始分析的结果是一致的
-
-## cmu10-714 dlsys 总结
-
-总结自动微分实现过程中常用算子的梯度求法。使用torch进行举例。
-
-### EWiseAdd
-
-矩阵元素加法。
-
-### AddScalar
-
-### EWiseMul
-
-### MulScalar
-
-### PowerScalar
-
-### EWiseDiv
-
-### DivScalar
-
-### Transpose
-
-### Reshape
-
-### BroadcastTo
-
-### Summation
-
-### MatMul
-
-### Negate
-
-### Log
-
-### Exp
-
-### ReLU
-
-### LogSumExp
 
 
 

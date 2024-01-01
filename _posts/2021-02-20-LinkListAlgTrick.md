@@ -1,6 +1,5 @@
 ---
 title: 链表的一些常用操作
-author: Guanguan
 keywords: 链表
 date: 2021-02-20 11:44:59
 tags: 算法

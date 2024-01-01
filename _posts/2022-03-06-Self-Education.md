@@ -1,7 +1,6 @@
 ---
 title: 自我教育
-date: 2020-02-06 15:50:59
-type: "learn"
+tags: "学习方法"
 excerpt: "Self-Education的一些想法"
 ---
 

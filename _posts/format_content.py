@@ -52,9 +52,8 @@ class FormatContent:
 
         header = f'---\n' \
                  f'title: "{input_file.split(".")[0]}"\n' \
-                 f'author: Guanguan\n' \
                  f'excerpt: "本文是xxx，xxx是xxx，只做了xxx，其余部分xxx。"\n' \
-                 f'tags: "默认标签"\n' \
+                 f'tags: "新文章在写"\n' \
                  f'mathjax: false\n' \
                  f"---\n\n"
         txt = header + txt
