@@ -1,6 +1,7 @@
 ---
 title: "AlgSummary"
 excerpt: "常用算法和数据结构的简单个人总结。"
+tags: "算法与数据结构"
 mathjax: true
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: JavaAdMulThread
-author: Guanguan
 keywords: JavaAdMulThread
 date: 2020-02-28 18:38:09
 tags: Java多线程

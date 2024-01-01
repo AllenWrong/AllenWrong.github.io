@@ -1,6 +1,5 @@
 ---
 title: 大端法和小端法
-author: Guanguan
 keywords: BigSmallEnd
 date: 2020-03-20 23:05:54
 tags: 计算机系统

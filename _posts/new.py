@@ -14,7 +14,7 @@ def mkfile(file_name):
 title: "{file_name}"\n\
 excerpt: ""\n\
 mathjax: false\n\
-tags: \n\
+tags: "新文章在写"\n\
 ---'
     file_name = time_stamp_to_time(time.time()) + "-" + file_name + ".md"
     with open(file_name, "w") as f:
